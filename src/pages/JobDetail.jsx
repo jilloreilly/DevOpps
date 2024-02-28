@@ -1,7 +1,7 @@
 // job details
 
 import { useEffect } from 'react';
-import Container from 'react-bootstrap/Container';
+
 
 
 function JobDetails() {
