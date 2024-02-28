@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer'
-import { Candidate, Custom404, Employer, Home, JobDetail, JobResults } from './components/Pages';
+import { Candidate, Custom404, Employer, Home, JobDetail, JobResults } from './components/pages';
 import './App.css'
 
 function App() {
