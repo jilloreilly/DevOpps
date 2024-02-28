@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import Container from 'react-bootstrap/Container';
+
 
 
 function Candidate() {
@@ -8,5 +8,5 @@ function Candidate() {
     <h1>Candidate</h1>
     );
   }
-  
+
   export default Candidate;
