@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
+import CandidateProfileForm from '../components/CandidateProfileForm';
 
 
 
 function Candidate() {
 
   return (
-    <h1>Candidate</h1>
+    <CandidateProfileForm />
     );
   }
 
