@@ -2,6 +2,7 @@ import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button } from "@n
 
 export default function MyHeader() {
   return (
+    <>
     <Navbar shouldHideOnScroll>
       <NavbarBrand>
         {/* <AcmeLogo /> */}
@@ -35,5 +36,6 @@ export default function MyHeader() {
         </NavbarItem>
       </NavbarContent>
     </Navbar>
+    </>
   );
 }
