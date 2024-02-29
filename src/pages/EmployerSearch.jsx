@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import candidatesData from '../../../candidates.json';
-import "../EmployerSearch/index.css"
+import candidatesData from '../../candidates.json';
+import "../pages/Employer.css"
 
 function EmployerSearch() {
   const [people, setPeople] = useState([]);
