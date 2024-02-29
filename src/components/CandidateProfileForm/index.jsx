@@ -21,9 +21,19 @@ function CandidateProfile() {
       return response.json()
       })
       .then(data => {
-      console.log(data)
-    })
+        console.log(data);
 
+        const gitHubRepos = data.repos_url;
+        console.log(gitHubRepos);
+
+        const gitHubAvatar = data.avatar_url;
+        console.log(gitHubAvatar);
+
+        const gitHubFollowers = data.followers;
+        console.log(gitHubFollowers)
+
+
+    })
 
   }
 
@@ -180,7 +190,7 @@ function CandidateProfile() {
               <label htmlFor="git-hub-link" className="sr-only">
                 Email address
               </label>
-              <input
+              <span className="px-3 py-2 border-2">https://github.com/</span><input
                 id="git-hub-link"
                 name="git-hub-link"
                 type="text"
@@ -189,7 +199,7 @@ function CandidateProfile() {
                 autoComplete="email"
                 required
                 className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3 py-2  shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
-                placeholder="Enter your GitHub Account"
+                placeholder="GitHub Username"
               />
               <button id ="fetch-git-hub" onClick={handleGitHubClick}
                 type="submit"
