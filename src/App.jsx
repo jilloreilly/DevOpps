@@ -1,14 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Header from './components/Header';
-// import Footer from './components/Footer'
-import { Candidate, Custom404, Home, JobDetails, JobResults, EmployerSearch } from './pages';
+import MyHeader from './components/Header';
+import MyFooter from './components/Footer'
+import { Candidate, Custom404, Employer, Home, JobDetails, JobResults } from './pages';
 import './App.css'
+
+import React from 'react';
 
 function App() {
 
   return (
     <Router >
-      {/* <Header /> */}
+      <MyHeader />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='candidate' element={<Candidate />} />
