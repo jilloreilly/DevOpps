@@ -15,23 +15,23 @@ function Home() {
         ></div> */}
 
         {/* Content */}
-        <div className="relative z-10 flex items-center justify-between px-4 py-8 sm:py-12">
+        <div className="flex flex-row">
           {/* Left Section */}
-          <div className="text-white">
+          <div className="grid grid-cols-6">
             {/* Text */}
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome</h1>
-              <p className="text-lg md:text-xl mb-6">Tag Line.</p>
+              <h1 className="">Welcome</h1>
+              <p className="">Tag Line.</p>
             </div>
             {/* Buttons */}
             <div>
-              <Button color="primary" variant="gradient" className="mr-4">Get Started</Button>
+              <Button color="primary" variant="flat">Get Started</Button>
               <Button color="primary" variant="flat">Learn More</Button>
             </div>
           </div>
 
           {/* Right Section */}
-          <div className="hidden md:block ml-8">
+          <div className="grid grid-cols-6">
             blah blah
             {/* <img src="/your-other-photo.jpg" alt="Your Other Photo" className="w-32 h-32 rounded-full" /> */}
           </div>
