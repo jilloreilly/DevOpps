@@ -12,7 +12,7 @@ function EmployerSearch() {
 
   useEffect(() => {
     setPeople(candidatesData);
-    setResults(candidatesData); // Initially, show all results
+    setResults(candidatesData); 
   }, []);
 
   const handleSearchChange = (event) => {

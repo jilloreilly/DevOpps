@@ -4,5 +4,5 @@ import App from '../App';
 
 // Test if our `App` component renders without throwing an error.
 it('App Component Renders Without Error', () => {
-  render(<App />);
+  render();
 });
