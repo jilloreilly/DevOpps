@@ -12,6 +12,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='candidate' element={<Candidate />} />
+        <Route path='/job-results' element={<JobResults />} />
         <Route path='employer' element={<Employer />} />
         <Route path='404' element={<Custom404 />} />
         <Route path="/job/:id" element={<JobDetails />} />
