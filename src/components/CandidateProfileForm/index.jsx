@@ -7,14 +7,14 @@ function CandidateProfile() {
     <form id="candidate-profile-form">
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
-          <h1 className="text-base font-semibold leading-7 text-gray-900">Candidate - Create Profile</h1>
+          <h1 className="text-3xl text-base font-semibold leading-7 text-gray-900">Candidate - Create Profile</h1>
           <p className="mt-1 text-sm leading-6 text-gray-600">
             This information will be displayed publicly so be careful what you share.
           </p>
         </div>
 
         <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="my-5 text-base font-semibold leading-7 text-gray-900">Personal Information</h2>
+          <h2 className="text-3xl my-5 text-base font-semibold leading-7 text-gray-900">Personal Information</h2>
           <p className="mt-4 text-sm leading-6 text-gray-600">This is a subheading</p>
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
@@ -109,7 +109,7 @@ function CandidateProfile() {
               </div>
 
               <div className="sm:col-span-3">
-              <label htmlFor="office-remote" className="block text-sm font-medium leading-6 text-gray-900">
+              <label htmlFor="office-remote-hybrid" className="block text-sm font-medium leading-6 text-gray-900">
                 Office/Remote/Hybrid
               </label>
               <div className="mt-2">
@@ -137,12 +137,45 @@ function CandidateProfile() {
         </button>
         <button id ="submitProfile"
           type="submit"
-          className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className="rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
           Save
         </button>
       </div>
     </form>
+    
+    <div className="space-y-12">
+        <div className="border-b border-gray-900/10 pb-12">
+          <h2 className="text-base font-semibold leading-7 text-gray-900">Add Skills</h2>
+          
+        </div>
+        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Link your GitHub Account</h2>
+            <p className="mt-4 text-lg leading-8 text-gray-300">
+              Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit quis. Duis tempor incididunt
+              dolore.
+            </p>
+        <div className="mt-6 flex max-w-md gap-x-4">
+              <label htmlFor="git-hub-link" className="sr-only">
+                Email address
+              </label>
+              <input
+                id="git-hub-link"
+                name="git-hub-link"
+                type="text"
+                autoComplete="email"
+                required
+                className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                placeholder="Enter your GitHub Account"
+              />
+              <button
+                type="submit"
+                className="flex-none rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+              >
+                Link GitHub
+              </button>
+            </div>
+        
+        </div>
     
     </>
 
