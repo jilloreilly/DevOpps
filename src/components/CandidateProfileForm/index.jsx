@@ -2,6 +2,30 @@ import { useRef, useState } from "react";
 
 function CandidateProfile() {
 
+  const [profileFormData, setProfileFormData] = useState({
+    firstName: '',
+    lastName: '',
+    emailAddress: '',
+    location: '',
+    jobTitle: '',
+    salaryRange: '',
+    officeRemoteHybrid: '',
+
+  });
+
+  const handleProfileChange = (e) => {
+    const { name, value } = e.target;
+    setProfileFormData({
+      ...profileFormData,
+      [name]: value,
+    })
+  }
+
+  const handleProfileSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form Data: ', profileFormData)
+  }
+
   const [gitHubProfile, setGitHubProfile] = useState('')
 
   const handleGitHubChange = (e) => {
@@ -39,7 +63,7 @@ function CandidateProfile() {
 
   return (
     <>
-    <form id="candidate-profile-form">
+    <form id="candidate-profile-form" onSubmit={handleProfileSubmit}>
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
           <h1 className="text-3xl text-base font-semibold leading-7 text-gray-900">Candidate - Create Profile</h1>
@@ -54,29 +78,32 @@ function CandidateProfile() {
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-3">
-              <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
+              <label htmlFor="firstName" className="block text-sm font-medium leading-6 text-gray-900">
                 First name
               </label>
               <div className="mt-2">
                 <input
                   type="text"
-                  name="first-name"
-                  id="first-name"
-                  autoComplete="given-name"
+                    name="firstName"
+                    value={profileFormData.firstName}
+                    onChange={handleProfileChange}
+                  id="firstName"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
 
             <div className="sm:col-span-3">
-              <label htmlFor="last-name" className="block text-sm font-medium leading-6 text-gray-900">
+              <label htmlFor="lastName" className="block text-sm font-medium leading-6 text-gray-900">
                 Last name
               </label>
               <div className="mt-2">
                 <input
                   type="text"
-                  name="last-name"
-                  id="last-name"
+                  name="lastName"
+                    id="lastName"
+                    value={profileFormData.lastName}
+                    onChange={handleProfileChange}
                   autoComplete="family-name"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
@@ -84,14 +111,17 @@ function CandidateProfile() {
             </div>
 
             <div className="sm:col-span-4">
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+              <label htmlFor="emailAddress" className="block text-sm font-medium leading-6 text-gray-900">
                 Email address
               </label>
               <div className="mt-2">
                 <input
-                  id="email"
-                  name="email"
+                  id="emailAddress"
+                    name="emailAddress"
+                    value={profileFormData.emailAddress}
+                    onChange={handleProfileChange}
                   type="email"
+                  
                   autoComplete="email"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
@@ -105,8 +135,9 @@ function CandidateProfile() {
               <div className="mt-2">
                 <input
                   id="location"
-                  name="location"
-                  autoComplete="city-name"
+                    name="location"
+                    value={profileFormData.location}
+                    onChange={handleProfileChange}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                 </input>
@@ -114,14 +145,15 @@ function CandidateProfile() {
               </div>
 
               <div className="sm:col-span-3">
-              <label htmlFor="job-title" className="block text-sm font-medium leading-6 text-gray-900">
+              <label htmlFor="jobTitle" className="block text-sm font-medium leading-6 text-gray-900">
                 Job Title
               </label>
               <div className="mt-2">
                 <input
-                  id="job-title"
-                  name="job-title"
-                  autoComplete="job-title"
+                  id="jobTitle"
+                    name="jobTitle"
+                    value={profileFormData.jobTitle}
+                    onChange={handleProfileChange}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                 </input>
@@ -129,14 +161,15 @@ function CandidateProfile() {
               </div>
 
               <div className="sm:col-span-3">
-              <label htmlFor="salary-range" className="block text-sm font-medium leading-6 text-gray-900">
+              <label htmlFor="salaryRange" className="block text-sm font-medium leading-6 text-gray-900">
                 Salary Range
               </label>
               <div className="mt-2">
                 <input
-                  id="salary-range"
-                  name="salary-range"
-                  autoComplete="salary"
+                  id="salaryRange"
+                    name="salaryRange"
+                    value={profileFormData.salaryRange}
+                    onChange={handleProfileChange}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                 </input>
@@ -144,14 +177,15 @@ function CandidateProfile() {
               </div>
 
               <div className="sm:col-span-3">
-              <label htmlFor="office-remote-hybrid" className="block text-sm font-medium leading-6 text-gray-900">
+              <label htmlFor="officeRemoteHybrid" className="block text-sm font-medium leading-6 text-gray-900">
                 Office/Remote/Hybrid
               </label>
               <div className="mt-2">
                 <input
-                  id="office-remote-hybrid"
-                  name="office-remote-hybrid"
-                  autoComplete="office-remote-hybrid"
+                  id="officeRemoteHybrid"
+                    name="officeRemoteHybrid"
+                    value={profileFormData.officeRemoteHybrid}
+                    onChange={handleProfileChange}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                 >
                 </input>
