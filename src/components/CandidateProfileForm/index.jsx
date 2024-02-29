@@ -4,7 +4,7 @@ function CandidateProfile() {
 
   return (
     <>
-    <form>
+    <form id="candidate-profile-form">
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
           <h1 className="text-base font-semibold leading-7 text-gray-900">Candidate - Create Profile</h1>
@@ -14,8 +14,8 @@ function CandidateProfile() {
         </div>
 
         <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base font-semibold leading-7 text-gray-900">Personal Information</h2>
-          <p className="mt-1 text-sm leading-6 text-gray-600">This is a subheading</p>
+          <h2 className="my-5 text-base font-semibold leading-7 text-gray-900">Personal Information</h2>
+          <p className="mt-4 text-sm leading-6 text-gray-600">This is a subheading</p>
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-3">
@@ -76,7 +76,57 @@ function CandidateProfile() {
                 >
                 </input>
               </div>
-            </div>
+              </div>
+
+              <div className="sm:col-span-3">
+              <label htmlFor="job-title" className="block text-sm font-medium leading-6 text-gray-900">
+                Job Title
+              </label>
+              <div className="mt-2">
+                <input
+                  id="job-title"
+                  name="job-title"
+                  autoComplete="job-title"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                >
+                </input>
+              </div>
+              </div>
+
+              <div className="sm:col-span-3">
+              <label htmlFor="salary-range" className="block text-sm font-medium leading-6 text-gray-900">
+                Salary Range
+              </label>
+              <div className="mt-2">
+                <input
+                  id="salary-range"
+                  name="salary-range"
+                  autoComplete="salary"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                >
+                </input>
+              </div>
+              </div>
+
+              <div className="sm:col-span-3">
+              <label htmlFor="office-remote" className="block text-sm font-medium leading-6 text-gray-900">
+                Office/Remote/Hybrid
+              </label>
+              <div className="mt-2">
+                <input
+                  id="office-remote-hybrid"
+                  name="office-remote-hybrid"
+                  autoComplete="office-remote-hybrid"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                >
+                </input>
+              </div>
+              </div>
+              
+
+
+
+
           </div>
         </div>
       </div>
@@ -85,7 +135,7 @@ function CandidateProfile() {
         <button type="button" className="text-sm font-semibold leading-6 text-gray-900">
           Cancel
         </button>
-        <button
+        <button id ="submitProfile"
           type="submit"
           className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
