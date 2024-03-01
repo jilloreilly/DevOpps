@@ -132,7 +132,7 @@ function CandidateProfile() {
                 Salary Range
               </label>
                 <div className="mt-2">
-                <span class="inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none">£</span>
+                <span className="inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none">£</span>
         
   
                 <input

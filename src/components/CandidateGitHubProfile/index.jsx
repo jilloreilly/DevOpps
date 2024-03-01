@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CompleteGitHubProfile from "./completeGitHubProfile";
 import axios from 'axios';
 
@@ -15,7 +15,7 @@ function CandidateGitHubProfile() {
     fetchGitHub(gitHubProfile)
   }
 
-  const [gitHubDetails, setGitHubDetails] = useState([]);
+  const [gitHubDetails, setGitHubDetails] = useState({});
 
   const fetchGitHub = async (username) => {
     
@@ -27,12 +27,16 @@ function CandidateGitHubProfile() {
         const response = await axios.request(resource);
         console.log(response.data)
         setGitHubDetails(response.data);
-        console.log(gitHubDetails);
       } catch (error) {
         console.error(error);
       }
 
   }
+
+  useEffect(() => {
+    console.log({ gitHubDetails });
+    console.log(gitHubDetails.avatar_url);// Logs the updated state whenever gitHubDetails changes
+  }, [gitHubDetails]);
   
 
   return (
@@ -65,19 +69,7 @@ function CandidateGitHubProfile() {
                 Link GitHub
               </button>
         </div>
-        </div>
-      
-      <div>
-          
-            <CompleteGitHubProfile
-              avatar={gitHubDetails.avatar_url}
-              id={gitHubDetails.id}
-              repos={gitHubDetails.repos_url}
-              followers={gitHubDetails.followers}
-        />
-          
-        </div>
-        
+        </div>    
      
     
     </>
