@@ -6,7 +6,8 @@
     "age": 28,
     "city": "London",
     "experience": "Junior",
-    "technology": "JavaScript"
+    "role": "Frontend Developer",
+    "technology": ["JavaScript", "React", "HTML", "CSS"]
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "age": 35,
     "city": "Manchester",
     "experience": "Senior",
-    "technology": "Python"
+    "role": "Backend Developer",
+    "technology": ["Python", "Django"]
   },
   {
     "id": 3,
@@ -23,8 +25,9 @@
     "email": "sophiapatel@yahoo.com",
     "age": 41,
     "city": "Birmingham",
-    "experience": "Pleno",
-    "technology": "Java"
+    "experience": "Mid",
+    "role": "Backend Developer",
+    "technology": ["Java"]
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "age": 29,
     "city": "Glasgow",
     "experience": "Senior",
-    "technology": "C#"
+    "role": "Backend Developer",
+    "technology": ["C#", ".NET", "ASP.NET"]
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@
     "age": 33,
     "city": "Liverpool",
     "experience": "Junior",
-    "technology": "PHP"
+    "role": "Backend Developer",
+    "technology": ["PHP", "Laravel"]
   },
   {
     "id": 6,
@@ -50,8 +55,9 @@
     "email": "noahwilson@yahoo.com",
     "age": 24,
     "city": "Bristol",
-    "experience": "Pleno",
-    "technology": "Ruby"
+    "experience": "Lead",
+    "role": "Backend Developer",
+    "technology": ["Java"]
   },
   {
     "id": 7,
@@ -60,7 +66,8 @@
     "age": 37,
     "city": "Oxford",
     "experience": "Senior",
-    "technology": "Swift"
+    "role": "Backend Developer",
+    "technology": ["React Native"]
   },
   {
     "id": 8,
@@ -68,8 +75,9 @@
     "email": "jamesjohnson@hotmail.com",
     "age": 31,
     "city": "Cambridge",
-    "experience": "Pleno",
-    "technology": "C++"
+    "experience": "Mid",
+    "role": "Backend Developer",
+    "technology": ["C++"]
   },
   {
     "id": 9,
@@ -78,7 +86,8 @@
     "age": 39,
     "city": "Edinburgh",
     "experience": "Junior",
-    "technology": "HTML/CSS"
+    "role": "Frontend Developer",
+    "technology": ["HTML", "CSS", "Bootstrap", "Sass"]
   },
   {
     "id": 10,
@@ -86,8 +95,9 @@
     "email": "liamthomas@gmail.com",
     "age": 26,
     "city": "Cardiff",
-    "experience": "Pleno",
-    "technology": "SQL"
+    "experience": "Lead",
+    "role": "Database Administrator",
+    "technology": ["SQL", "MySQL"]
   },
   {
     "id": 11,
@@ -96,7 +106,8 @@
     "age": 44,
     "city": "London",
     "experience": "Senior",
-    "technology": "React"
+    "role": "Frontend Developer",
+    "technology": ["React"]
   },
   {
     "id": 12,
@@ -105,7 +116,8 @@
     "age": 29,
     "city": "Manchester",
     "experience": "Junior",
-    "technology": "Angular"
+    "role": "Frontend Developer",
+    "technology": ["Angular", "TypeScript"]
   },
   {
     "id": 13,
@@ -113,8 +125,9 @@
     "email": "ameliadavies@gmail.com",
     "age": 36,
     "city": "Birmingham",
-    "experience": "Pleno",
-    "technology": "Vue.js"
+    "experience": "Mid",
+    "role": "Frontend Developer",
+    "technology": ["Vue.js"]
   },
   {
     "id": 14,
@@ -123,7 +136,8 @@
     "age": 27,
     "city": "Glasgow",
     "experience": "Junior",
-    "technology": "Node.js"
+    "role": "Backend Developer",
+    "technology": ["Node.js", "Express.js"]
   },
   {
     "id": 15,
@@ -132,6 +146,157 @@
     "age": 32,
     "city": "Liverpool",
     "experience": "Senior",
-    "technology": "JavaScript"
+    "role": "Fullstack Developer",
+    "technology": ["JavaScript", "React Native"]
+  },
+  {
+    "id": 16,
+    "name": "Emma Wilson",
+    "email": "emmawilson@gmail.com",
+    "age": 30,
+    "city": "London",
+    "experience": "Mid",
+    "role": "Frontend Developer",
+    "technology": ["JavaScript", "Angular", "HTML", "CSS"]
+  },
+  {
+    "id": 17,
+    "name": "Alexander Garcia",
+    "email": "alexandergarcia@hotmail.com",
+    "age": 34,
+    "city": "London",
+    "experience": "Senior",
+    "role": "Frontend Developer",
+    "technology": ["JavaScript", "Vue.js"]
+  },
+  {
+    "id": 18,
+    "name": "Sofia Fernandez",
+    "email": "sofiafernandez@yahoo.com",
+    "age": 29,
+    "city": "London",
+    "experience": "Junior",
+    "role": "Frontend Developer",
+    "technology": ["JavaScript", "React", "HTML", "CSS"]
+  },
+  {
+    "id": 19,
+    "name": "Lucas Martinez",
+    "email": "lucasmartinez@gmail.com",
+    "age": 31,
+    "city": "Manchester",
+    "experience": "Senior",
+    "role": "Backend Developer",
+    "technology": ["Python", "Django"]
+  },
+  {
+    "id": 20,
+    "name": "Mia Sanchez",
+    "email": "miasanchez@hotmail.com",
+    "age": 27,
+    "city": "London",
+    "experience": "Mid",
+    "role": "Backend Developer",
+    "technology": ["Java"]
+  },
+  {
+    "id": 21,
+    "name": "Diego Ramos",
+    "email": "diegoramos@yahoo.com",
+    "age": 35,
+    "city": "London",
+    "experience": "Senior",
+    "role": "Fullstack Developer",
+    "technology": ["JavaScript", "Vue.js"]
+  },
+  {
+    "id": 22,
+    "name": "Ana Silva",
+    "email": "anasilva@gmail.com",
+    "age": 28,
+    "city": "London",
+    "experience": "Junior",
+    "role": "Frontend Developer",
+    "technology": ["JavaScript", "React", "HTML", "CSS"]
+  },
+  {
+    "id": 23,
+    "name": "João Santos",
+    "email": "joaosantos@hotmail.com",
+    "age": 32,
+    "city": "London",
+    "experience": "Senior",
+    "role": "Backend Developer",
+    "technology": ["Python", "Django"]
+  },
+  {
+    "id": 24,
+    "name": "Mariana Costa",
+    "email": "marianacosta@yahoo.com",
+    "age": 30,
+    "city": "London",
+    "experience": "Mid",
+    "role": "Backend Developer",
+    "technology": ["Java"]
+  },
+  {
+    "id": 25,
+    "name": "Rafael Ferreira",
+    "email": "rafaelferreira@gmail.com",
+    "age": 29,
+    "city": "London",
+    "experience": "Senior",
+    "role": "Backend Developer",
+    "technology": ["C#", ".NET", "ASP.NET"]
+  },
+  {
+    "id": 26,
+    "name": "Inês Oliveira",
+    "email": "inesoliveira@hotmail.com",
+    "age": 33,
+    "city": "London",
+    "experience": "Junior",
+    "role": "Backend Developer",
+    "technology": ["PHP", "Laravel"]
+  },
+  {
+    "id": 27,
+    "name": "Pedro Almeida",
+    "email": "pedroalmeida@yahoo.com",
+    "age": 24,
+    "city": "London",
+    "experience": "Lead",
+    "role": "Backend Developer",
+    "technology": ["Java"]
+  },
+  {
+    "id": 28,
+    "name": "Sara Gonçalves",
+    "email": "saragoncalves@gmail.com",
+    "age": 37,
+    "city": "London",
+    "experience": "Senior",
+    "role": "Backend Developer",
+    "technology": ["React Native"]
+  },
+  {
+    "id": 29,
+    "name": "Tiago Rodrigues",
+    "email": "tiagorodrigues@hotmail.com",
+    "age": 31,
+    "city": "London",
+    "experience": "Mid",
+    "role": "Backend Developer",
+    "technology": ["C++"]
+  },
+  {
+    "id": 30,
+    "name": "Marta Sousa",
+    "email": "martasousa@yahoo.com",
+    "age": 39,
+    "city": "London",
+    "experience": "Junior",
+    "role": "Frontend Developer",
+    "technology": ["HTML", "CSS", "Bootstrap", "Sass"]
   }
 ]
