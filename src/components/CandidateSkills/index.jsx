@@ -32,7 +32,7 @@ export default function CandidateSkills () {
         <CustomCheckbox value="Tailwind CSS">Tailwind CSS</CustomCheckbox>
       </CheckboxGroup>
       <p className="mt-4 mb-4 ml-1 text-default-500">
-        Selected: {groupSelected.join(", ")}
+        Selected Skills: {groupSelected.join(", ")}
       </p>
     </div>
   );

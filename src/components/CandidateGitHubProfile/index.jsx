@@ -15,8 +15,16 @@ function CandidateGitHubProfile() {
     console.log('Input Value: ', gitHubProfile)
     fetchGitHub(gitHubProfile)
   }
-
+  
   const [gitHubDetails, setGitHubDetails] = useState({});
+  const [gitHubRepoDetails, setGitHubRepoDetails] = useState({});
+  
+  useEffect(() => {
+    if (Object.keys(gitHubDetails).length > 0) {
+      console.log({ gitHubDetails });
+      console.log(gitHubDetails.repos_url)
+    }
+  }, [gitHubDetails]);
 
   const fetchGitHub = async (username) => {
     
@@ -27,15 +35,29 @@ function CandidateGitHubProfile() {
       try {
         const response = await axios.request(resource);
         setGitHubDetails(response.data);
+        fetchGitHubRepos(username)
       } catch (error) {
         console.error(error);
       }
       
   }
 
-  useEffect(() => {
-    console.log({ gitHubDetails });
-  }, [gitHubDetails]);
+  const fetchGitHubRepos = async (username) => {
+    
+    const resource = {
+      method: 'GET',
+      url: `https://api.github.com/users/${username}/repos`,
+    };
+    try {
+      const response = await axios.request(resource);
+      console.log(response.data)
+      setGitHubRepoDetails(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+    
+}
+
 
   const propsNotPassed = !gitHubDetails || !gitHubDetails.avatar_url || !gitHubDetails.repos_url || !gitHubDetails.followers;
 
@@ -74,12 +96,18 @@ function CandidateGitHubProfile() {
       {propsNotPassed ? (
         <div></div>
       ) : (
-        <CompleteGitHubProfile
-          avatar={gitHubDetails.avatar_url}
-          repos={gitHubDetails.repos_url}
+          
+          <CompleteGitHubProfile
+            id={gitHubDetails.id}
+            avatar={gitHubDetails.avatar_url}
+            repos={gitHubDetails.repos_url}
           followers={gitHubDetails.followers}
-        />
-      )}
+          />
+        
+            
+      )
+      }
+
     
         
      
