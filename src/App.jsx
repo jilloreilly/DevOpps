@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Header from './components/Header';
-// import Footer from './components/Footer'
+import MyHeader from './components/Header';
+import MyFooter from './components/Footer'
 import { Candidate, Custom404, Home, JobDetails, JobResults, EmployerSearch } from './pages';
 import './App.css'
 
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <Router >
-      {/* <Header /> */}
+      <MyHeader />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='candidate' element={<Candidate />} />
@@ -17,7 +17,7 @@ function App() {
         <Route path='404' element={<Custom404 />} />
         <Route path="/job/:id" element={<JobDetails />} />
       </Routes>
-      {/* <Footer /> */}
+      <MyFooter />
     </Router>
   )
 }
