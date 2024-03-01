@@ -8,6 +8,17 @@ import axios from 'axios';
 function JobResults() {
   
   const [jobs, setJobs] = useState([]);
+  const [apiKey, setApiKey] = useState('');
+
+  useEffect(() => {
+    if (import.meta.env) {
+      console.log("vite env")
+      setApiKey(import.meta.env.VITE_JOBS_API_KEY);
+    } else {
+      console.log("process.env");
+      setApiKey(process.env.VITE_JOBS_API_KEY);
+    }
+  }, []);
 
    const handleSearch = async () => {
     const resource = {
@@ -24,7 +35,7 @@ function JobResults() {
         index: '0'
       },
       headers: {
-        'X-RapidAPI-Key': import.meta.env.VITE_JOBS_API_KEY,
+        'X-RapidAPI-Key': apiKey,
         'X-RapidAPI-Host': 'jobs-api14.p.rapidapi.com'
       }
     };
