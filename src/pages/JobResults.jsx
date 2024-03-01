@@ -39,7 +39,7 @@ function JobResults() {
 
   return (
     <div className="container mx-auto">
-      <h1>Job Results</h1>
+      <h1>Job Results - using import.meta.env</h1>
 
       <div className=""> {/*Need to add row/cols/grid? */}
         <button onClick={handleSearch}>Click me!</button>
