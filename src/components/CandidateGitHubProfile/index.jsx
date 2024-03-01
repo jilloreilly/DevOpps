@@ -38,14 +38,14 @@ function CandidateGitHubProfile() {
   return (
     <>
   
-          <div className="space-y-12">
-        </div>
+          <div className="space-y-12 flex flex-col items-center">
+        
         <h2 className="text-3xl font-bold tracking-tight sm:text-3xl">Link your GitHub Account</h2>
             <p className="mt-4 text-lg leading-8 text-gray-300">
               Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit quis. Duis tempor incididunt
               dolore.
             </p>
-        <div className="mt-6 flex max-w-md gap-x-4">
+        <div className="mt-6 flex max-w-md">
               
               <span className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600">https://github.com/</span><input
                 id="git-hub-link"
@@ -55,16 +55,17 @@ function CandidateGitHubProfile() {
             onChange={handleGitHubChange}
                 autoComplete="email"
                 required
-                className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3 py-2  shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-0 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
                 placeholder="GitHub Username"
               />
               <button id ="fetch-git-hub" onClick={handleGitHubClick}
                 type="submit"
-                className="flex-none rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                className="ms-4 flex-none rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
               >
                 Link GitHub
               </button>
-      </div>
+        </div>
+        </div>
       
       <div>
           

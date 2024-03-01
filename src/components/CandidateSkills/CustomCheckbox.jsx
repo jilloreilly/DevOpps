@@ -9,7 +9,7 @@ const checkbox = tv({
   variants: {
     isSelected: {
       true: {
-        base: "border-primary bg-primary hover:bg-primary-500 hover:border-primary-500",
+        base: "border-indigo-500 bg-indigo-500 hover:bg-indigo-500 hover:border-indigo-500",
         content: "text-primary-foreground pl-1"
       }
     },
