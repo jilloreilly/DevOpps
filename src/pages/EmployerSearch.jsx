@@ -36,9 +36,9 @@ function EmployerSearch() {
   const handleTechnologyChange = (event) => {
     const technology = event.target.value;
     if (event.target.checked) {
-      setFilteredTechnologies([technology]);
+      setFilteredTechnologies([...filteredTechnologies, technology]);
     } else {
-      setFilteredTechnologies([]);
+      setFilteredTechnologies(filteredTechnologies.filter(item => item !== technology));
     }
   };
 
@@ -81,15 +81,16 @@ function EmployerSearch() {
   }, [search, people, filteredTechnologies, filteredCities, filteredExperiences, filteredRoles]);
 
   return (
-    <div className="">
+    <div className="container mx-auto p-4">
       <div className="">
         <div className="">
           <h1 className="text-3xl font-bold mb-4">People Search</h1>
-          <div className="grid grid-cols-3 gap-4">
-            <div>
-              <h2>Filter by Technology:</h2>
+          <div className="bg-neutral-200 ">
+            <h1 className='italic font-bold text-2xl '>Filter By: </h1>
+            <div className='bg-neutral-300 '>
+              <h2 className='italic font-bold '>Technology:</h2>
               {availableTechnologies.map((technology, index) => (
-                <div key={index} className="mb-2 flex inline">
+                <div key={index} className="inline-grid px-1 text-sm  ">
                   <input
                     type="checkbox"
                     id={`technology-${index}`}
@@ -101,10 +102,10 @@ function EmployerSearch() {
                 </div>
               ))}
             </div>
-            <div>
-              <h2>Filter by City:</h2>
+            <div className='bg-neutral-300'>
+              <h2 className='italic font-bold '>City:</h2>
               {Array.from(new Set(people.map((person) => person.city))).map((city, index) => (
-                <div key={index} className="mb-2">
+                <div key={index} className="mb-1 inline-grid px-1">
                   <input
                     type="checkbox"
                     id={`city-${index}`}
@@ -116,11 +117,11 @@ function EmployerSearch() {
                 </div>
               ))}
             </div>
-            <div>
-              <h2>Filter by Experience:</h2>
-              <div className="flex flex-wrap">
+            <div className='bg-neutral-300'>
+              <h2 className='italic font-bold '>Experience:</h2>
+              <div className="flex justify-center">
                 {Array.from(new Set(people.map((person) => person.experience))).map((experience, index) => (
-                  <div key={index} className="mb-2 mr-4">
+                  <div key={index} className="px-2 rounded">
                     <input
                       type="checkbox"
                       id={`experience-${index}`}
@@ -133,11 +134,11 @@ function EmployerSearch() {
                 ))}
               </div>
             </div>
-            <div>
-              <h2>Filter by Role:</h2>
+            <div className='bg-neutral-300'>
+              <h2 className='italic font-bold'>Role:</h2>
               <div className="flex flex-wrap">
                 {Array.from(new Set(people.map((person) => person.role))).map((role, index) => (
-                  <div key={index} className="mb-2 mr-4">
+                  <div key={index} className="flex justify-center px-2">
                     <input
                       type="checkbox"
                       id={`role-${index}`}
@@ -157,13 +158,13 @@ function EmployerSearch() {
           <h1 className="text-3xl font-bold mb-4">Results</h1>
           <div className="grid grid-cols-2 gap-4">
             {results.map((person) => (
-              <div key={person.id} className="border p-4 rounded">
+              <div key={person.id} className="border p-4 rounded bg-neutral-300">
                 <strong>Name:</strong> {person.name}<br />
                 <strong>Email:</strong> {person.email}<br />
                 <strong>Age:</strong> {person.age}<br />
                 <strong>City:</strong> {person.city}<br />
                 <strong>Experience:</strong> {person.experience}<br />
-                <strong>Technology:</strong> {person.technology}<br />
+                <strong>Technology:</strong> {person.technology.join(', ')}<br />
                 <strong>Role:</strong> {person.role}
               </div>
             ))}
