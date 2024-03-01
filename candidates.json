@@ -6,7 +6,8 @@
     "age": 28,
     "city": "London",
     "experience": "Junior",
-    "technology": "JavaScript"
+    "role": "Frontend Developer",
+    "technology": ["JavaScript", "React", "HTML", "CSS"]
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "age": 35,
     "city": "Manchester",
     "experience": "Senior",
-    "technology": "Python"
+    "role": "Backend Developer",
+    "technology": ["Python", "Django", "Flask"]
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "age": 41,
     "city": "Birmingham",
     "experience": "Mid",
-    "technology": "Java"
+    "role": "Fullstack Developer",
+    "technology": ["Java", "Spring", "Hibernate"]
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "age": 29,
     "city": "Glasgow",
     "experience": "Senior",
-    "technology": "C#"
+    "role": "Software Engineer",
+    "technology": ["C#", ".NET", "ASP.NET"]
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@
     "age": 33,
     "city": "Liverpool",
     "experience": "Junior",
-    "technology": "PHP"
+    "role": "Web Developer",
+    "technology": ["PHP", "Laravel", "Symfony"]
   },
   {
     "id": 6,
@@ -51,7 +56,8 @@
     "age": 24,
     "city": "Bristol",
     "experience": "Lead",
-    "technology": "Ruby"
+    "role": "Technical Lead",
+    "technology": ["Ruby", "Ruby on Rails", "Sinatra"]
   },
   {
     "id": 7,
@@ -60,7 +66,8 @@
     "age": 37,
     "city": "Oxford",
     "experience": "Senior",
-    "technology": "Swift"
+    "role": "iOS Developer",
+    "technology": ["Swift", "iOS", "Objective-C"]
   },
   {
     "id": 8,
@@ -69,7 +76,8 @@
     "age": 31,
     "city": "Cambridge",
     "experience": "Mid",
-    "technology": "C++"
+    "role": "Systems Developer",
+    "technology": ["C++", "OpenGL", "Qt"]
   },
   {
     "id": 9,
@@ -78,7 +86,8 @@
     "age": 39,
     "city": "Edinburgh",
     "experience": "Junior",
-    "technology": "HTML/CSS"
+    "role": "Frontend Developer",
+    "technology": ["HTML/CSS", "Bootstrap", "Sass"]
   },
   {
     "id": 10,
@@ -87,7 +96,8 @@
     "age": 26,
     "city": "Cardiff",
     "experience": "Lead",
-    "technology": "SQL"
+    "role": "Database Administrator",
+    "technology": ["SQL", "MySQL", "PostgreSQL"]
   },
   {
     "id": 11,
@@ -96,7 +106,8 @@
     "age": 44,
     "city": "London",
     "experience": "Senior",
-    "technology": "React"
+    "role": "Frontend Developer",
+    "technology": ["React", "Redux", "GraphQL"]
   },
   {
     "id": 12,
@@ -105,7 +116,8 @@
     "age": 29,
     "city": "Manchester",
     "experience": "Junior",
-    "technology": "Angular"
+    "role": "Frontend Developer",
+    "technology": ["Angular", "RxJS", "TypeScript"]
   },
   {
     "id": 13,
@@ -114,7 +126,8 @@
     "age": 36,
     "city": "Birmingham",
     "experience": "Mid",
-    "technology": "Vue.js"
+    "role": "Fullstack Developer",
+    "technology": ["Vue.js", "Vuex", "Nuxt.js"]
   },
   {
     "id": 14,
@@ -123,7 +136,8 @@
     "age": 27,
     "city": "Glasgow",
     "experience": "Junior",
-    "technology": "Node.js"
+    "role": "Backend Developer",
+    "technology": ["Node.js", "Express.js", "Meteor.js"]
   },
   {
     "id": 15,
@@ -132,6 +146,7 @@
     "age": 32,
     "city": "Liverpool",
     "experience": "Senior",
-    "technology": "JavaScript"
+    "role": "Fullstack Developer",
+    "technology": ["JavaScript", "Vue.js", "React Native"]
   }
 ]
