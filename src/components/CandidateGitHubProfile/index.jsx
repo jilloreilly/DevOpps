@@ -5,24 +5,19 @@ import axios from 'axios';
 function CandidateGitHubProfile() {
 
   const [gitHubProfile, setGitHubProfile] = useState('')
-  const [gitHubDetails, setGitHubDetails] = useState({});
+  
+  const handleGitHubChange = (e) => {
+    setGitHubProfile(e.target.value)
+  }
+
+  const handleGitHubClick = () => {
+    console.log('Input Value: ', gitHubProfile)
+    fetchGitHub(gitHubProfile)
+  }
+
+  const [gitHubDetails, setGitHubDetails] = useState([]);
 
   const fetchGitHub = async (username) => {
-
-    // const queryURL = `https://api.github.com/users/${username}`
-    // fetch(queryURL)
-    //   .then(response => {
-    //   return response.json()
-    //   })
-    //   .then(data => {
-    //     console.log({ data });
-    //     setGitHubDetails(data);
-    //     console.log({ gitHubDetails })
-
-    //   })
-    //   .catch(error => {
-    //   console.error('Error fetching GitHub details: ', error)
-    //   })
     
       const resource = {
         method: 'GET',
@@ -39,16 +34,6 @@ function CandidateGitHubProfile() {
 
   }
   
-  const handleGitHubChange = (e) => {
-    setGitHubProfile(e.target.value)
-  }
-
-  const handleGitHubClick = () => {
-    console.log('Input Value: ', gitHubProfile)
-    fetchGitHub(gitHubProfile)
-  }
-
-  
 
   return (
     <>
@@ -61,10 +46,8 @@ function CandidateGitHubProfile() {
               dolore.
             </p>
         <div className="mt-6 flex max-w-md gap-x-4">
-              <label htmlFor="git-hub-link" className="sr-only">
-                Email address
-              </label>
-              <span className="px-3 py-2 border-2">https://github.com/</span><input
+              
+              <span className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600">https://github.com/</span><input
                 id="git-hub-link"
                 name="git-hub-link"
                 type="text"
