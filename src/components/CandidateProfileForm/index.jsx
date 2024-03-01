@@ -38,30 +38,6 @@ function CandidateProfile() {
     fetchGitHub(gitHubProfile)
   }
 
-  const fetchGitHub = (username) => {
-
-    const queryURL = `https://api.github.com/users/${username}`
-    fetch(queryURL)
-      .then(response => {
-      return response.json()
-      })
-      .then(data => {
-        console.log(data);
-
-        const gitHubRepos = data.repos_url;
-        console.log(gitHubRepos);
-
-        const gitHubAvatar = data.avatar_url;
-        console.log(gitHubAvatar);
-
-        const gitHubFollowers = data.followers;
-        console.log(gitHubFollowers)
-
-
-    })
-
-  }
-
   return (
     <>
     <form id="candidate-profile-form" onSubmit={handleProfileSubmit}>

@@ -1,4 +1,5 @@
-import {useState } from "react";
+import { useState } from "react";
+import CompleteGitHubProfile from "./completeGitHubProfile";
 
 function CandidateGitHubProfile() {
 
@@ -31,6 +32,8 @@ function CandidateGitHubProfile() {
 
         const gitHubFollowers = data.followers;
         console.log(gitHubFollowers)
+
+        
 
 
     })
@@ -68,9 +71,11 @@ function CandidateGitHubProfile() {
               >
                 Link GitHub
               </button>
-            </div>
+      </div>
+      
+      <CompleteGitHubProfile />
         
-        
+     
     
     </>
 
