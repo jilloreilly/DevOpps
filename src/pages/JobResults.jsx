@@ -2,6 +2,7 @@
 import JobList from "../components/JobList";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import SearchFilter from "../components/SearchFilter";
 
 
 
@@ -31,34 +32,39 @@ function JobResults() {
     try {
       const response = await axios.request(resource);
       setJobs(response.data.jobs);
-      console.log(jobs);
     } catch (error) {
       console.error(error);
     }
 };
 
+  console.log(jobs);
   return (
     <div className="container mx-auto">
       <h1>Job Results</h1>
+      <div className="flex flex-row sm:flex-col md:flex-row lg:flex-row">
+        <aside className="w-4/12 sm:w-full md:w-4/12">
+          <h2>Filter your results:</h2>
+          <SearchFilter />
+        </aside>
 
-      <div className=""> {/*Need to add row/cols/grid? */}
-        <button onClick={handleSearch}>Click me!</button>
-        <div>
-          {jobs.map((job) =>(
-            <JobList
-              title={job.title}
-              id={job.id}
-              key={job.id}
-              company={job.company}
-              location={job.location}
-              type={job.employmentType}
-              date={job.datePosted}
-              salary={job.salaryRange} />
-          ))}
-        </div>
-        
+        <section className="w-8/12 sm:w-full">
+          <button onClick={handleSearch}>Click me!</button>
+          <div>
+            {jobs.map((job) =>(
+              <JobList
+                title={job.title}
+                id={job.id}
+                key={job.id}
+                company={job.company}
+                location={job.location}
+                type={job.employmentType}
+                date={job.datePosted}
+                salary={job.salaryRange} />
+            ))}
+          </div>
+          
+        </section>
       </div>
-
     </div>
     );
   }
