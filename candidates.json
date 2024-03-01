@@ -87,7 +87,7 @@
     "city": "Edinburgh",
     "experience": "Junior",
     "role": "Frontend Developer",
-    "technology": ["HTML/CSS", "Bootstrap", "Sass"]
+    "technology": ["HTML", "CSS", "Bootstrap", "Sass"]
   },
   {
     "id": 10,

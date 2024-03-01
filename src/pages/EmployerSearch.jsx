@@ -81,15 +81,15 @@ function EmployerSearch() {
   }, [search, people, filteredTechnologies, filteredCities, filteredExperiences, filteredRoles]);
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="flex">
+    <div className="">
+      <div className="">
         <div className="">
           <h1 className="text-3xl font-bold mb-4">People Search</h1>
           <div className="grid grid-cols-3 gap-4">
             <div>
               <h2>Filter by Technology:</h2>
               {availableTechnologies.map((technology, index) => (
-                <div key={index} className="mb-2">
+                <div key={index} className="mb-2 flex inline">
                   <input
                     type="checkbox"
                     id={`technology-${index}`}
@@ -153,7 +153,7 @@ function EmployerSearch() {
           </div>
         </div>
         {/* Results */}
-        <div className="w-1/2 pl-4">
+        <div>
           <h1 className="text-3xl font-bold mb-4">Results</h1>
           <div className="grid grid-cols-2 gap-4">
             {results.map((person) => (
@@ -163,7 +163,7 @@ function EmployerSearch() {
                 <strong>Age:</strong> {person.age}<br />
                 <strong>City:</strong> {person.city}<br />
                 <strong>Experience:</strong> {person.experience}<br />
-                <strong>Technology:</strong> {person.technology.join(', ')}<br />
+                <strong>Technology:</strong> {person.technology}<br />
                 <strong>Role:</strong> {person.role}
               </div>
             ))}
