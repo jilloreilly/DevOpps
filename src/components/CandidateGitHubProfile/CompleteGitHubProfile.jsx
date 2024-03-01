@@ -1,15 +1,16 @@
-export function CompleteGitHubProfile(props) { 
+export const CompleteGitHubProfile = (props) => {
 
-
-  return (
-  <>
-    <img src={props.avatar}></img>
-    <p>{props.id}</p>
-    <p>{props.repose}</p>
-      <p>{props.followers}</p>
+    return (
+      <>
+        <img className="rounded-full" src={props.avatar}></img>
+        <p>{props.id}</p>
+        <p>Repos Link: {props.repos}</p>
+        <p>Followers: {props.followers}</p>
       </>
-)
+    )
+  }
 
 
-}
+
+
 

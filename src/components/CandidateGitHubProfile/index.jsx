@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
+import { CompleteGitHubProfile } from "./CompleteGitHubProfile";
 
 function CandidateGitHubProfile() {
 
@@ -9,7 +10,8 @@ function CandidateGitHubProfile() {
     setGitHubProfile(e.target.value)
   }
 
-  const handleGitHubClick = () => {
+  const handleGitHubClick = (e) => {
+    e.preventDefault()
     console.log('Input Value: ', gitHubProfile)
     fetchGitHub(gitHubProfile)
   }
@@ -24,19 +26,18 @@ function CandidateGitHubProfile() {
       };
       try {
         const response = await axios.request(resource);
-        console.log(response.data)
         setGitHubDetails(response.data);
       } catch (error) {
         console.error(error);
       }
-
+      
   }
 
   useEffect(() => {
     console.log({ gitHubDetails });
-    console.log(gitHubDetails.avatar_url);// Logs the updated state whenever gitHubDetails changes
   }, [gitHubDetails]);
-  
+
+  const propsNotPassed = !gitHubDetails || !gitHubDetails.avatar_url || !gitHubDetails.repos_url || !gitHubDetails.followers;
 
   return (
     <>
@@ -56,7 +57,6 @@ function CandidateGitHubProfile() {
                 type="text"
             value={gitHubProfile}
             onChange={handleGitHubChange}
-                autoComplete="email"
                 required
                 className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-0 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
                 placeholder="GitHub Username"
@@ -68,8 +68,18 @@ function CandidateGitHubProfile() {
                 Link GitHub
               </button>
         </div>
-        </div>
+      </div>
       
+
+      {propsNotPassed ? (
+        <div></div>
+      ) : (
+        <CompleteGitHubProfile
+          avatar={gitHubDetails.avatar_url}
+          repos={gitHubDetails.repos_url}
+          followers={gitHubDetails.followers}
+        />
+      )}
     
         
      
