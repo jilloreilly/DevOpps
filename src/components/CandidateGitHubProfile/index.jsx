@@ -73,7 +73,10 @@ function CandidateGitHubProfile() {
             </p>
         <div className="mt-3 flex max-w-md">
               
-              <span className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600">https://github.com/</span><input
+          <span className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600">https://github.com/</span>
+          
+          
+          <input
                 id="git-hub-link"
                 name="git-hub-link"
                 type="text"
@@ -94,24 +97,21 @@ function CandidateGitHubProfile() {
       
 
       {propsNotPassed ? (
-        <div></div>
+        console.log('No Props Passed')
       ) : (
           
           <CompleteGitHubProfile
             id={gitHubDetails.id}
+            login={gitHubDetails.login}
             avatar={gitHubDetails.avatar_url}
             repos={gitHubDetails.repos_url}
-          followers={gitHubDetails.followers}
+            followers={gitHubDetails.followers}
+            following={gitHubDetails.following}
           />
         
-            
       )
       }
 
-    
-        
-     
-    
     </>
 
 
