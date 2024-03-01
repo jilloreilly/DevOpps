@@ -6,7 +6,10 @@ import CandidateProfileForm from '../components/CandidateProfileForm';
 function Candidate() {
 
   return (
-    <CandidateProfileForm />
+    <>
+      <CandidateProfileForm />
+      </>
+
     );
   }
 
