@@ -17,7 +17,8 @@ function Home() {
         Exercitationem.
       </div>
       </div>
-      <div className='grid grid-cols-1 sm:grid-cols-3 flex-row'> 
+
+      <div className='grid grid-cols-1 sm:grid-cols-2 flex-row h-96'> 
       <div>
           BLAH
       </div>

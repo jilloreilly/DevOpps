@@ -2,7 +2,7 @@ import React from 'react';
 
 const MyFooter = () => {
     return (
-        <footer className="bg-blue-900 text-black p-16 fixed bottom-0 left-0 w-full">
+        <footer className="bg-blue-900 text-black p-16 relative bottom-0 left-0 w-full">
             <div className="container mx-auto flex justify-between items-center">
                 <div className="w-1/2 flex flex-col items-start">
                     {/* Adjusted alignment */}
