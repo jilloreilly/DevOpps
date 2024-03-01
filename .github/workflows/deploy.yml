@@ -37,5 +37,4 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          VITE_JOBS_API_KEY: ${{ secrets.VITE_JOBS_API_KEY }}
         run: netlify deploy --dir=dist --prod
