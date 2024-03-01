@@ -1,44 +1,31 @@
 import { Button } from "@nextui-org/react";
 import React from 'react';
-
+// import HomeSearch from '../components/HomeSearchForm'
 
 function Home() {
   return (
     <>
-    <div className="absolute inset-0 bg-cover bg-center flex items-center justify-center">
-      {/* Background Photo */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/background.jpg')" }}
-      ></div>
-
-      {/* Content */}
-      <div className="relative max-w-4xl mx-auto p-3">
-        <div className="flex flex-row">
-          {/* Left Section */}
-          <div className="w-5/12 flex flex-col justify-center pr-10"> 
-            {/* Text */}
-            <div className="text-white">
-              <h1 className="text-4xl font-bold mb-4">Welcome</h1>
-              <p className="text-lg">Tag Line.</p>
-            </div>
-            {/* Buttons */}
-            <div className="mt-4 flex flex-row">
-              <Button color="primary" variant="flat">Get Started</Button>
-              <Button color="primary" variant="flat" className="ml-4">Learn More</Button>
-            </div>
-          </div>
-
-          {/* Right Section */}
-          <div className="w-7/12 flex items-center justify-center text-white pl-10">
-            <p>Blah blah blah... .</p>
-            {/* <img src="/photo.jpg" alt="Animation" className="w-32 h-32 rounded-full" /> */}
-          </div>
-        </div>
+    <div className='container px-8 mx-auto'>
+      <div className='grid grid-cols-1 sm:grid-cols-3 flex-row h-96'> 
+      <div className='sm:col-span-2'>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, fugit perferendis delectus eius corporis amet fuga? 
+        Ipsa rerum nostrum hic molestias ratione fuga. Asperiores maiores sapiente blanditiis, laboriosam quasi molestiae!
       </div>
-    </div>
-    <div>
-      <h1>Hello</h1>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro debitis reiciendis laborum sunt tenetur? Nihil, 
+        velit neque facere perspiciatis itaque explicabo voluptate nemo, cumque adipisci exercitationem, eos culpa accusantium. 
+        Exercitationem.
+      </div>
+      </div>
+      <div className='grid grid-cols-1 sm:grid-cols-3 flex-row'> 
+      <div>
+          BLAH
+      </div>
+      <div>
+        BLAH2
+      </div>
+
+      </div>
     </div>
     </>
   );
