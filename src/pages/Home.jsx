@@ -21,7 +21,7 @@ function Home() {
               <p className="text-lg">Tag Line.</p>
             </div>
             {/* Buttons */}
-            <div className="mt-4">
+            <div className="mt-4 flex flex-row">
               <Button color="primary" variant="flat">Get Started</Button>
               <Button color="primary" variant="flat" className="ml-4">Learn More</Button>
             </div>
