@@ -1,6 +1,7 @@
 import React from "react";
 import {CheckboxGroup} from "@nextui-org/react";
-import {CustomCheckbox} from "./CustomCheckbox";
+import { CustomCheckbox } from "./CustomCheckbox";
+import '../CandidateSkills/index.css'
 
 export default function CandidateSkills () {
   const [groupSelected, setGroupSelected] = React.useState([]);

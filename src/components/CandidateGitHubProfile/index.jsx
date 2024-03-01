@@ -102,6 +102,7 @@ function CandidateGitHubProfile() {
           
           <CompleteGitHubProfile
             id={gitHubDetails.id}
+            url={gitHubDetails.html_url}
             login={gitHubDetails.login}
             avatar={gitHubDetails.avatar_url}
             repos={gitHubDetails.repos_url}
