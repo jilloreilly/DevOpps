@@ -32,12 +32,12 @@ function JobResults() {
     try {
       const response = await axios.request(resource);
       setJobs(response.data.jobs);
-      console.log(jobs);
     } catch (error) {
       console.error(error);
     }
 };
 
+  console.log(jobs);
   return (
     <div className="container mx-auto">
       <h1>Job Results</h1>
