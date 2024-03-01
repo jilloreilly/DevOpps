@@ -8,11 +8,25 @@ function EmployerSearch() {
   const [filteredTechnologies, setFilteredTechnologies] = useState([]);
   const [filteredCities, setFilteredCities] = useState([]);
   const [filteredExperiences, setFilteredExperiences] = useState([]);
+  const [filteredRoles, setFilteredRoles] = useState([]);
   const [results, setResults] = useState([]);
+  const [availableTechnologies, setAvailableTechnologies] = useState([]);
 
   useEffect(() => {
     setPeople(candidatesData);
     setResults(candidatesData); // Initially, show all results
+
+    // Get available technologies
+    const technologies = candidatesData.reduce((acc, person) => {
+      person.technology.forEach(tech => {
+        if (!acc.includes(tech)) {
+          acc.push(tech);
+        }
+      });
+      return acc;
+    }, []);
+
+    setAvailableTechnologies(technologies);
   }, []);
 
   const handleSearchChange = (event) => {
@@ -22,39 +36,49 @@ function EmployerSearch() {
   const handleTechnologyChange = (event) => {
     const technology = event.target.value;
     if (event.target.checked) {
-      setFilteredTechnologies([...filteredTechnologies, technology]);
+      setFilteredTechnologies([technology]);
     } else {
-      setFilteredTechnologies(filteredTechnologies.filter((item) => item !== technology));
+      setFilteredTechnologies([]);
     }
   };
 
   const handleCityChange = (event) => {
     const city = event.target.value;
     if (event.target.checked) {
-      setFilteredCities([...filteredCities, city]);
+      setFilteredCities([city]);
     } else {
-      setFilteredCities(filteredCities.filter((item) => item !== city));
+      setFilteredCities([]);
     }
   };
 
   const handleExperienceChange = (event) => {
     const experience = event.target.value;
     if (event.target.checked) {
-      setFilteredExperiences([...filteredExperiences, experience]);
+      setFilteredExperiences([experience]);
     } else {
-      setFilteredExperiences(filteredExperiences.filter((item) => item !== experience));
+      setFilteredExperiences([]);
+    }
+  };
+
+  const handleRoleChange = (event) => {
+    const role = event.target.value;
+    if (event.target.checked) {
+      setFilteredRoles([role]);
+    } else {
+      setFilteredRoles([]);
     }
   };
 
   useEffect(() => {
     const filteredResults = people.filter((person) =>
       person.name.toLowerCase().includes(search.toLowerCase()) &&
-      (filteredTechnologies.length === 0 || filteredTechnologies.includes(person.technology)) &&
+      (filteredTechnologies.length === 0 || filteredTechnologies.includes(person.technology[0])) &&
       (filteredCities.length === 0 || filteredCities.includes(person.city)) &&
-      (filteredExperiences.length === 0 || filteredExperiences.includes(person.experience))
+      (filteredExperiences.length === 0 || filteredExperiences.includes(person.experience)) &&
+      (filteredRoles.length === 0 || filteredRoles.includes(person.role))
     );
     setResults(filteredResults);
-  }, [search, people, filteredTechnologies, filteredCities, filteredExperiences]);
+  }, [search, people, filteredTechnologies, filteredCities, filteredExperiences, filteredRoles]);
 
   return (
     <div className="container mx-auto p-4">
@@ -64,7 +88,7 @@ function EmployerSearch() {
           <div className="grid grid-cols-3 gap-4">
             <div>
               <h2>Filter by Technology:</h2>
-              {Array.from(new Set(people.map((person) => person.technology))).map((technology, index) => (
+              {availableTechnologies.map((technology, index) => (
                 <div key={index} className="mb-2">
                   <input
                     type="checkbox"
@@ -109,6 +133,23 @@ function EmployerSearch() {
                 ))}
               </div>
             </div>
+            <div>
+              <h2>Filter by Role:</h2>
+              <div className="flex flex-wrap">
+                {Array.from(new Set(people.map((person) => person.role))).map((role, index) => (
+                  <div key={index} className="mb-2 mr-4">
+                    <input
+                      type="checkbox"
+                      id={`role-${index}`}
+                      value={role}
+                      onChange={handleRoleChange}
+                      className="mr-2"
+                    />
+                    <label htmlFor={`role-${index}`}>{role}</label>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
         {/* Results */}
@@ -122,7 +163,8 @@ function EmployerSearch() {
                 <strong>Age:</strong> {person.age}<br />
                 <strong>City:</strong> {person.city}<br />
                 <strong>Experience:</strong> {person.experience}<br />
-                <strong>Technology:</strong> {person.technology}
+                <strong>Technology:</strong> {person.technology.join(', ')}<br />
+                <strong>Role:</strong> {person.role}
               </div>
             ))}
           </div>
