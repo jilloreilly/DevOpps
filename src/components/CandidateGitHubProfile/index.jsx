@@ -1,27 +1,41 @@
 import { useState } from "react";
 import CompleteGitHubProfile from "./completeGitHubProfile";
+import axios from 'axios';
 
 function CandidateGitHubProfile() {
 
   const [gitHubProfile, setGitHubProfile] = useState('')
   const [gitHubDetails, setGitHubDetails] = useState({});
 
-  const fetchGitHub = (username) => {
+  const fetchGitHub = async (username) => {
 
-    const queryURL = `https://api.github.com/users/${username}`
-    fetch(queryURL)
-      .then(response => {
-      return response.json()
-      })
-      .then(data => {
-        console.log({ data });
-        setGitHubDetails(data);
-        console.log({ gitHubDetails })
+    // const queryURL = `https://api.github.com/users/${username}`
+    // fetch(queryURL)
+    //   .then(response => {
+    //   return response.json()
+    //   })
+    //   .then(data => {
+    //     console.log({ data });
+    //     setGitHubDetails(data);
+    //     console.log({ gitHubDetails })
 
-      })
-      .catch(error => {
-      console.error('Error fetching GitHub details: ', error)
-    })
+    //   })
+    //   .catch(error => {
+    //   console.error('Error fetching GitHub details: ', error)
+    //   })
+    
+      const resource = {
+        method: 'GET',
+        url: `https://api.github.com/users/${username}`,
+      };
+      try {
+        const response = await axios.request(resource);
+        console.log(response.data)
+        setGitHubDetails(response.data);
+        console.log(gitHubDetails);
+      } catch (error) {
+        console.error(error);
+      }
 
   }
   
