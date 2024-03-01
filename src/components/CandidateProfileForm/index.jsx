@@ -1,10 +1,11 @@
 import {useState } from "react";
+import CandidateSkills from "../CandidateSkills";
+import CandidateGitHubProfile from "../CandidateGitHubProfile";
 
 function CandidateProfile() {
 
   const [profileFormData, setProfileFormData] = useState({
-    firstName: '',
-    lastName: '',
+    name: '',
     emailAddress: '',
     location: '',
     jobTitle: '',
@@ -29,7 +30,7 @@ function CandidateProfile() {
   return (
     <>
     <form id="candidate-profile-form" onSubmit={handleProfileSubmit}>
-      <div className="space-y-12">
+      <div>
         <div className="border-b border-gray-900/10 pb-12">
           <h1 className="font-semibold leading-7 text-gray-900 sm:text-4xl">Candidate - Create Profile</h1>
           <p className="mt-3 text-sm leading-6 text-gray-600">
@@ -38,42 +39,27 @@ function CandidateProfile() {
         </div>
 
         <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-3xl my-5 font-semibold leading-7 text-gray-900 sm:text-3xl">Personal Information</h2>
+          <h2 className="mt-5 font-bold sm:text-3xl">Personal Information</h2>
           <p className="mt-4 text-sm leading-6 text-gray-600">This is a subheading</p>
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-12">
             <div className="sm:col-span-4">
               <label htmlFor="firstName" className="block text-sm font-medium leading-6 text-gray-900">
-                First name
+                 Name
               </label>
               <div className="mt-2">
                 <input
                   type="text"
-                    name="firstName"
-                    value={profileFormData.firstName}
+                    name="name"
+                    value={profileFormData.name}
                     onChange={handleProfileChange}
-                  id="firstName"
+                  id="name"
                   className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
 
-            <div className="sm:col-span-4">
-              <label htmlFor="lastName" className="block text-sm font-medium leading-6 text-gray-900">
-                Last name
-              </label>
-              <div className="mt-2">
-                <input
-                  type="text"
-                  name="lastName"
-                    id="lastName"
-                    value={profileFormData.lastName}
-                    onChange={handleProfileChange}
-                  autoComplete="family-name"
-                  className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
+            
 
             <div className="sm:col-span-4">
               <label htmlFor="emailAddress" className="block text-sm font-medium leading-6 text-gray-900">
@@ -170,7 +156,10 @@ function CandidateProfile() {
 
           </div>
         </div>
-      </div>
+        </div>
+        
+        <CandidateSkills />
+        <CandidateGitHubProfile />
 
       <div className="mt-6 flex items-center justify-end gap-x-6">
         <button id ="submitProfile"
