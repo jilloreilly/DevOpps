@@ -11,13 +11,8 @@ function JobResults() {
   const [apiKey, setApiKey] = useState('');
 
   useEffect(() => {
-    if (import.meta.env) {
-      console.log("vite env")
+      console.log("vite env" + import.meta.env.VITE_JOBS_API_KEY)
       setApiKey(import.meta.env.VITE_JOBS_API_KEY);
-    } else {
-      console.log("process.env");
-      setApiKey(process.env.VITE_JOBS_API_KEY);
-    }
   }, []);
 
    const handleSearch = async () => {
