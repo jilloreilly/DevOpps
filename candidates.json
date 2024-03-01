@@ -164,7 +164,7 @@
     "name": "Alexander Garcia",
     "email": "alexandergarcia@hotmail.com",
     "age": 34,
-    "city": "Barcelona",
+    "city": "London",
     "experience": "Senior",
     "role": "Frontend Developer",
     "technology": ["JavaScript", "Vue.js"]
@@ -174,7 +174,7 @@
     "name": "Sofia Fernandez",
     "email": "sofiafernandez@yahoo.com",
     "age": 29,
-    "city": "Madrid",
+    "city": "London",
     "experience": "Junior",
     "role": "Frontend Developer",
     "technology": ["JavaScript", "React", "HTML", "CSS"]
@@ -184,7 +184,7 @@
     "name": "Lucas Martinez",
     "email": "lucasmartinez@gmail.com",
     "age": 31,
-    "city": "Valencia",
+    "city": "Manchester",
     "experience": "Senior",
     "role": "Backend Developer",
     "technology": ["Python", "Django"]
@@ -194,7 +194,7 @@
     "name": "Mia Sanchez",
     "email": "miasanchez@hotmail.com",
     "age": 27,
-    "city": "Seville",
+    "city": "London",
     "experience": "Mid",
     "role": "Backend Developer",
     "technology": ["Java"]
@@ -204,7 +204,7 @@
     "name": "Diego Ramos",
     "email": "diegoramos@yahoo.com",
     "age": 35,
-    "city": "Valencia",
+    "city": "London",
     "experience": "Senior",
     "role": "Fullstack Developer",
     "technology": ["JavaScript", "Vue.js"]
@@ -214,7 +214,7 @@
     "name": "Ana Silva",
     "email": "anasilva@gmail.com",
     "age": 28,
-    "city": "Lisbon",
+    "city": "London",
     "experience": "Junior",
     "role": "Frontend Developer",
     "technology": ["JavaScript", "React", "HTML", "CSS"]
@@ -224,7 +224,7 @@
     "name": "João Santos",
     "email": "joaosantos@hotmail.com",
     "age": 32,
-    "city": "Porto",
+    "city": "London",
     "experience": "Senior",
     "role": "Backend Developer",
     "technology": ["Python", "Django"]
@@ -234,7 +234,7 @@
     "name": "Mariana Costa",
     "email": "marianacosta@yahoo.com",
     "age": 30,
-    "city": "Lisbon",
+    "city": "London",
     "experience": "Mid",
     "role": "Backend Developer",
     "technology": ["Java"]
@@ -244,7 +244,7 @@
     "name": "Rafael Ferreira",
     "email": "rafaelferreira@gmail.com",
     "age": 29,
-    "city": "Porto",
+    "city": "London",
     "experience": "Senior",
     "role": "Backend Developer",
     "technology": ["C#", ".NET", "ASP.NET"]
@@ -254,7 +254,7 @@
     "name": "Inês Oliveira",
     "email": "inesoliveira@hotmail.com",
     "age": 33,
-    "city": "Faro",
+    "city": "London",
     "experience": "Junior",
     "role": "Backend Developer",
     "technology": ["PHP", "Laravel"]
@@ -264,7 +264,7 @@
     "name": "Pedro Almeida",
     "email": "pedroalmeida@yahoo.com",
     "age": 24,
-    "city": "Lisbon",
+    "city": "London",
     "experience": "Lead",
     "role": "Backend Developer",
     "technology": ["Java"]
@@ -274,7 +274,7 @@
     "name": "Sara Gonçalves",
     "email": "saragoncalves@gmail.com",
     "age": 37,
-    "city": "Porto",
+    "city": "London",
     "experience": "Senior",
     "role": "Backend Developer",
     "technology": ["React Native"]
@@ -284,7 +284,7 @@
     "name": "Tiago Rodrigues",
     "email": "tiagorodrigues@hotmail.com",
     "age": 31,
-    "city": "Faro",
+    "city": "London",
     "experience": "Mid",
     "role": "Backend Developer",
     "technology": ["C++"]
@@ -294,7 +294,7 @@
     "name": "Marta Sousa",
     "email": "martasousa@yahoo.com",
     "age": 39,
-    "city": "Funchal",
+    "city": "London",
     "experience": "Junior",
     "role": "Frontend Developer",
     "technology": ["HTML", "CSS", "Bootstrap", "Sass"]

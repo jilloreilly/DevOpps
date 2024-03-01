@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import candidatesData from '../../candidates.json';
-import "../pages/Employer.css"
+import "../pages/Employer.css";
 
 function EmployerSearch() {
   const [people, setPeople] = useState([]);
@@ -11,10 +11,11 @@ function EmployerSearch() {
   const [filteredRoles, setFilteredRoles] = useState([]);
   const [results, setResults] = useState([]);
   const [availableTechnologies, setAvailableTechnologies] = useState([]);
+  const [showResults, setShowResults] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     setPeople(candidatesData);
-    setResults(candidatesData); // Initially, show all results
 
     // Get available technologies
     const technologies = candidatesData.reduce((acc, person) => {
@@ -69,7 +70,35 @@ function EmployerSearch() {
     }
   };
 
-  useEffect(() => {
+  const handleClear = () => {
+    setSearch('');
+    setFilteredTechnologies([]);
+    setFilteredCities([]);
+    setFilteredExperiences([]);
+    setFilteredRoles([]);
+    setResults([]);
+    setShowResults(false);
+    setErrorMessage('');
+
+    // Uncheck all checkboxes
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+      checkbox.checked = false;
+    });
+  };
+
+  const handleSearch = () => {
+    if (
+      search.trim() === '' &&
+      filteredTechnologies.length === 0 &&
+      filteredCities.length === 0 &&
+      filteredExperiences.length === 0 &&
+      filteredRoles.length === 0
+    ) {
+      setErrorMessage('Please select at least one filter or enter a search term.');
+      return;
+    }
+
     const filteredResults = people.filter((person) =>
       person.name.toLowerCase().includes(search.toLowerCase()) &&
       (filteredTechnologies.length === 0 || filteredTechnologies.includes(person.technology[0])) &&
@@ -78,13 +107,15 @@ function EmployerSearch() {
       (filteredRoles.length === 0 || filteredRoles.includes(person.role))
     );
     setResults(filteredResults);
-  }, [search, people, filteredTechnologies, filteredCities, filteredExperiences, filteredRoles]);
+    setShowResults(true);
+    setErrorMessage('');
+  };
 
   return (
     <div className="container mx-auto p-4">
       <div className="">
         <div className="">
-          <h1 className="text-3xl font-bold mb-4">People Search</h1>
+          <h1 className="text-5xl font-bold mb-4 font-serif">People Search</h1>
           <div className="bg-neutral-200 ">
             <h1 className='italic font-bold text-2xl '>Filter By: </h1>
             <div className='bg-neutral-300 '>
@@ -136,7 +167,7 @@ function EmployerSearch() {
             </div>
             <div className='bg-neutral-300'>
               <h2 className='italic font-bold'>Role:</h2>
-              <div className="flex flex-wrap">
+              <div className="flex justify-center">
                 {Array.from(new Set(people.map((person) => person.role))).map((role, index) => (
                   <div key={index} className="flex justify-center px-2">
                     <input
@@ -153,7 +184,18 @@ function EmployerSearch() {
             </div>
           </div>
         </div>
-        {/* Results */}
+        {/* Search button */}
+        <div className=" mt-4">
+          <button onClick={handleSearch} className="px-4 py-1 bg-blue-500 text-white rounded mr-2">Search</button>
+          <button onClick={handleClear} className="px-4 py-1 bg-red-500 text-white rounded">Clear</button>
+        </div>
+        {/* Error message */}
+        {errorMessage && (
+          <div className="text-red-500 mt-2">{errorMessage}</div>
+        )}
+      </div>
+      {/* Results */}
+      {showResults && (
         <div>
           <h1 className="text-3xl font-bold mb-4">Results</h1>
           <div className="grid grid-cols-2 gap-4">
@@ -170,7 +212,7 @@ function EmployerSearch() {
             ))}
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
