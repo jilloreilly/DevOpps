@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-// import {MyHeader} from '../components/Header'
 import { Button } from "@nextui-org/react";
 
 
