@@ -1,14 +1,15 @@
-import {useState } from "react";
-
-function CompleteGitHubProfile(props) { 
+export function CompleteGitHubProfile(props) { 
 
 
   return (
-  
-    <div><h1>Hello</h1></div>
+  <>
+    <img src={props.avatar}></img>
+    <p>{props.id}</p>
+    <p>{props.repose}</p>
+      <p>{props.followers}</p>
+      </>
 )
 
 
 }
 
-export default CompleteGitHubProfile

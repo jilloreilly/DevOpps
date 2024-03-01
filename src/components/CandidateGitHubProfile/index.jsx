@@ -4,15 +4,7 @@ import CompleteGitHubProfile from "./completeGitHubProfile";
 function CandidateGitHubProfile() {
 
   const [gitHubProfile, setGitHubProfile] = useState('')
-
-  const handleGitHubChange = (e) => {
-    setGitHubProfile(e.target.value)
-  }
-
-  const handleGitHubClick = () => {
-    console.log('Input Value: ', gitHubProfile)
-    fetchGitHub(gitHubProfile)
-  }
+  const [gitHubDetails, setGitHubDetails] = useState({});
 
   const fetchGitHub = (username) => {
 
@@ -22,23 +14,27 @@ function CandidateGitHubProfile() {
       return response.json()
       })
       .then(data => {
-        console.log(data);
+        console.log({ data });
+        setGitHubDetails(data);
+        console.log({ gitHubDetails })
 
-        const gitHubRepos = data.repos_url;
-        console.log(gitHubRepos);
-
-        const gitHubAvatar = data.avatar_url;
-        console.log(gitHubAvatar);
-
-        const gitHubFollowers = data.followers;
-        console.log(gitHubFollowers)
-
-        
-
-
+      })
+      .catch(error => {
+      console.error('Error fetching GitHub details: ', error)
     })
 
   }
+  
+  const handleGitHubChange = (e) => {
+    setGitHubProfile(e.target.value)
+  }
+
+  const handleGitHubClick = () => {
+    console.log('Input Value: ', gitHubProfile)
+    fetchGitHub(gitHubProfile)
+  }
+
+  
 
   return (
     <>
@@ -73,7 +69,16 @@ function CandidateGitHubProfile() {
               </button>
       </div>
       
-      <CompleteGitHubProfile />
+      <div>
+          
+            <CompleteGitHubProfile
+              avatar={gitHubDetails.avatar_url}
+              id={gitHubDetails.id}
+              repos={gitHubDetails.repos_url}
+              followers={gitHubDetails.followers}
+        />
+          
+        </div>
         
      
     
