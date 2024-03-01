@@ -66,14 +66,14 @@ function CandidateGitHubProfile() {
   
           <div className="flex flex-col items-center">
         
-        <h2 className="mt-5 font-bold sm:text-3xl">Link your GitHub Account</h2>
+        <h2 className="text-2xl mt-5 font-bold sm:text-3xl">Link your GitHub Account</h2>
             <p className="my-5 text-lg leading-8 text-gray-300">
               Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit quis. Duis tempor incididunt
               dolore.
             </p>
         <div className="mt-3 flex max-w-md">
               
-          <span className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600">https://github.com/</span>
+          <span className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600">Github.com/</span>
           
           
           <input

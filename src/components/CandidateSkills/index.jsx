@@ -8,7 +8,7 @@ export default function CandidateSkills () {
 
   return (
     <div className="flex flex-col gap-1 w-full">
-      <h2 className="mt-5 font-bold sm:text-3xl">Add your Skills</h2>
+      <h2 className="text-2xl mt-5 font-bold sm:text-3xl">Add your Skills</h2>
       <CheckboxGroup
         className="mt-5 gap-1 justify-center"
         orientation="horizontal"

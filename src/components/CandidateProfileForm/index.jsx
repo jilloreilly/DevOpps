@@ -32,15 +32,14 @@ function CandidateProfile() {
     <form id="candidate-profile-form" onSubmit={handleProfileSubmit}>
       <div>
         <div className="border-b border-gray-900/10 pb-12">
-          <h1 className="font-semibold leading-7 text-gray-900 sm:text-4xl">Candidate - Create Profile</h1>
+          <h1 className="text-3xl font-semibold leading-7 text-gray-900 sm:text-4xl">Candidate - Create Profile</h1>
           <p className="mt-3 text-sm leading-6 text-gray-600">
             This information will be displayed publicly so be careful what you share.
           </p>
         </div>
 
         <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="mt-5 font-bold sm:text-3xl">Personal Information</h2>
-          <p className="mt-4 text-sm leading-6 text-gray-600">This is a subheading</p>
+          <h2 className="text-2xl mt-5 font-bold sm:text-3xl">Personal Information</h2>
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-12">
             <div className="sm:col-span-4">
