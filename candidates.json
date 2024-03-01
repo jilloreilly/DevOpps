@@ -23,7 +23,7 @@
     "email": "sophiapatel@yahoo.com",
     "age": 41,
     "city": "Birmingham",
-    "experience": "Pleno",
+    "experience": "Mid",
     "technology": "Java"
   },
   {
@@ -50,7 +50,7 @@
     "email": "noahwilson@yahoo.com",
     "age": 24,
     "city": "Bristol",
-    "experience": "Pleno",
+    "experience": "Lead",
     "technology": "Ruby"
   },
   {
@@ -68,7 +68,7 @@
     "email": "jamesjohnson@hotmail.com",
     "age": 31,
     "city": "Cambridge",
-    "experience": "Pleno",
+    "experience": "Mid",
     "technology": "C++"
   },
   {
@@ -86,7 +86,7 @@
     "email": "liamthomas@gmail.com",
     "age": 26,
     "city": "Cardiff",
-    "experience": "Pleno",
+    "experience": "Lead",
     "technology": "SQL"
   },
   {
@@ -113,7 +113,7 @@
     "email": "ameliadavies@gmail.com",
     "age": 36,
     "city": "Birmingham",
-    "experience": "Pleno",
+    "experience": "Mid",
     "technology": "Vue.js"
   },
   {
