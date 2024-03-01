@@ -66,14 +66,14 @@ function CandidateProfile() {
     <form id="candidate-profile-form" onSubmit={handleProfileSubmit}>
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
-          <h1 className="text-3xl text-base font-semibold leading-7 text-gray-900">Candidate - Create Profile</h1>
-          <p className="mt-1 text-sm leading-6 text-gray-600">
+          <h1 className="font-semibold leading-7 text-gray-900 sm:text-4xl">Candidate - Create Profile</h1>
+          <p className="mt-3 text-sm leading-6 text-gray-600">
             This information will be displayed publicly so be careful what you share.
           </p>
         </div>
 
         <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-3xl my-5 text-base font-semibold leading-7 text-gray-900">Personal Information</h2>
+          <h2 className="text-3xl my-5 text-base font-semibold leading-7 text-gray-900 sm:text-3xl">Personal Information</h2>
           <p className="mt-4 text-sm leading-6 text-gray-600">This is a subheading</p>
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
@@ -198,12 +198,9 @@ function CandidateProfile() {
       </div>
 
       <div className="mt-6 flex items-center justify-end gap-x-6">
-        <button type="button" className="text-sm font-semibold leading-6 text-gray-900">
-          Cancel
-        </button>
         <button id ="submitProfile"
           type="submit"
-          className="rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
           Save
         </button>
@@ -212,10 +209,10 @@ function CandidateProfile() {
     
     <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base font-semibold leading-7 text-gray-900">Add Skills</h2>
+          <h2 className="sm:text-3xl font-semibold leading-7 text-gray-900">Add Skills</h2>
           
         </div>
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Link your GitHub Account</h2>
+        <h2 className="text-3xl font-bold tracking-tight sm:text-3xl">Link your GitHub Account</h2>
             <p className="mt-4 text-lg leading-8 text-gray-300">
               Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit quis. Duis tempor incididunt
               dolore.
@@ -237,7 +234,7 @@ function CandidateProfile() {
               />
               <button id ="fetch-git-hub" onClick={handleGitHubClick}
                 type="submit"
-                className="flex-none rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                className="flex-none rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
               >
                 Link GitHub
               </button>
