@@ -69,28 +69,24 @@
     
   /* City grid styling */
 
-  /* .london-box {    
-    background-image: url('/images/London-box.jpg');
-
+.london-box {    
+    background-image: url('/images/London.jpg');
+    height: 450px;
   }
   .bristol-box {    
-    background-image: url('/images/Bristol-box.jpg');
-
+    background-image: url('/images/Bristol.jpg');
   }
   .manchester-box {    
-    background-image: url('./images/Manchester-box.jpg');
-
+    background-image: url('./images/Manchester.jpg');
   }
   .cardiff-box {    
-    background-image: url('/images/Cardiff-box.jpg');
-
+    background-image: url('/images/Cardiff.jpg');
   }
   .edinburgh-box {    
-    background-image: url('/images/Edinburgh-box.jpg');
-
+    background-image: url('/images/Edinburgh.jpg');
   }
   .bristol-box, .cardiff-box, .edinburgh-box, .manchester-box, .london-box {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-  } */
+  }

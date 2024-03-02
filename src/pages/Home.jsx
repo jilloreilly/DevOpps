@@ -24,6 +24,7 @@ function Home() {
       setLocation(cityName); 
       handleSearch(); 
     };
+
   return (
     <>
       {/* Hero section */}
@@ -66,37 +67,37 @@ function Home() {
           <h2>Search popular cities:</h2>
         </div>
 
-        {/* Photo/City Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-32">
-          {/* First Column */}
-          <div className="sm:col-span-1 relative bg-red-500 h-96">
-            <h2 className="absolute bottom-0 right-0 mr-4 mb-4 text-white">London</h2>
-          </div>
+        {/* City Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-32">
+        {/* First Column */}
+        <div className="sm:col-span-1 relative london-box" onClick={() => handleCityClick('London')}>
+          <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">London</h2>
+        </div>
 
-          {/* Second Column */}
-          <div className="sm:col-span-1 grid grid-cols-1 gap-4 h-96">
-            {/* First Row in Second Column */}
-            <div className="relative bg-blue-500">
-              <h2 className="absolute bottom-0 right-0 mr-4 mb-4 text-white">Bristol</h2>
-            </div>
-            {/* Second Row in Second Column */}
-            <div className="relative bg-green-500">
-              <h2 className="absolute bottom-0 right-0 mr-4 mb-4 text-white">Edinburgh</h2>
-            </div>
+        {/* Second Column */}
+        <div className="sm:col-span-1 grid grid-cols-1 gap-2">
+          {/* First Row in Second Column */}
+          <div className="relative bristol-box" onClick={() => handleCityClick('Bristol')}>
+            <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Bristol</h2>
           </div>
-
-          {/* Third Column */}
-          <div className="sm:col-span-1 grid grid-cols-1 gap-4 h-96">
-            {/* First Row in Third Column */}
-            <div className="relative bg-yellow-500">
-              <h2 className="absolute bottom-0 right-0 mr-4 mb-4 text-white">Cardiff</h2>
-            </div>
-            {/* Second Row in Third Column */}
-            <div className="relative bg-purple-500">
-              <h2 className="absolute bottom-0 right-0 mr-4 mb-4 text-white">Manchester</h2>
-            </div>
+          {/* Second Row in Second Column */}
+          <div className="relative edinburgh-box" onClick={() => handleCityClick('Edinburgh')}>
+            <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Edinburgh</h2>
           </div>
         </div>
+
+        {/* Third Column */}
+        <div className="sm:col-span-1 grid grid-cols-1 gap-2">
+          {/* First Row in Third Column */}
+          <div className="relative cardiff-box" onClick={() => handleCityClick('Cardiff')}>
+            <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Cardiff</h2>
+          </div>
+          {/* Second Row in Third Column */}
+          <div className="relative manchester-box" onClick={() => handleCityClick('Manchester')}>
+            <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Manchester</h2>
+          </div>
+        </div>
+      </div>
 
 
       </div>
