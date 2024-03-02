@@ -4,21 +4,16 @@ import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const navigate = useNavigate();
-  const [jobTitle, setJobTitle] = useState('');
+  const [selectedOption, setSelectedOption] = useState('');
   const [location, setLocation] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSearch = (jobTitle, location) => {
-    navigate(`/job-results/?title=${jobTitle}&location=${location}`);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (!jobTitle || !location) {
-      setErrorMessage("Please fill in both job title and location.");
+  const handleSearch = () => {
+    if (!selectedOption || !location) {
+      setErrorMessage("Please select a job type and enter a location.");
       return;
     }
-    handleSearch(jobTitle, location);
+    navigate(`/job-results/?title=${selectedOption}&location=${location}`);
   };
 
   return (
@@ -28,8 +23,13 @@ function Home() {
           <h1 className="text-5xl font-medium text-white">Welcome to DevOpps</h1>
         </div>
         <div className="container mx-auto text-center flex flex-col sm:flex-row justify-center items-center">
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center sm:ml-4">
-            <input type="text" value={jobTitle} onChange={(e) => setJobTitle(e.target.value)} placeholder="Enter job title" className="mb-2 sm:mb-0 sm:mr-2 text-black" />
+          <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex flex-col sm:flex-row items-center sm:ml-4">
+            <select value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)} className="mb-2 sm:mb-0 sm:mr-2 text-black">
+              <option value="">Select a job type</option>
+              <option value="Developer">Developer</option>
+              <option value="Front End Developer">Front End Developer</option>
+              <option value="Full Stack Developer">Full Stack Developer</option>
+            </select>
             <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} placeholder="Enter location" className="mb-2 sm:mb-0 sm:mr-2 text-black" />
             <Button type="submit" variant="contained" color="primary">Search</Button>
           </form>

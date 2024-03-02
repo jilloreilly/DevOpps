@@ -15,12 +15,12 @@ function JobResults() {
     }
   }, []);
 
-  const fetchJobs = async (jobTitle, location) => {
+  const fetchJobs = async (selectedOption, location) => {
     const resource = {
       method: 'GET',
       url: 'https://jobs-api14.p.rapidapi.com/list',
       params: {
-        query: jobTitle,
+        query: selectedOption,
         location: location,
         distance: '1.0',
         language: 'en_GB',
