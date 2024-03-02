@@ -18,12 +18,15 @@ function Home() {
     navigate(`/job-results/?title=${selectedOption}&location=${location}`);
   };
 
-    // Function to handle city click
-    const handleCityClick = (cityName) => {
-      setSelectedOption('Developer'); 
-      setLocation(cityName); 
-      handleSearch(); 
-    };
+  // Function to handle city click
+const handleCityClick = (cityName) => {
+  const option = 'Software Developer';
+  const city = (cityName);
+  setErrorMessage(""); // Clear error message
+  navigate(`/job-results/?title=${option}&location=${city}`);
+};
+
+
 
   return (
     <>
@@ -36,8 +39,9 @@ function Home() {
           <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex flex-col sm:flex-row items-center sm:ml-4">
             <select value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)} className="mb-2 p-2 my-2 sm:mb-0 sm:mr-2 text-black">
               <option value="">Select a job type</option>
-              <option value="Developer">Developer</option>
+              <option value="Developer">Software Developer</option>
               <option value="Front End Developer">Front End Developer</option>
+              <option value="Front End Developer">Back End Developer</option>
               <option value="Full Stack Developer">Full Stack Developer</option>
             </select>
             <div className="input-container">
@@ -55,11 +59,11 @@ function Home() {
 
         {/* Employee/Employer cards linked to pages */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-32 py-5 ">
-          <Link to='employer/search'><div className="bg-white p-4 shadow-md rounded-lg h-96 flex justify-center items-center mr-3">
-            <div className="text-gray-700">EMPLOYER</div>
+          <Link to='employer/search'><div className="employer bg-blue-600 p-4 shadow-md rounded-lg h-72 flex justify-center items-center mr-3">
+            <div className="text-gray-700">I am an employer.</div>
           </div></Link>
-          <Link to='candidate'><div className="bg-white p-4 shadow-md rounded-lg h-96 flex justify-center items-center ml-3">
-            <div className="text-gray-700">EMPLOYEE</div>
+          <Link to='candidate'><div className="employee bg-blue-600 p-4 shadow-md rounded-lg h-72 flex justify-center items-center ml-3">
+            <div className="text-gray-700">I am a candidate.</div>
           </div></Link>
         </div>
 
@@ -68,36 +72,41 @@ function Home() {
         </div>
 
         {/* City Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-32">
-        {/* First Column */}
-        <div className="sm:col-span-1 relative london-box" onClick={() => handleCityClick('London')}>
-          <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">London</h2>
-        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-32">
+          {/* First Column */}
+          <a className="relative london-box" onClick={() => handleCityClick('London')}><div>
+            <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
+            <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">London</h2>
+          </div></a>
 
-        {/* Second Column */}
-        <div className="sm:col-span-1 grid grid-cols-1 gap-2">
-          {/* First Row in Second Column */}
-          <div className="relative bristol-box" onClick={() => handleCityClick('Bristol')}>
-            <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Bristol</h2>
+          {/* Second Column */}
+          <div className="sm:col-span-1 grid grid-cols-1 gap-2">
+            {/* First Row in Second Column */}
+            <a className="relative bristol-box" onClick={() => handleCityClick('Bristol')}><div>
+              <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
+              <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Bristol</h2>
+            </div></a>
+            {/* Second Row in Second Column */}
+            <a className="relative edinburgh-box" onClick={() => handleCityClick('Edinburgh')}><div>
+              <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
+              <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Edinburgh</h2>
+            </div></a>
           </div>
-          {/* Second Row in Second Column */}
-          <div className="relative edinburgh-box" onClick={() => handleCityClick('Edinburgh')}>
-            <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Edinburgh</h2>
-          </div>
-        </div>
 
-        {/* Third Column */}
-        <div className="sm:col-span-1 grid grid-cols-1 gap-2">
-          {/* First Row in Third Column */}
-          <div className="relative cardiff-box" onClick={() => handleCityClick('Cardiff')}>
-            <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Cardiff</h2>
-          </div>
-          {/* Second Row in Third Column */}
-          <div className="relative manchester-box" onClick={() => handleCityClick('Manchester')}>
-            <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Manchester</h2>
+          {/* Third Column */}
+          <div className="sm:col-span-1 grid grid-cols-1 gap-2">
+            {/* First Row in Third Column */}
+            <a className="relative cardiff-box" onClick={() => handleCityClick('Cardiff')}><div>
+              <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
+              <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Cardiff</h2>
+            </div></a>
+            {/* Second Row in Third Column */}
+            <a className="relative manchester-box" onClick={() => handleCityClick('Manchester')}><div>
+              <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
+              <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Manchester</h2>
+            </div></a>
           </div>
         </div>
-      </div>
 
 
       </div>
