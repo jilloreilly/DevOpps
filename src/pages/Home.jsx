@@ -70,32 +70,37 @@ function Home() {
         {/* City Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-32">
         {/* First Column */}
-        <div className="sm:col-span-1 relative london-box" onClick={() => handleCityClick('London')}>
+        <a className="relative london-box" onClick={() => handleCityClick('London')}><div>
+        <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
           <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">London</h2>
-        </div>
+        </div></a>
 
         {/* Second Column */}
         <div className="sm:col-span-1 grid grid-cols-1 gap-2">
           {/* First Row in Second Column */}
-          <div className="relative bristol-box" onClick={() => handleCityClick('Bristol')}>
+          <a className="relative bristol-box" onClick={() => handleCityClick('Bristol')}><div>
+          <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
             <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Bristol</h2>
-          </div>
+          </div></a>
           {/* Second Row in Second Column */}
-          <div className="relative edinburgh-box" onClick={() => handleCityClick('Edinburgh')}>
+          <a className="relative edinburgh-box" onClick={() => handleCityClick('Edinburgh')}><div>
+          <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
             <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Edinburgh</h2>
-          </div>
+          </div></a>
         </div>
 
         {/* Third Column */}
         <div className="sm:col-span-1 grid grid-cols-1 gap-2">
           {/* First Row in Third Column */}
-          <div className="relative cardiff-box" onClick={() => handleCityClick('Cardiff')}>
+          <a className="relative cardiff-box" onClick={() => handleCityClick('Cardiff')}><div>
+          <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
             <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Cardiff</h2>
-          </div>
+          </div></a>
           {/* Second Row in Third Column */}
-          <div className="relative manchester-box" onClick={() => handleCityClick('Manchester')}>
+          <a className="relative manchester-box" onClick={() => handleCityClick('Manchester')}><div>
+          <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
             <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Manchester</h2>
-          </div>
+          </div></a>
         </div>
       </div>
 
