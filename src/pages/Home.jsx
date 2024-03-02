@@ -9,7 +9,7 @@ function Home() {
   const [selectedOption, setSelectedOption] = useState('');
   const [location, setLocation] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-
+  // handle search section to death with form
   const handleSearch = () => {
     if (!selectedOption || !location) {
       setErrorMessage("Please select a job type and enter a location.");
@@ -20,6 +20,7 @@ function Home() {
 
   return (
     <>
+      {/* Hero section */}
       <div className="h-screen flex flex-col items-center justify-center hero-background">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-medium text-white">Welcome to DevOpps</h1>
@@ -41,7 +42,11 @@ function Home() {
           {errorMessage && <p className="text-white">{errorMessage}</p>}
         </div>
       </div>
+
+      {/* Container for everything under hero banner */}
       <div className='container px-8 mx-auto'>
+
+        {/* Employee/Employer cards linked to pages */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-5 py-5 ">
           <Link to='employer/search'><div className="bg-white p-4 shadow-md rounded-lg h-96">
             <p className="text-gray-700">EMPLOYER</p>
@@ -51,14 +56,29 @@ function Home() {
           </div></Link>
         </div>
 
-        <div className='grid grid-cols-1 sm:grid-cols-2 flex-row h-96'>
-          <div>
-            BLAH
+        {/* Photo/City Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="sm:col-span-1 bg-red-500 h-96"> 
+            {/* Content */}
           </div>
-          <div>
-            BLAH2
+          <div className="sm:col-span-1 grid grid-cols-1 gap-4 h-96">
+            <div className="bg-blue-500"> 
+              {/* Content */}
+            </div>
+            <div className="bg-green-500"> 
+              {/* Content */}
+            </div>
+          </div>
+          <div className="sm:col-span-1 grid grid-cols-1 gap-4 h-96">
+            <div className="bg-yellow-500"> 
+              {/* Content */}
+            </div>
+            <div className="bg-purple-500"> 
+              {/* Content */}
+            </div>
           </div>
         </div>
+
       </div>
 
     </>
