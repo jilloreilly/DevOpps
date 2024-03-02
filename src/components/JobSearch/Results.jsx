@@ -5,14 +5,9 @@ function JobSearchResults({jobs}){
     <>
         {jobs.map((job) =>(
           <JobList
-            title={job.title}
-            id={job.id}
-            key={job.id}
-            company={job.company}
-            location={job.location}
-            type={job.employmentType}
-            date={job.datePosted}
-            salary={job.salaryRange} />
+          key={job.id}
+          data={{...job}}
+          />
         ))
         }
     </>
