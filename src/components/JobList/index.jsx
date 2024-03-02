@@ -25,12 +25,6 @@ export default function JobList(props) {
       <p>Employment type: {jobs.employmentType}</p>
       <p>Date posted: {jobs.datePosted}</p>
       <p>Salary range: {jobs.salaryRange}</p>
-      
-      <div className="more-detail">
-        <p>Job description: {jobs.description}</p>
-        <h3>Apply here</h3>
-        {/* <p>Job providers: {jobs.jobProviders[0].jobProvider}</p> */}
-      </div> 
   </div>
 </div>
 </Link>
