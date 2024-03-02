@@ -24,14 +24,17 @@ function Home() {
         </div>
         <div className="container mx-auto text-center flex flex-col sm:flex-row justify-center items-center">
           <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex flex-col sm:flex-row items-center sm:ml-4">
-            <select value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)} className="mb-2 sm:mb-0 sm:mr-2 text-black">
+            <select value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)} className="mb-2 p-2 my-2 sm:mb-0 sm:mr-2 text-black">
               <option value="">Select a job type</option>
               <option value="Developer">Developer</option>
               <option value="Front End Developer">Front End Developer</option>
               <option value="Full Stack Developer">Full Stack Developer</option>
             </select>
-            <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} placeholder="Enter location" className="mb-2 sm:mb-0 sm:mr-2 text-black" />
-            <Button type="submit" variant="contained" color="primary">Search</Button>
+            <p className="input-container">
+            <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} placeholder="Enter location" className="mb-2 my-2 p-2 sm:mb-0 sm:mr-2 text-black" />
+            <label className="input-label" for="text">Location</label>
+            </p>
+            <Button type="submit" className="bg-gray-300 hover:bg-gray-400 shadow-md text-gray-800 font-bold py-1 rounded-full" >Search</Button>
           </form>
           {errorMessage && <p className="text-white">{errorMessage}</p>}
         </div>
