@@ -1,22 +1,27 @@
-// job list
-import JobList from "../components/JobList";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import JobList from "../components/JobList";
 import SearchFilter from "../components/SearchFilter";
 
-
-
 function JobResults() {
-  
   const [jobs, setJobs] = useState([]);
 
-   const handleSearch = async () => {
+  useEffect(() => {
+    const queryParams = new URLSearchParams(window.location.search);
+    const title = queryParams.get('title');
+    const location = queryParams.get('location');
+    if (title && location) {
+      fetchJobs(title, location);
+    }
+  }, []);
+
+  const fetchJobs = async (jobTitle, location) => {
     const resource = {
       method: 'GET',
       url: 'https://jobs-api14.p.rapidapi.com/list',
       params: {
-        query: 'Web Developer',
-        location: 'brighton, uk',
+        query: jobTitle,
+        location: location,
         distance: '1.0',
         language: 'en_GB',
         remoteOnly: 'false',
@@ -35,9 +40,8 @@ function JobResults() {
     } catch (error) {
       console.error(error);
     }
-};
+  };
 
-  console.log(jobs);
   return (
     <div className="container mx-auto">
       <h1>Job Results</h1>
@@ -46,9 +50,7 @@ function JobResults() {
           <h2>Filter your results:</h2>
           <SearchFilter />
         </aside>
-
         <section className="w-8/12 sm:w-full">
-          <button onClick={handleSearch}>Click me!</button>
           <div>
             {jobs.map((job) =>(
               <JobList
@@ -62,11 +64,10 @@ function JobResults() {
                 salary={job.salaryRange} />
             ))}
           </div>
-          
         </section>
       </div>
     </div>
-    );
-  }
-  
-  export default JobResults;
+  );
+}
+
+export default JobResults;
