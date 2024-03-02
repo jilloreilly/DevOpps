@@ -1,6 +1,8 @@
 import { Button } from "@nextui-org/react";
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
+
 
 function Home() {
   const navigate = useNavigate();
@@ -31,37 +33,34 @@ function Home() {
               <option value="Full Stack Developer">Full Stack Developer</option>
             </select>
             <p className="input-container">
-            <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} placeholder="Enter location" className="mb-2 my-2 p-2 sm:mb-0 sm:mr-2 text-black" />
-            <label className="input-label" for="text">Location</label>
+              <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} placeholder="Enter location" className="mb-2 my-2 p-1 sm:mb-0 sm:mr-2 text-black" />
+              <label className="input-label" for="text">Location</label>
             </p>
             <Button type="submit" className="bg-gray-300 hover:bg-gray-400 shadow-md text-gray-800 font-bold py-1 rounded-full" >Search</Button>
           </form>
           {errorMessage && <p className="text-white">{errorMessage}</p>}
         </div>
       </div>
-    <div className='container px-8 mx-auto'>
-      <div className='grid grid-cols-1 sm:grid-cols-3 flex-row h-96'> 
-      <div className='sm:col-span-2'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, fugit perferendis delectus eius corporis amet fuga? 
-        Ipsa rerum nostrum hic molestias ratione fuga. Asperiores maiores sapiente blanditiis, laboriosam quasi molestiae!
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro debitis reiciendis laborum sunt tenetur? Nihil, 
-        velit neque facere perspiciatis itaque explicabo voluptate nemo, cumque adipisci exercitationem, eos culpa accusantium. 
-        Exercitationem.
-      </div>
+      <div className='container px-8 mx-auto'>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-5 py-5 ">
+          <Link to='employer/search'><div className="bg-white p-4 shadow-md rounded-lg h-96">
+            <p className="text-gray-700">EMPLOYER</p>
+          </div></Link>
+          <Link to='candidate'><div className="bg-white p-4 shadow-md rounded-lg h-96">
+            <p className="text-gray-700">EMPLOYEE</p>
+          </div></Link>
+        </div>
+
+        <div className='grid grid-cols-1 sm:grid-cols-2 flex-row h-96'>
+          <div>
+            BLAH
+          </div>
+          <div>
+            BLAH2
+          </div>
+        </div>
       </div>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 flex-row h-96'> 
-      <div>
-          BLAH
-      </div>
-      <div>
-        BLAH2
-      </div>
-
-      </div>
-    </div>
     </>
   );
 }
