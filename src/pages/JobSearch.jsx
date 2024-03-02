@@ -181,19 +181,20 @@ function JobSearch() {
   return (
     <div className="container mx-auto">
 
+      <h1 className="text-3xl font-semibold leading-7 text-gray-900 sm:text-4xl mb-6">Job Search</h1>
+
       <div className="flex flex-row sm:flex-col md:flex-row lg:flex-row">
         <aside className="w-4/12 sm:w-full md:w-4/12">
           <JobSearchFilter />
         </aside>
 
-        <section className="w-8/12 sm:w-full">
-          <h1 className="text-3xl font-semibold leading-7 text-gray-900 sm:text-4xl mb-6">Job Search</h1>
-          <div id="next-page-nav" className={`your-normal-class ${jobs.length < 10 ? "hidden" : "block"}`}>
+        <section className="w-8/12 sm:w-full">          
+          <div id="next-page-nav" className={`flex justify-end ${jobs.length < 10 ? "hidden" : "block"}`}>
             <button
               id="prev-button"
               onClick={handlePrevPage}
               disabled={page < 1 || isSearching}
-              className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              className="rounded-md bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
               Previous
             </button>
             <div className="inline-block mb-6">Page {page + 1}</div>
@@ -201,7 +202,7 @@ function JobSearch() {
               id="next-button"
               onClick={handleNextPage}
               disabled={jobs.length < 10 || isSearching}
-              className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              className="rounded-md bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
               Next
             </button>
           </div>
