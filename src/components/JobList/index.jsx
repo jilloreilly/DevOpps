@@ -5,11 +5,6 @@ export default function JobList(props) {
   
   const jobs = props.data;
   
-  // Toggle visibility
-  const [bar, setBar] = useState({ isHidden: true });
-  const toggleVisibility = () => setBar({ isHidden: !bar.isHidden });
-  const style = { display: bar.isHidden ? 'none' : 'block' };
-
   // Test
   const data = {name: 'JILL', age: '25'};
 
@@ -19,9 +14,7 @@ export default function JobList(props) {
   return (
     <>
     
-<Link to={{
-  pathname: `/job-details/${jobs.id}`,
-  state: {jobData: { jobs } } }} className="flex w-full mb-3 bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+<Link to={`/job-details/${jobs.id}`} state={{jobData: { jobs }}} className="flex w-full mb-3 bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
 <div key={jobs.id} className="flex w-full mb-3 bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
   {/* <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="/docs/images/blog/image-4.jpg" alt="" /> */}
   {/* <button onClick={handleClick}>Go to Job Detail</button> */}
@@ -32,8 +25,8 @@ export default function JobList(props) {
       <p>Employment type: {jobs.employmentType}</p>
       <p>Date posted: {jobs.datePosted}</p>
       <p>Salary range: {jobs.salaryRange}</p>
-      {/* <a href='#' onClick={toggleVisibility}>More detail...</a> */}
-      <div className="more-detail" style={style}>
+      
+      <div className="more-detail">
         <p>Job description: {jobs.description}</p>
         <h3>Apply here</h3>
         {/* <p>Job providers: {jobs.jobProviders[0].jobProvider}</p> */}

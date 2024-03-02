@@ -8,6 +8,7 @@ function JobDetails() {
 
   const location = useLocation();
   const { jobData } = location.state;
+  let data = jobData.jobs;
   
   return (
   <>
@@ -18,21 +19,18 @@ function JobDetails() {
         {/* <a href="#">
             <img className="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
         </a> */}
-
-        <p>Name: {jobData.name}</p>
-        <p>Name: {jobData.age}</p>
         
         <div className="p-5">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Job Title{jobData.title}</h5>
-          <p>Company: {jobData.company}</p>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, nobis! Architecto officiis doloremque aliquid! Ipsam, odit ex? Molestias voluptate consequuntur voluptatibus, dolores fugiat laudantium obcaecati cum magni inventore distinctio at.{jobData.description}</p>
-          <p>Location: {jobData.location}</p>
-          <p>Employment Type: {jobData.type}</p>
-          <p>Date posted: {jobData.date}</p>
-          <p>Salary: {jobData.salary}</p>
-          <ul>
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Job Title{data.title}</h5>
+          <p>Company: {data.company}</p>
+          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{data.description}</p>
+          <p>Location: {data.location}</p>
+          <p>Employment Type: {data.type}</p>
+          <p>Date posted: {data.date}</p>
+          <p>Salary: {data.salary}</p>
+          {/* <ul>
             <li><a href={jobData.url}>{jobData.jobProvider}</a></li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div>
