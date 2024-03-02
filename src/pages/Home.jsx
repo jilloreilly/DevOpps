@@ -18,12 +18,18 @@ function Home() {
     navigate(`/job-results/?title=${selectedOption}&location=${location}`);
   };
 
-    // Function to handle city click
-    const handleCityClick = (cityName) => {
-      setSelectedOption('Developer'); 
-      setLocation(cityName); 
-      handleSearch(); 
-    };
+  // Function to handle city click
+// Function to handle city click
+const handleCityClick = (cityName) => {
+  const option = 'Software Developer';
+  const city = (cityName);
+  // Pass handleSearch as a callback to ensure it's executed immediately after state update
+  // This guarantees that handleSearch is called with the updated state values
+  setErrorMessage(""); // Clear error message
+  navigate(`/job-results/?title=${option}&location=${city}`);
+};
+
+
 
   return (
     <>
@@ -36,8 +42,9 @@ function Home() {
           <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex flex-col sm:flex-row items-center sm:ml-4">
             <select value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)} className="mb-2 p-2 my-2 sm:mb-0 sm:mr-2 text-black">
               <option value="">Select a job type</option>
-              <option value="Developer">Developer</option>
+              <option value="Developer">Software Developer</option>
               <option value="Front End Developer">Front End Developer</option>
+              <option value="Front End Developer">Back End Developer</option>
               <option value="Full Stack Developer">Full Stack Developer</option>
             </select>
             <div className="input-container">
@@ -68,41 +75,41 @@ function Home() {
         </div>
 
         {/* City Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-32">
-        {/* First Column */}
-        <a className="relative london-box" onClick={() => handleCityClick('London')}><div>
-        <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
-          <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">London</h2>
-        </div></a>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-32">
+          {/* First Column */}
+          <a className="relative london-box" onClick={() => handleCityClick('London')}><div>
+            <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
+            <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">London</h2>
+          </div></a>
 
-        {/* Second Column */}
-        <div className="sm:col-span-1 grid grid-cols-1 gap-2">
-          {/* First Row in Second Column */}
-          <a className="relative bristol-box" onClick={() => handleCityClick('Bristol')}><div>
-          <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
-            <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Bristol</h2>
-          </div></a>
-          {/* Second Row in Second Column */}
-          <a className="relative edinburgh-box" onClick={() => handleCityClick('Edinburgh')}><div>
-          <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
-            <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Edinburgh</h2>
-          </div></a>
-        </div>
+          {/* Second Column */}
+          <div className="sm:col-span-1 grid grid-cols-1 gap-2">
+            {/* First Row in Second Column */}
+            <a className="relative bristol-box" onClick={() => handleCityClick('Bristol')}><div>
+              <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
+              <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Bristol</h2>
+            </div></a>
+            {/* Second Row in Second Column */}
+            <a className="relative edinburgh-box" onClick={() => handleCityClick('Edinburgh')}><div>
+              <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
+              <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Edinburgh</h2>
+            </div></a>
+          </div>
 
-        {/* Third Column */}
-        <div className="sm:col-span-1 grid grid-cols-1 gap-2">
-          {/* First Row in Third Column */}
-          <a className="relative cardiff-box" onClick={() => handleCityClick('Cardiff')}><div>
-          <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
-            <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Cardiff</h2>
-          </div></a>
-          {/* Second Row in Third Column */}
-          <a className="relative manchester-box" onClick={() => handleCityClick('Manchester')}><div>
-          <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
-            <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Manchester</h2>
-          </div></a>
+          {/* Third Column */}
+          <div className="sm:col-span-1 grid grid-cols-1 gap-2">
+            {/* First Row in Third Column */}
+            <a className="relative cardiff-box" onClick={() => handleCityClick('Cardiff')}><div>
+              <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
+              <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Cardiff</h2>
+            </div></a>
+            {/* Second Row in Third Column */}
+            <a className="relative manchester-box" onClick={() => handleCityClick('Manchester')}><div>
+              <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
+              <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Manchester</h2>
+            </div></a>
+          </div>
         </div>
-      </div>
 
 
       </div>
