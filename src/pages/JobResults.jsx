@@ -52,7 +52,7 @@ function JobResults() {
         </aside>
         <section className="w-8/12 sm:w-full">
           <div>
-            {jobs.map((job) =>(
+            {jobs.map((job) => (
               // <JobList
               //   title={job.title}
               //   id={job.id}
@@ -65,8 +65,8 @@ function JobResults() {
               //   salary={job.salaryRange} />
               <JobList
                 key={job.id}
-                data={{...job}}
-                 />
+                data={{ ...job }}
+              />
             ))}
           </div>
         </section>
