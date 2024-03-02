@@ -11,7 +11,7 @@ function EmployerSearch() {
   const [filteredRoles, setFilteredRoles] = useState([]);
   const [results, setResults] = useState([]);
   const [availableTechnologies, setAvailableTechnologies] = useState([]);
-  const [showAllTechnologies, setShowAllTechnologies] = useState(false); // State para controlar a exibição de todas as tecnologias
+  const [showAllTechnologies, setShowAllTechnologies] = useState(false); // State to control the display of all technologies
   const [showResults, setShowResults] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -140,7 +140,7 @@ function EmployerSearch() {
                     <label htmlFor={`technology-${index}`}>{technology}</label>
                   </div>
                 ))}
-                {/* Show more Link*/}
+                {/* "Show more" Link/btn*/}
                 {availableTechnologies.length > 10 &&
                   <button onClick={() => setShowAllTechnologies(!showAllTechnologies)} className="text-blue-500 underline"> {showAllTechnologies ? 'Show Less' : 'Show More'}</button>
                 }
