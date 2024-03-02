@@ -1,6 +1,7 @@
 import { Button } from "@nextui-org/react";
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import JobResults from './JobResults';
 
 function Home() {
   const navigate = useNavigate();
