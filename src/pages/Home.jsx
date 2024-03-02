@@ -9,7 +9,7 @@ function Home() {
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSearch = (jobTitle, location) => {
-    navigate(`/job/results?title=${jobTitle}&location=${location}`);
+    navigate(`/job-results/?title=${jobTitle}&location=${location}`);
   };
 
   const handleSubmit = (event) => {
