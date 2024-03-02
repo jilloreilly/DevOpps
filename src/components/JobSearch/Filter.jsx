@@ -1,0 +1,1 @@
+// JobSearchFilter component placeholder. Moved to JobSearch page for now.
