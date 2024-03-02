@@ -5,12 +5,6 @@ export default function JobList(props) {
   
   const jobs = props.data;
   
-  // Test
-  const data = {name: 'JILL', age: '25'};
-
-  // console.log(jobs);
-  // console.log('BOO!');
-  
   return (
     <>
     
