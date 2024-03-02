@@ -10,13 +10,13 @@ function JobResults() {
   
   const [jobs, setJobs] = useState([]);
 
-   const handleSearch = async () => {
+  const handleSearch = async (jobTitle, location) => {
     const resource = {
       method: 'GET',
       url: 'https://jobs-api14.p.rapidapi.com/list',
       params: {
-        query: 'Web Developer',
-        location: 'brighton, uk',
+        query: jobTitle, // Use the provided jobTitle
+        location: location, // Use the provided location
         distance: '1.0',
         language: 'en_GB',
         remoteOnly: 'false',
@@ -35,7 +35,8 @@ function JobResults() {
     } catch (error) {
       console.error(error);
     }
-};
+  };
+  
 
   console.log(jobs);
   return (
