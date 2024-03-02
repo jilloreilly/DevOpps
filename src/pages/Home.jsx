@@ -37,7 +37,7 @@ const handleCityClick = (cityName) => {
         </div>
         <div className="container mx-auto text-center flex flex-col sm:flex-row justify-center items-center">
           <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex flex-col sm:flex-row items-center sm:ml-4">
-            <select value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)} className="mb-2 p-2 my-2 sm:mb-0 sm:mr-2 text-black">
+            <select name="job-type" value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)} className="mb-2 p-2 my-2 sm:mb-0 sm:mr-2 text-black">
               <option value="">Select a job type</option>
               <option value="Developer">Software Developer</option>
               <option value="Front End Developer">Front End Developer</option>
@@ -45,8 +45,8 @@ const handleCityClick = (cityName) => {
               <option value="Full Stack Developer">Full Stack Developer</option>
             </select>
             <div className="input-container">
-              <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} placeholder="Enter location" className="mb-2 my-2 p-1 sm:mb-0 sm:mr-2 text-black" />
-              <label className="input-label" for="text">Location</label>
+              <input name="job-location" type="text" value={location} onChange={(e) => setLocation(e.target.value)} placeholder="Enter location" className="mb-2 my-2 p-1 sm:mb-0 sm:mr-2 text-black" />
+              <label className="input-label" htmlFor="job-location">Location</label>
             </div>
             <Button type="submit" className="bg-gray-300 hover:bg-gray-400 shadow-md text-gray-800 font-bold py-1 rounded-full" >Search</Button>
           </form>
