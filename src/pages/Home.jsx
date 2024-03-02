@@ -18,6 +18,12 @@ function Home() {
     navigate(`/job-results/?title=${selectedOption}&location=${location}`);
   };
 
+    // Function to handle city click
+    const handleCityClick = (cityName) => {
+      setSelectedOption('Developer'); 
+      setLocation(cityName); 
+      handleSearch(); 
+    };
   return (
     <>
       {/* Hero section */}
@@ -33,10 +39,10 @@ function Home() {
               <option value="Front End Developer">Front End Developer</option>
               <option value="Full Stack Developer">Full Stack Developer</option>
             </select>
-            <p className="input-container">
+            <div className="input-container">
               <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} placeholder="Enter location" className="mb-2 my-2 p-1 sm:mb-0 sm:mr-2 text-black" />
               <label className="input-label" for="text">Location</label>
-            </p>
+            </div>
             <Button type="submit" className="bg-gray-300 hover:bg-gray-400 shadow-md text-gray-800 font-bold py-1 rounded-full" >Search</Button>
           </form>
           {errorMessage && <p className="text-white">{errorMessage}</p>}
@@ -47,37 +53,51 @@ function Home() {
       <div className='container px-8 mx-auto'>
 
         {/* Employee/Employer cards linked to pages */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-5 py-5 ">
-          <Link to='employer/search'><div className="bg-white p-4 shadow-md rounded-lg h-96">
-            <p className="text-gray-700">EMPLOYER</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-32 py-5 ">
+          <Link to='employer/search'><div className="bg-white p-4 shadow-md rounded-lg h-96 flex justify-center items-center mr-3">
+            <div className="text-gray-700">EMPLOYER</div>
           </div></Link>
-          <Link to='candidate'><div className="bg-white p-4 shadow-md rounded-lg h-96">
-            <p className="text-gray-700">EMPLOYEE</p>
+          <Link to='candidate'><div className="bg-white p-4 shadow-md rounded-lg h-96 flex justify-center items-center ml-3">
+            <div className="text-gray-700">EMPLOYEE</div>
           </div></Link>
         </div>
 
+        <div className='text-center'>
+          <h2>Search popular cities:</h2>
+        </div>
+
         {/* Photo/City Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="sm:col-span-1 bg-red-500 h-96"> 
-            {/* Content */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-32">
+          {/* First Column */}
+          <div className="sm:col-span-1 relative bg-red-500 h-96">
+            <h2 className="absolute bottom-0 right-0 mr-4 mb-4 text-white">London</h2>
           </div>
+
+          {/* Second Column */}
           <div className="sm:col-span-1 grid grid-cols-1 gap-4 h-96">
-            <div className="bg-blue-500"> 
-              {/* Content */}
+            {/* First Row in Second Column */}
+            <div className="relative bg-blue-500">
+              <h2 className="absolute bottom-0 right-0 mr-4 mb-4 text-white">Bristol</h2>
             </div>
-            <div className="bg-green-500"> 
-              {/* Content */}
+            {/* Second Row in Second Column */}
+            <div className="relative bg-green-500">
+              <h2 className="absolute bottom-0 right-0 mr-4 mb-4 text-white">Edinburgh</h2>
             </div>
           </div>
+
+          {/* Third Column */}
           <div className="sm:col-span-1 grid grid-cols-1 gap-4 h-96">
-            <div className="bg-yellow-500"> 
-              {/* Content */}
+            {/* First Row in Third Column */}
+            <div className="relative bg-yellow-500">
+              <h2 className="absolute bottom-0 right-0 mr-4 mb-4 text-white">Cardiff</h2>
             </div>
-            <div className="bg-purple-500"> 
-              {/* Content */}
+            {/* Second Row in Third Column */}
+            <div className="relative bg-purple-500">
+              <h2 className="absolute bottom-0 right-0 mr-4 mb-4 text-white">Manchester</h2>
             </div>
           </div>
         </div>
+
 
       </div>
 
