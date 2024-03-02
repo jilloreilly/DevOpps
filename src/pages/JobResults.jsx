@@ -65,8 +65,8 @@ function JobResults() {
               //   salary={job.salaryRange} />
               <JobList
                 key={job.id}
-                data={{ ...job }}
-              />
+                data={{...job}}
+                 />
             ))}
           </div>
         </section>

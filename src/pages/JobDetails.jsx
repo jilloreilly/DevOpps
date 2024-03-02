@@ -18,6 +18,9 @@ function JobDetails() {
         {/* <a href="#">
             <img className="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
         </a> */}
+
+        <p>Name: {jobData.name}</p>
+        <p>Name: {jobData.age}</p>
         
         <div className="p-5">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Job Title{jobData.title}</h5>
