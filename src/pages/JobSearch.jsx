@@ -13,6 +13,16 @@ function JobSearch() {
     location: '',
     });
 
+    // Index for pagination
+    const [page, setPage] = useState(0);
+
+    // Handle Next Page button
+    const handleNextPage = () => {
+      setPage(page + 1);
+      console.log("Page set to " + page);
+      handleJobSearch();
+    };
+
   // Handle form input changes
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -29,8 +39,10 @@ function JobSearch() {
 
   // Handle form submission
   const handleJobSearch = async (event) => {
-    event.preventDefault();
 
+    if (event) {event.preventDefault();}
+    setPage(page + 1);
+console.log(page);
     let query = formData.query;
     query = query.trim();
     let location = formData.location;
@@ -40,10 +52,15 @@ function JobSearch() {
     const response = await getJobs({
       query: query, 
       location: location,
+      index: page
     });
 
     // Update jobs array
     setJobs(response.data.jobs);
+
+    setPage(response.data.index);
+
+    console.log(page);
   };
 
   const JobSearchFilter = () => {
@@ -153,6 +170,7 @@ function JobSearch() {
         </aside>
 
         <section className="w-8/12 sm:w-full">
+          <button onClick={handleNextPage}>Next Page</button>
           <JobSearchResults jobs={jobs} />
         </section>
       </div>
