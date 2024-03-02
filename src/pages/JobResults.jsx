@@ -51,15 +51,20 @@ function JobResults() {
           <button onClick={handleSearch}>Click me!</button>
           <div>
             {jobs.map((job) =>(
+              // <JobList
+              //   title={job.title}
+              //   id={job.id}
+              //   key={job.id}
+              //   company={job.company}
+              //   location={job.location}
+              //   description={job.description}
+              //   type={job.employmentType}
+              //   date={job.datePosted}
+              //   salary={job.salaryRange} />
               <JobList
-                title={job.title}
-                id={job.id}
                 key={job.id}
-                company={job.company}
-                location={job.location}
-                type={job.employmentType}
-                date={job.datePosted}
-                salary={job.salaryRange} />
+                data={{...job}}
+                 />
             ))}
           </div>
           
