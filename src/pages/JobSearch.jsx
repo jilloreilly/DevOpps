@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import getJobs from "../services/getJobs.js";
 import JobSearchResults from "../components/JobSearch/Results.jsx";
 
@@ -16,11 +16,14 @@ function JobSearch() {
     // Index for pagination
     const [page, setPage] = useState(0);
 
+    // Listen for the page to change and rerun the search when it does
+    useEffect(() => {
+      handleJobSearch();
+    }, [page]);
+
     // Handle Next Page button
     const handleNextPage = () => {
       setPage(page + 1);
-      console.log("Page set to " + page);
-      handleJobSearch();
     };
 
   // Handle form input changes
@@ -41,13 +44,12 @@ function JobSearch() {
   const handleJobSearch = async (event) => {
 
     if (event) {event.preventDefault();}
-    setPage(page + 1);
-console.log(page);
+
     let query = formData.query;
     query = query.trim();
     let location = formData.location;
     location = location.trim();
-
+console.log(formData.query);
     // Get jobs from API
     const response = await getJobs({
       query: query, 
@@ -57,10 +59,8 @@ console.log(page);
 
     // Update jobs array
     setJobs(response.data.jobs);
+console.log(response);
 
-    setPage(response.data.index);
-
-    console.log(page);
   };
 
   const JobSearchFilter = () => {
@@ -170,7 +170,12 @@ console.log(page);
         </aside>
 
         <section className="w-8/12 sm:w-full">
-          <button onClick={handleNextPage}>Next Page</button>
+          <button 
+            id="next-button" 
+            onClick={handleNextPage}
+            disabled={jobs.length < 10}>
+            Next Page
+          </button>
           <JobSearchResults jobs={jobs} />
         </section>
       </div>
