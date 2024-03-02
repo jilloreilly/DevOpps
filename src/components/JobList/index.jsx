@@ -4,8 +4,9 @@ import { useState } from 'react';
 export default function JobList(props) {
   
   const jobs = props.data;
-  const boo = jobs.jobProviders;
-  console.log(`Boo: ${boo}`);
+  
+  // const boo = jobs.jobProviders;
+  // console.log(`Boo: ${boo}`);
 
   // Toggle visibility
   const [bar, setBar] = useState({ isHidden: true });
