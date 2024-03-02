@@ -16,7 +16,7 @@ export default function App() {
         />
         {/* Render the NavbarBrand */}
         <NavbarBrand>
-          <p className="font-bold text-inherit">DevOpps</p>
+        <Link href="/" className="font-bold text-inherit">DevOpps</Link>
         </NavbarBrand>
         {/* Render NavbarMenuToggle as the last item on larger screens */}
         <NavbarItem className="hidden sm:flex">
@@ -29,34 +29,26 @@ export default function App() {
         {isMenuOpen ? (
           <NavbarContent>
             <NavbarItem>
-              {/* You can render your menu items here */}
-              {/* For example: */}
-              <Link color="foreground" href="#">
-                Test
+              <Link color="foreground" href="employer/search">
+                Employer
               </Link>
             </NavbarItem>
             <NavbarItem>
-              <Link color="foreground" href="#">
-                Test2
+              <Link color="foreground" href="candidate">
+                Candidate
               </Link>
             </NavbarItem>
-            {/* Add other menu items as needed */}
           </NavbarContent>
         ) : (
           <NavbarContent className="hidden sm:flex gap-4" justify="center">
             <NavbarItem>
-              <Link color="foreground" href="#">
-                test1
+              <Link color="foreground" href="employer/search">
+                Employer
               </Link>
-            </NavbarItem>
-            <NavbarItem isActive>
-              <Link href="#" aria-current="page">
-                test2
-              </Link>
-            </NavbarItem>
+            </NavbarItem>   
             <NavbarItem>
-              <Link color="foreground" href="#">
-                test3
+              <Link color="foreground" href="candidate">
+                Candidate
               </Link>
             </NavbarItem>
           </NavbarContent>
