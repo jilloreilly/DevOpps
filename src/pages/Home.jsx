@@ -19,12 +19,9 @@ function Home() {
   };
 
   // Function to handle city click
-// Function to handle city click
 const handleCityClick = (cityName) => {
   const option = 'Software Developer';
   const city = (cityName);
-  // Pass handleSearch as a callback to ensure it's executed immediately after state update
-  // This guarantees that handleSearch is called with the updated state values
   setErrorMessage(""); // Clear error message
   navigate(`/job-results/?title=${option}&location=${city}`);
 };
