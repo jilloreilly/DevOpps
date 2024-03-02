@@ -10,14 +10,13 @@ function Home() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Perform validation
     if (!jobTitle || !location) {
       setErrorMessage("Please fill in both job title and location.");
       return;
     }
-    // Redirect to job details page
-    navigate(`/job/details?title=${jobTitle}&location=${location}`);
+    handleSearch(jobTitle, location); // Call handleSearch with jobTitle and location
   };
+  
 
   return (
     <>
