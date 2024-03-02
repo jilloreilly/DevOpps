@@ -53,15 +53,20 @@ function JobResults() {
         <section className="w-8/12 sm:w-full">
           <div>
             {jobs.map((job) =>(
+              // <JobList
+              //   title={job.title}
+              //   id={job.id}
+              //   key={job.id}
+              //   company={job.company}
+              //   location={job.location}
+              //   description={job.description}
+              //   type={job.employmentType}
+              //   date={job.datePosted}
+              //   salary={job.salaryRange} />
               <JobList
-                title={job.title}
-                id={job.id}
                 key={job.id}
-                company={job.company}
-                location={job.location}
-                type={job.employmentType}
-                date={job.datePosted}
-                salary={job.salaryRange} />
+                data={{...job}}
+                 />
             ))}
           </div>
         </section>
