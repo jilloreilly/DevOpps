@@ -1,7 +1,7 @@
 #root {
 
 }
-
+/* hero image */
 .hero-background {
     background-image: url('/images/background.jpg');
     background-repeat: no-repeat;
@@ -12,7 +12,7 @@
 .hide {
     display: none;
 }
-
+/* hero button styling */
 .input-container {
     --c-text: rgb(50, 50, 80);
     --c-bg: rgb(252, 252, 252);
@@ -67,3 +67,26 @@
     font-weight: 500;
   }
     
+  /* City grid styling */
+
+.london-box {    
+    background-image: url('/images/London.jpg');
+    height: 450px;
+  }
+  .bristol-box {    
+    background-image: url('/images/Bristol.jpg');
+  }
+  .manchester-box {    
+    background-image: url('./images/Manchester.jpg');
+  }
+  .cardiff-box {    
+    background-image: url('/images/Cardiff.jpg');
+  }
+  .edinburgh-box {    
+    background-image: url('/images/Edinburgh.jpg');
+  }
+  .bristol-box, .cardiff-box, .edinburgh-box, .manchester-box, .london-box {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
