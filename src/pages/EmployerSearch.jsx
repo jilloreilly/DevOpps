@@ -11,6 +11,7 @@ function EmployerSearch() {
   const [filteredRoles, setFilteredRoles] = useState([]);
   const [results, setResults] = useState([]);
   const [availableTechnologies, setAvailableTechnologies] = useState([]);
+  const [showAllTechnologies, setShowAllTechnologies] = useState(false); // State para controlar a exibição de todas as tecnologias
   const [showResults, setShowResults] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -109,77 +110,89 @@ function EmployerSearch() {
     setResults(filteredResults);
     setShowResults(true);
     setErrorMessage('');
+    // scrow up when clicked 
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="">
-        <div className="">
-          <h1 className="text-5xl font-bold mb-4 font-serif">People Search</h1>
-          <div className="bg-neutral-200 ">
-            <h1 className='italic font-bold text-2xl '>Filter By: </h1>
-            <div className='bg-neutral-300 '>
-              <h2 className='italic font-bold '>Technology:</h2>
-              {availableTechnologies.map((technology, index) => (
-                <div key={index} className="inline-grid px-1 text-sm  ">
-                  <input
-                    type="checkbox"
-                    id={`technology-${index}`}
-                    value={technology}
-                    onChange={handleTechnologyChange}
-                    className="mr-2"
-                  />
-                  <label htmlFor={`technology-${index}`}>{technology}</label>
-                </div>
-              ))}
-            </div>
-            <div className='bg-neutral-300'>
-              <h2 className='italic font-bold '>City:</h2>
-              {Array.from(new Set(people.map((person) => person.city))).map((city, index) => (
-                <div key={index} className="mb-1 inline-grid px-1">
-                  <input
-                    type="checkbox"
-                    id={`city-${index}`}
-                    value={city}
-                    onChange={handleCityChange}
-                    className="mr-2"
-                  />
-                  <label htmlFor={`city-${index}`}>{city}</label>
-                </div>
-              ))}
-            </div>
-            <div className='bg-neutral-300'>
-              <h2 className='italic font-bold '>Experience:</h2>
-              <div className="flex justify-center">
-                {Array.from(new Set(people.map((person) => person.experience))).map((experience, index) => (
-                  <div key={index} className="px-2 rounded">
+    <div>
+    <div>
+      <h1 className="text-3xl md:text-5xl font-bold font-serif">Employee Search</h1>
+    </div>
+    <div className="flex flex-col md:flex-row">
+      <div className="w-full md:w-1/5">
+        <div className="bg-gray-500">
+          <div className="bg-gray-500">
+            <h1 className='italic font-bold text-lg md:text-2xl'>Filter By: </h1>
+            <div className='bg-gray-300 grid grid-cols-1 md:grid-cols-2'>
+              <div>
+                <h2 className='italic font-bold text-sm md:text-base'>Technology:</h2>
+                {/* Show only 10 tech's  */}
+                {availableTechnologies.slice(0, showAllTechnologies ? availableTechnologies.length : 10).map((technology, index) => (
+                  <div key={index} className=''>
                     <input
                       type="checkbox"
-                      id={`experience-${index}`}
-                      value={experience}
-                      onChange={handleExperienceChange}
+                      id={`technology-${index}`}
+                      value={technology}
+                      onChange={handleTechnologyChange}
                       className="mr-2"
                     />
-                    <label htmlFor={`experience-${index}`}>{experience}</label>
+                    <label htmlFor={`technology-${index}`}>{technology}</label>
+                  </div>
+                ))}
+                {/* Show more Link*/}
+                {availableTechnologies.length > 10 &&
+                  <button onClick={() => setShowAllTechnologies(!showAllTechnologies)} className="text-blue-500 underline"> {showAllTechnologies ? 'Show Less' : 'Show More'}</button>
+                }
+              </div>
+              <div>
+                <h2 className='italic font-bold text-sm md:text-base'>City:</h2>
+                {Array.from(new Set(people.map((person) => person.city))).map((city, index) => (
+                  <div key={index} className="">
+                    <input
+                      type="checkbox"
+                      id={`city-${index}`}
+                      value={city}
+                      onChange={handleCityChange}
+                      className="mr-2"
+                    />
+                    <label htmlFor={`city-${index}`}>{city}</label>
                   </div>
                 ))}
               </div>
-            </div>
-            <div className='bg-neutral-300'>
-              <h2 className='italic font-bold'>Role:</h2>
-              <div className="flex justify-center">
-                {Array.from(new Set(people.map((person) => person.role))).map((role, index) => (
-                  <div key={index} className="flex justify-center px-2">
-                    <input
-                      type="checkbox"
-                      id={`role-${index}`}
-                      value={role}
-                      onChange={handleRoleChange}
-                      className="mr-2"
-                    />
-                    <label htmlFor={`role-${index}`}>{role}</label>
-                  </div>
-                ))}
+              <div>
+                <h2 className='italic font-bold text-sm md:text-base'>Experience:</h2>
+                <div>
+                  {Array.from(new Set(people.map((person) => person.experience))).map((experience, index) => (
+                    <div key={index} className="">
+                      <input
+                        type="checkbox"
+                        id={`experience-${index}`}
+                        value={experience}
+                        onChange={handleExperienceChange}
+                        className="mr-2"
+                      />
+                      <label htmlFor={`experience-${index}`}>{experience}</label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div >
+                <h2 className='italic font-bold text-sm md:text-base'>Role:</h2>
+                <div>
+                  {Array.from(new Set(people.map((person) => person.role))).map((role, index) => (
+                    <div key={index} className="">
+                      <input
+                        type="checkbox"
+                        id={`role-${index}`}
+                        value={role}
+                        onChange={handleRoleChange}
+                        className="mr-2"
+                      />
+                      <label htmlFor={`role-${index}`}>{role}</label>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -195,25 +208,32 @@ function EmployerSearch() {
         )}
       </div>
       {/* Results */}
-      {showResults && (
-        <div>
-          <h1 className="text-3xl font-bold mb-4">Results</h1>
-          <div className="grid grid-cols-2 gap-4">
-            {results.map((person) => (
-              <div key={person.id} className="border p-4 rounded bg-neutral-300">
-                <strong>Name:</strong> {person.name}<br />
-                <strong>Email:</strong> {person.email}<br />
-                <strong>Age:</strong> {person.age}<br />
-                <strong>City:</strong> {person.city}<br />
-                <strong>Experience:</strong> {person.experience}<br />
-                <strong>Technology:</strong> {person.technology.join(', ')}<br />
-                <strong>Role:</strong> {person.role}
-              </div>
-            ))}
+      <div className="w-full md:w-4/5 lg:w-3/5 mx-auto">
+        {showResults && (
+          <div>
+            <h1 className="text-3xl font-bold mb-2">Results</h1>
+            <div className="">
+              {results.map((person) => (
+                <div key={person.id} className="border border-gray-300 mb-4 p-2">
+                  <strong>Name:</strong> {person.name}<br />
+                  <strong>Email:</strong> {person.email}<br />
+                  <strong>Age:</strong> {person.age}<br />
+                  <strong>City:</strong> {person.city}<br />
+                  <strong>Experience:</strong> {person.experience}<br />
+                  <strong>Technology:</strong> {person.technology.join(', ')}<br />
+                  <strong>Role:</strong> {person.role}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
+  </div>
+  
+  
+
+
   );
 }
 
