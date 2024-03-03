@@ -8,15 +8,15 @@ const MyFooter = () => {
             <div className="container mx-auto flex justify-around flex-col items-center sm:flex-row p-10">
                 {/* Left section for logo +/- text */}
                 <div className="w-1/2 flex flex-col items-center justify-center">
-                    <p className='p-5'>DevOpps simplifies the hiring process by enabling developers to find their ideal job matches while assisting employers in discovering top talent. </p>
+                    <p className='p-5 text-center text-large'>DevOpps simplifies the hiring process by enabling developers to find their ideal job matches while assisting employers in discovering top talent. </p>
                     <p>LOGO</p>
                 </div>
                 {/* Right section for quick links */}
                 <div className='flex flex-col items-center w-1/2'>
-                    <h2>Quick Links</h2>
-                    <Link to="/employer/search" className="text-black p-3">Employers</Link>
-                    <Link to="candidate" className="text-black p-3">Candidates</Link>
-                    <Link to="/" className="text-black p-3">Job Search</Link>
+                    <h3 className='text-lg p-3'>Quick Links</h3>
+                    <Link to="/employer/search" className="text-black p-2">Employers</Link>
+                    <Link to="candidate" className="text-black p-2">Candidates</Link>
+                    <Link to="/" className="text-black p-2">Job Search</Link>
                 </div>
             </div>
             {/* Bottom copyright and links */}
