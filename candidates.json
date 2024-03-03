@@ -298,5 +298,23 @@
     "experience": "Junior",
     "role": "Frontend Developer",
     "technology": ["HTML", "CSS", "Bootstrap", "Sass"]
+  },
+  {
+    "id": 98531516,
+    "name": "Richard Llewellyn",
+    "email": "richard.lee.llewellyn@gmail.com",
+    "age": 36,
+    "city": "London",
+    "experience": "Junior",
+    "role": "Frontend Developer",
+    "salaryRange": 100000,
+    "workplace": "Hybrid",
+    "technology": ["HTML", "CSS", "Javascript", "Bootstrap", "Sass"],
+    "gitHubURL": "https://api.github.com/users/RichLlew182",
+    "gitHubAvatar": "https://avatars.githubusercontent.com/u/98531516?v=4",
+    "gitHubRepos": ["Bootstrap Portfolio", "clicky-memory-game"], 
+    "gitHubRepoUrls": ["https://github.com/RichLlew182/Bootstrap-Portfolio","https://github.com/RichLlew182/clicky-memory-game"],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   }
 ]
