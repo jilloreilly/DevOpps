@@ -2,14 +2,21 @@ import { Button } from "@nextui-org/react";
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
+import {
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem
+} from "@nextui-org/react";
+import {Input} from "@nextui-org/react";
 
 
 function Home() {
   const navigate = useNavigate();
-  const [selectedOption, setSelectedOption] = useState(undefined);
+  const [selectedOption, setSelectedOption] = useState(null); // Change undefined to null
   const [location, setLocation] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  // handle search section to death with form
+
   const handleSearch = () => {
     if (!selectedOption || !location) {
       setErrorMessage("Please select a job type and enter a location.");
@@ -18,48 +25,51 @@ function Home() {
     navigate(`/job-results/?title=${selectedOption}&location=${location}`);
   };
 
-  // Function to handle city click
-const handleCityClick = (cityName) => {
-  const option = 'Software Developer';
-  const city = (cityName);
-  setErrorMessage(""); // Clear error message
-  navigate(`/job-results/?title=${option}&location=${city}`);
-};
-
-
+  const handleCityClick = (cityName) => {
+    const option = 'Software Developer';
+    const city = cityName;
+    setErrorMessage(""); // Clear error message
+    navigate(`/job-results/?title=${option}&location=${city}`);
+  };
 
   return (
     <>
-      {/* Hero section */}
       <div className="h-screen flex items-center justify-start hero-background">
-  <div className="w-1/2 px-10 py-20 flex items-start flex-col"> {/* Adjust the width as needed */}
-    <h1 className="text-5xl font-medium text-white mb-8">Welcome to DevOpps</h1>
-    <h3 className="text-2xl font-light text-white mb-8">From job seekers to recruiters, DevOpps offers a comprehensive platform for all your tech hiring needs, making job searches and candidate sourcing hassle-free.</h3>
+        <div className="w-1/2 px-20 py-20 flex flex-col"> 
+          <h1 className="text-5xl font-medium text-white mb-8">Welcome to DevOpps</h1>
+          <h3 className="text-2xl font-light text-white mb-8">From job seekers to recruiters, DevOpps offers a comprehensive platform for all your tech hiring needs, making job searches and candidate sourcing hassle-free.</h3>
+          <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex flex-col items-start ml-5">
+  <Dropdown>
+    <DropdownTrigger>
+      <Button variant="bordered" className="w-full p-2 bg-gray-200 text-gray-600 hover:text-gray-300 mb-2 w-1/2 ">
+        {selectedOption || 'Select a job type'}
+      </Button>
+    </DropdownTrigger>
+    <DropdownMenu aria-label="Static Actions">
+      <DropdownItem key="Software Developer" onClick={() => setSelectedOption('Software Developer')}>
+        Software Developer
+      </DropdownItem>
+      <DropdownItem key="Front End Developer" onClick={() => setSelectedOption('Front End Developer')}>
+        Front End Developer
+      </DropdownItem>
+      <DropdownItem key="Back End Developer" onClick={() => setSelectedOption('Back End Developer')}>
+        Back End Developer
+      </DropdownItem>
+      <DropdownItem key="Full Stack Developer" onClick={() => setSelectedOption('Full Stack Developer')}>
+        Full Stack Developer
+      </DropdownItem>
+    </DropdownMenu>
+  </Dropdown>
+  <Input type="location" label="Enter your location" value={location} onChange={(e) => setLocation(e.target.value)} className="flex-grow p-1 bg-gray-200 text-gray-600 hover:text-gray-300 mb-2 rounded-medium w-1/2 " />
+  <Button type="submit" className="hover:bg-gray-400 shadow-md text-gray-800 font-bold py-1 rounded-full w-1/2">Search</Button>
+</form>
 
-    <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex flex-col sm:flex-row items-start">
-      <select name="job-type" value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)} className="mb-2 p-2 mr-4 text-black">
-        <option value="">Select a job type</option>
-        <option value="Software Developer">Software Developer</option>
-        <option value="Front End Developer">Front End Developer</option>
-        <option value="Back End Developer">Back End Developer</option>
-        <option value="Full Stack Developer">Full Stack Developer</option>
-      </select>
-      <div className="input-container mb-2 mr-4">
-        <input name="job-location" type="text" value={location} onChange={(e) => setLocation(e.target.value)} placeholder="Enter location" className="p-1 text-black" />
-        <label className="input-label" htmlFor="job-location">Location</label>
+
+          {errorMessage && <p className="text-white">{errorMessage}</p>}
+        </div>
       </div>
-      <Button type="submit" className="bg-gray-300 hover:bg-gray-400 shadow-md text-gray-800 font-bold py-1 rounded-full">Search</Button>
-    </form>
-    {errorMessage && <p className="text-white">{errorMessage}</p>}
-  </div>
-</div>
 
-
-
-      {/* Container for everything under hero banner */}
       <div className='container px-8 mx-auto'>
-
-        {/* Employee/Employer cards linked to pages */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-32 py-5 ">
           <Link to='employer/search'><div className="employer bg-blue-600 p-4 shadow-md rounded-lg h-72 flex justify-center items-center mr-3">
             <div className="text-gray-700">I am an employer.</div>
@@ -73,46 +83,35 @@ const handleCityClick = (cityName) => {
           <h2>Search popular cities:</h2>
         </div>
 
-        {/* City Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-32">
-          {/* First Column */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-32 rounded-lg">
           <a className="relative london-box" onClick={() => handleCityClick('London')}><div>
             <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
             <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">London</h2>
           </div></a>
 
-          {/* Second Column */}
           <div className="sm:col-span-1 grid grid-cols-1 gap-2">
-            {/* First Row in Second Column */}
             <a className="relative bristol-box" onClick={() => handleCityClick('Bristol')}><div>
               <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
               <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Bristol</h2>
             </div></a>
-            {/* Second Row in Second Column */}
             <a className="relative edinburgh-box" onClick={() => handleCityClick('Edinburgh')}><div>
               <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
               <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Edinburgh</h2>
             </div></a>
           </div>
 
-          {/* Third Column */}
           <div className="sm:col-span-1 grid grid-cols-1 gap-2">
-            {/* First Row in Third Column */}
             <a className="relative cardiff-box" onClick={() => handleCityClick('Cardiff')}><div>
               <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
               <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Cardiff</h2>
             </div></a>
-            {/* Second Row in Third Column */}
             <a className="relative manchester-box" onClick={() => handleCityClick('Manchester')}><div>
               <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
               <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Manchester</h2>
             </div></a>
           </div>
         </div>
-
-
       </div>
-
     </>
   );
 }
