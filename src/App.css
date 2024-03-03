@@ -1,6 +1,14 @@
+/* Global */
 #root {
 
 }
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+
 /* hero image */
 .hero-background {
     background-image: url('/images/background.jpg');
