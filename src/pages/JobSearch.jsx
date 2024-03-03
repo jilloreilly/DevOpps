@@ -132,8 +132,8 @@ function JobSearch() {
 
       <h1 className="text-3xl font-semibold leading-7 text-gray-900 sm:text-4xl mb-6">Job Search</h1>
 
-      <div className="flex flex-row sm:flex-col md:flex-row lg:flex-row">
-        <aside className="w-4/12 sm:w-full md:w-4/12">
+      <div className="flex flex-col md:flex-row lg:flex-row">
+        <aside className="w-full md:w-4/12">
 
           <form onSubmit={handleSearchFormSubmit} className="bg-white rounded-lg p-2 mr-2">
             <div className="space-y-12">
@@ -163,7 +163,7 @@ function JobSearch() {
                     <div className="mt-2">
                       <input
                         value={formData.location}
-                        onChange={handleLocationChange}
+                        onChange={handleInputChange}
                         name="location"
                         type="text"
                         placeholder="City, Country"
@@ -226,7 +226,7 @@ function JobSearch() {
 
         </aside>
 
-        <section className="w-8/12 sm:w-full">
+        <section className="w-full md:w-8/12">
           <div id="next-page-nav" className={`flex justify-end items-center mb-2 ${jobs.length < 10 ? "hidden" : "block"}`}>
             <button
               id="prev-button"
