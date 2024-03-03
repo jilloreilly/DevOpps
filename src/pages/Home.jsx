@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
-  const [selectedOption, setSelectedOption] = useState('');
+  const [selectedOption, setSelectedOption] = useState(undefined);
   const [location, setLocation] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   // handle search section to death with form
