@@ -13,12 +13,12 @@ function App() {
       <MyHeader />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='candidate' element={<Candidate />} />
+        <Route path='/candidate' element={<Candidate />} />
         <Route path='/job-results' element={<JobResults />} />
-        <Route path='employer/search' element={<EmployerSearch />} />
-        <Route path='404' element={<Custom404 />} />
+        <Route path='/employer/search' element={<EmployerSearch />} />
         <Route path="/job/search" element={<JobSearch />} />
         <Route path="/job-details/:id" element={<JobDetails />} />
+        <Route path='*' element={<Custom404 />} />
       </Routes>
       <MyFooter />
     </Router>
