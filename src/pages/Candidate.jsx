@@ -20,7 +20,7 @@ function Candidate({ userData } ) {
   
     return (
       <div className="container my-5 mx-auto">
-        <img className="rounded-full my-5 mx-auto" src={user.gitHubAvatar}></img>
+        <img className="rounded-full my-5" src={user.gitHubAvatar}></img>
         <h2 className="text-3xl font-semibold leading-7 text-gray-900 sm:text-4xl mb-4">{user.name}</h2>
         <p>Email: {user.email}</p>
         <p>City: {user.city}</p>
@@ -32,11 +32,11 @@ function Candidate({ userData } ) {
         <h2 className="mt-3 text-2xl font-semibold">Skills:</h2>
         <ul className="mt-5 flex flex-wrap flex-row items-center justify-center gap-4">
         {user.technology.map(tech => (
-          <div className="text-indigo-700 max-w-fit inline-flex items-center justify-between box-border whitespace-nowrap border-medium p-3 h-7 rounded-full border-indigo-100 bg-indigo-100 hover:bg-indigo-300 hover:border-indigo-300 relative select-none text-medium transition-colors-opacity before:transition-width motion-reduce:transition-none" key={tech}>{tech}</div>
+          <div className="text-indigo-700 max-w-fit inline-flex items-center justify-start box-border whitespace-nowrap border-medium p-3 h-7 rounded-full border-indigo-100 bg-indigo-100 hover:bg-indigo-300 hover:border-indigo-300 relative select-none text-medium transition-colors-opacity before:transition-width motion-reduce:transition-none" key={tech}>{tech}</div>
         ))}
       </ul>
         <h2 className="mt-3 text-2xl font-semibold">GitHub Repos:</h2>
-        <ul className="mt-5 flex flex-wrap flex-row items-center justify-center gap-3">
+        <ul className="mt-5 flex flex-wrap flex-row items-center justify-start gap-3">
          {user.gitHubRepos.map(repo => (
           <a className="bg-blue-100 hover:bg-blue-200 text-blue-800 text-xs font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400 inline-flex items-center justify-center" key={repo}>{repo} </a>
         ))}
