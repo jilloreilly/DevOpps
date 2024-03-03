@@ -44,11 +44,6 @@ function JobSearch() {
     }
   }, [page, initialRender]);
 
-  // useEffect(() => {
-  //   console.log("Page is set to " + page);
-  // }, [page]);
-
-
   // Set initialRender to false after first render
   useEffect(() => {
     setInitialRender(false);
@@ -106,7 +101,7 @@ function JobSearch() {
 
       // Update jobs array
       setJobs(response.data.jobs);
-      console.log(response);
+      // console.log(response);
 
       // Track we have done a search
       setReset(false);
