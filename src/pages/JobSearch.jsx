@@ -48,7 +48,7 @@ function JobSearch() {
   //   console.log("Page is set to " + page);
   // }, [page]);
 
-  
+
   // Set initialRender to false after first render
   useEffect(() => {
     setInitialRender(false);
@@ -82,15 +82,15 @@ function JobSearch() {
     let query;
     let location;
 
-    if (!formData.query){
+    if (!formData.query) {
       query = qsTitle;
-    }else{
+    } else {
       query = formData.query;
     }
-    
-    if (!formData.location){
+
+    if (!formData.location) {
       location = qsLocation;
-    }else{
+    } else {
       location = formData.location;
     }
 
@@ -114,7 +114,7 @@ function JobSearch() {
 
     // Remove the query string from the URL
     const urlWithoutQueryString = window.location.pathname;
-    window.history.replaceState({}, document.title, urlWithoutQueryString); 
+    window.history.replaceState({}, document.title, urlWithoutQueryString);
 
     setIsSearching(false);
   };
@@ -237,7 +237,7 @@ function JobSearch() {
           <JobSearchFilter />
         </aside>
 
-        <section className="w-8/12 sm:w-full">          
+        <section className="w-8/12 sm:w-full">
           <div id="next-page-nav" className={`flex justify-end items-center mb-2 ${jobs.length < 10 ? "hidden" : "block"}`}>
             <button
               id="prev-button"
