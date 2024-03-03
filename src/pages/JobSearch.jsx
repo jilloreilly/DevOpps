@@ -49,21 +49,6 @@ function JobSearch() {
     setInitialRender(false);
   }, []);
 
-  // Handle query field change
-  // const handleQueryChange = (event) => {
-  //   setFormData((prevFormData) => ({
-  //     ...prevFormData,
-  //     query: event.target.value,
-  //   }));
-  // };
-
-  // Handle location field change
-  // const handleLocationChange = (event) => {
-  //   setFormData((prevFormData) => ({
-  //     ...prevFormData,
-  //     location: event.target.value,
-  //   }));
-  // };
 
   // Handle form input changes
   const handleInputChange = (event) => {
