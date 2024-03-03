@@ -17,8 +17,8 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/candidate/create-profile' element={<CandidateProfileForm />} />
         <Route path="/candidate/profile/:id" element={<Candidate userData={userData} />} />
+        <Route path='/job-results' element={<JobSearch />} />
         <Route path='/employer/search' element={<EmployerSearch />} />
-        <Route path="/job/search" element={<JobSearch />} />
         <Route path="/job-details/:id" element={<JobDetails />} />
         <Route path='*' element={<Custom404 />} />
       </Routes>
