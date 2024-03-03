@@ -29,12 +29,12 @@ export default function App() {
         {isMenuOpen ? (
           <NavbarContent>
             <NavbarItem>
-              <Link color="foreground" href="employer/search">
+              <Link color="foreground" href="/employer/search">
                 Employer
               </Link>
             </NavbarItem>
             <NavbarItem>
-              <Link color="foreground" href="candidate">
+              <Link color="foreground" href="/candidate">
                 Candidate
               </Link>
             </NavbarItem>
@@ -42,12 +42,12 @@ export default function App() {
         ) : (
           <NavbarContent className="hidden sm:flex gap-4" justify="center">
             <NavbarItem>
-              <Link color="foreground" href="employer/search">
+              <Link color="foreground" href="/employer/search">
                 Employer
               </Link>
             </NavbarItem>   
             <NavbarItem>
-              <Link color="foreground" href="candidate">
+              <Link color="foreground" href="/candidate">
                 Candidate
               </Link>
             </NavbarItem>
