@@ -24,9 +24,9 @@ function JobDetails() {
           <p>Company: {data.company}</p>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{data.description}</p>
           <p>Location: {data.location}</p>
-          <p>Employment Type: {data.type}</p>
-          <p>Date posted: {data.date}</p>
-          <p>Salary: {data.salary == "" ?  "Competitive" : data.salary}</p>
+          <p>Employment Type: {data.employmentType}</p>
+          <p>Date posted: {data.datePosted}</p>
+          <p>Salary: {data.salaryRange == "" ?  "Competitive" : data.salaryRange}</p>
           {/* <ul>
             <li><a href={jobData.url}>{jobData.jobProvider}</a></li>
           </ul> */}
