@@ -51,24 +51,14 @@ function JobResults() {
           <SearchFilter />
         </aside>
         <section className="w-8/12 sm:w-full">
-          <div>
+          
             {jobs.map((job) => (
-              // <JobList
-              //   title={job.title}
-              //   id={job.id}
-              //   key={job.id}
-              //   company={job.company}
-              //   location={job.location}
-              //   description={job.description}
-              //   type={job.employmentType}
-              //   date={job.datePosted}
-              //   salary={job.salaryRange} />
               <JobList
                 key={job.id}
                 data={{...job}}
                  />
             ))}
-          </div>
+          
         </section>
       </div>
     </div>
