@@ -50,29 +50,29 @@ function JobSearch() {
   }, []);
 
   // Handle query field change
-  const handleQueryChange = (event) => {
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      query: event.target.value,
-    }));
-  };
-
-  // Handle location field change
-  const handleLocationChange = (event) => {
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      location: event.target.value,
-    }));
-  };
-
-  // Handle form input changes
-  // const handleInputChange = (event) => {
-  //   const { name, value } = event.target;
+  // const handleQueryChange = (event) => {
   //   setFormData((prevFormData) => ({
   //     ...prevFormData,
-  //     [name]: value,
+  //     query: event.target.value,
   //   }));
   // };
+
+  // Handle location field change
+  // const handleLocationChange = (event) => {
+  //   setFormData((prevFormData) => ({
+  //     ...prevFormData,
+  //     location: event.target.value,
+  //   }));
+  // };
+
+  // Handle form input changes
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
 
   // Handle Clear button
   const handleJobSearchClear = () => {
@@ -162,7 +162,7 @@ function JobSearch() {
                     <div className="mt-2">
                       <input
                         value={formData.query}
-                        onChange={handleQueryChange}
+                        onChange={handleInputChange}
                         type="text"
                         name="query"
                         placeholder="eg Frontend Developer"
