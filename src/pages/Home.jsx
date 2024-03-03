@@ -31,28 +31,30 @@ const handleCityClick = (cityName) => {
   return (
     <>
       {/* Hero section */}
-      <div className="h-screen flex flex-col items-center justify-center hero-background">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-medium text-white">Welcome to DevOpps</h1>
-        </div>
-        <div className="container mx-auto text-center flex flex-col sm:flex-row justify-center items-center">
-          <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex flex-col sm:flex-row items-center sm:ml-4">
-            <select name="job-type" value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)} className="mb-2 p-2 my-2 sm:mb-0 sm:mr-2 text-black">
-              <option value="">Select a job type</option>
-              <option value="Developer">Software Developer</option>
-              <option value="Front End Developer">Front End Developer</option>
-              <option value="Front End Developer">Back End Developer</option>
-              <option value="Full Stack Developer">Full Stack Developer</option>
-            </select>
-            <div className="input-container">
-              <input name="job-location" type="text" value={location} onChange={(e) => setLocation(e.target.value)} placeholder="Enter location" className="mb-2 my-2 p-1 sm:mb-0 sm:mr-2 text-black" />
-              <label className="input-label" htmlFor="job-location">Location</label>
-            </div>
-            <Button type="submit" className="bg-gray-300 hover:bg-gray-400 shadow-md text-gray-800 font-bold py-1 rounded-full" >Search</Button>
-          </form>
-          {errorMessage && <p className="text-white">{errorMessage}</p>}
-        </div>
+      <div className="h-screen flex items-center justify-start hero-background">
+  <div className="w-1/2 px-10 py-20 flex items-start flex-col"> {/* Adjust the width as needed */}
+    <h1 className="text-5xl font-medium text-white mb-8">Welcome to DevOpps</h1>
+    <h3 className="text-2xl font-light text-white mb-8">From job seekers to recruiters, DevOpps offers a comprehensive platform for all your tech hiring needs, making job searches and candidate sourcing hassle-free.</h3>
+
+    <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex flex-col sm:flex-row items-start">
+      <select name="job-type" value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)} className="mb-2 p-2 mr-4 text-black">
+        <option value="">Select a job type</option>
+        <option value="Software Developer">Software Developer</option>
+        <option value="Front End Developer">Front End Developer</option>
+        <option value="Back End Developer">Back End Developer</option>
+        <option value="Full Stack Developer">Full Stack Developer</option>
+      </select>
+      <div className="input-container mb-2 mr-4">
+        <input name="job-location" type="text" value={location} onChange={(e) => setLocation(e.target.value)} placeholder="Enter location" className="p-1 text-black" />
+        <label className="input-label" htmlFor="job-location">Location</label>
       </div>
+      <Button type="submit" className="bg-gray-300 hover:bg-gray-400 shadow-md text-gray-800 font-bold py-1 rounded-full">Search</Button>
+    </form>
+    {errorMessage && <p className="text-white">{errorMessage}</p>}
+  </div>
+</div>
+
+
 
       {/* Container for everything under hero banner */}
       <div className='container px-8 mx-auto'>
