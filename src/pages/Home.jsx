@@ -13,7 +13,7 @@ import {Input} from "@nextui-org/react";
 
 function Home() {
   const navigate = useNavigate();
-  const [selectedOption, setSelectedOption] = useState(null); // Change undefined to null
+  const [selectedOption, setSelectedOption] = useState(null); 
   const [location, setLocation] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -37,11 +37,11 @@ function Home() {
       <div className="h-screen flex items-center justify-start hero-background">
         <div className="w-1/2 px-20 py-20 flex flex-col"> 
           <h1 className="text-5xl font-medium text-white mb-8">Welcome to DevOpps</h1>
-          <h3 className="text-2xl font-light text-white mb-8">From job seekers to recruiters, DevOpps offers a comprehensive platform for all your tech hiring needs, making job searches and candidate sourcing hassle-free.</h3>
-          <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex flex-col items-start ml-5">
+          <h3 className="text-2xl font-light text-white mb-14">From job seekers to recruiters, DevOpps offers a comprehensive platform for all your tech hiring needs, making job searches and candidate sourcing hassle-free.</h3>
+          <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex flex-row items-center bg-gray-200 rounded-lg p-5">
   <Dropdown>
     <DropdownTrigger>
-      <Button variant="bordered" className="w-full p-2 bg-gray-200 text-gray-600 hover:text-gray-300 mb-2 w-1/2 ">
+      <Button variant="bordered" className="w-full bg-gray-200 text-gray-600 hover:text-gray-300 hover:bg-gray-400 h-12 mx-2 rounded-md">
         {selectedOption || 'Select a job type'}
       </Button>
     </DropdownTrigger>
@@ -60,9 +60,10 @@ function Home() {
       </DropdownItem>
     </DropdownMenu>
   </Dropdown>
-  <Input type="location" label="Enter your location" value={location} onChange={(e) => setLocation(e.target.value)} className="flex-grow p-1 bg-gray-200 text-gray-600 hover:text-gray-300 mb-2 rounded-medium w-1/2 " />
-  <Button type="submit" className="hover:bg-gray-400 shadow-md text-gray-800 font-bold py-1 rounded-full w-1/2">Search</Button>
+  <Input type="location" label="Enter your location" value={location} onChange={(e) => setLocation(e.target.value)} className="flex-grow bg-gray-200 text-gray-600 hover:text-gray-300 rounded-md h-12 mx-2 border border-gray-400" />
+  <Button type="submit" className="hover:bg-gray-400 shadow-md text-gray-800 font-bold rounded-md h-12 w-full border border-gray-400">Search</Button>
 </form>
+
 
 
           {errorMessage && <p className="text-white">{errorMessage}</p>}
