@@ -145,14 +145,20 @@ function JobSearch() {
                       Job Title
                     </label>
                     <div className="mt-2">
-                      <input
+                      <select
                         value={formData.query}
                         onChange={handleInputChange}
-                        type="text"
                         name="query"
-                        placeholder="eg Frontend Developer"
                         className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                        required />
+                        required
+                      >
+                        <option value="">Select a Role</option>
+                        <option value="Software Developer">Software Developer</option>
+                        <option value="Front End Developer">Front End Developer</option>
+                        <option value="Back End Developer">Back End Developer</option>
+                        <option value="Full Stack Developer">Full Stack Developer</option>
+                      </select>
+
                     </div>
                   </div>
 
