@@ -10,6 +10,9 @@ function JobSearch() {
   // Test for initial render
   const [initialRender, setInitialRender] = useState(true);
 
+  // Test for reset state (eg. when the user clears the form)
+  const [isReset, setReset] = useState(true);
+
   // Form data
   const [formData, setFormData] = useState({
     query: '',
@@ -63,6 +66,7 @@ function JobSearch() {
   // Handle Clear button
   const handleJobSearchClear = () => {
     setFormData({ query: '', location: '' });
+    setReset(true);
   };
 
   // Handle form submission
@@ -103,6 +107,9 @@ function JobSearch() {
       // Update jobs array
       setJobs(response.data.jobs);
       console.log(response);
+
+      // Track we have done a search
+      setReset(false);
     }
 
     // Remove the query string from the URL
@@ -115,6 +122,7 @@ function JobSearch() {
   // Handle form submission
   const handleSearchFormSubmit = async (event) => {
     event.preventDefault();
+    setPage(0);
     await handleJobSearch();
   }
 
@@ -248,7 +256,12 @@ function JobSearch() {
             </button>
           </div>
 
-          <JobSearchResults jobs={jobs} />
+          <div className="text-left">
+            {
+              // Show appropriate messages or results
+              isSearching ? "Searching..." : (jobs.length === 0 && !isSearching && !isReset) ? "No jobs found" : <JobSearchResults jobs={jobs} />
+            }
+          </div>
         </section>
       </div>
     </div>
