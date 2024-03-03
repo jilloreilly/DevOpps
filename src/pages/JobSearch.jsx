@@ -16,6 +16,17 @@ function JobSearch() {
     location: '',
   });
 
+  // Get querystring values and set form data on first render
+  useEffect(() => {
+    const queryString = new URLSearchParams(window.location.search);
+    const qsTitle = queryString.get('title') || '';
+    const qsLocation = queryString.get('location') || '';
+    setFormData({
+      query: qsTitle,
+      location: qsLocation,
+    });
+  }, []);
+
   // Track if a search is in progress to disable buttons and prevent accidental multi-searching 
   const [isSearching, setIsSearching] = useState(false);
 
