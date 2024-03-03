@@ -49,14 +49,39 @@ function JobSearch() {
     setInitialRender(false);
   }, []);
 
-  // Handle form input changes
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
+  // Handle query field change
+  const handleQueryChange = (event) => {
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [name]: value,
+      query: event.target.value,
     }));
   };
+
+  // Handle location field change
+  const handleLocationChange = (event) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      location: event.target.value,
+    }));
+  };
+
+  // Handle form input changes
+  // const handleInputChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setFormData((prevFormData) => ({
+  //     ...prevFormData,
+  //     [name]: value,
+  //   }));
+  // };
+
+  
+// Test a basic input field
+const [formTest, setFormTest] = useState(undefined);
+const handleTestChange = (event) => {
+const testValue = event.target.value;
+setFormTest(testValue);
+};
+
 
   // Handle Clear button
   const handleJobSearchClear = () => {
@@ -134,6 +159,20 @@ function JobSearch() {
             <div className="border-b border-gray-900/10 pb-6">
               <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 
+
+<div className="col-span-full">
+<label htmlFor="test" className="block text-sm font-medium leading-6 text-gray-900 text-left">Test</label>
+<input
+value={formTest}
+onChange={handleTestChange}
+id="test-id"
+name="test"
+type="text"
+placeholder="Test field"
+className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+required />
+</div>
+
                 <div className="col-span-full">
                   <label htmlFor="query" className="block text-sm font-medium leading-6 text-gray-900 text-left">
                     Job Title
@@ -141,7 +180,7 @@ function JobSearch() {
                   <div className="mt-2">
                     <input
                       value={formData.query}
-                      onChange={handleInputChange}
+                      onChange={handleQueryChange}
                       type="text"
                       name="query"
                       placeholder="eg Frontend Developer"
@@ -157,7 +196,7 @@ function JobSearch() {
                   <div className="mt-2">
                     <input
                       value={formData.location}
-                      onChange={handleInputChange}
+                      onChange={handleLocationChange}
                       name="location"
                       type="text"
                       placeholder="City, Country"
