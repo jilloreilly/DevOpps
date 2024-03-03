@@ -30,9 +30,9 @@ function JobSearch() {
     }
   }, [page, initialRender]);
 
-  useEffect(() => {
-    console.log("Page is set to " + page);
-  }, [page]);
+  // useEffect(() => {
+  //   console.log("Page is set to " + page);
+  // }, [page]);
 
   
   // Set initialRender to false after first render
@@ -93,6 +93,10 @@ function JobSearch() {
       setJobs(response.data.jobs);
       console.log(response);
     }
+
+    // Remove the query string from the URL
+    const urlWithoutQueryString = window.location.pathname;
+    window.history.replaceState({}, document.title, urlWithoutQueryString); 
 
     setIsSearching(false);
   };
