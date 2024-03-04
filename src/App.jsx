@@ -5,6 +5,7 @@ import CandidateProfileForm from './components/CandidateProfileForm';
 import { Custom404, Home, JobSearch, EmployerSearch, JobDetails, Candidate } from './pages';
 import './App.css'
 import React from 'react';
+import {useState, useEffect} from 'react'
 
 
 function App() {
