@@ -17,7 +17,6 @@ function App() {
         <Route path="/candidate/profile/:id" element={<Candidate userData={userData} />} />
         <Route path='/job-results' element={<JobSearch />} />
         <Route path='/employer/search' element={<EmployerSearch />} />
-        <Route path="/job-details/:id" element={<JobDetails />} />
         <Route path='*' element={<Custom404 />} />
       </Routes>
       <MyFooter />
