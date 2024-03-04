@@ -3,7 +3,7 @@ import axios from 'axios';
 import { GitHubSuccess } from "./GitHubSuccess";
 import { GitHubError } from "./GitHubError";
 
-function CandidateGitHubProfile({ onGitHubInputChange }) {
+function CandidateGitHubProfile({ onGitHubInputChange, onGitHubDetailsChange }) {
   
   const [gitHubProfile, setGitHubProfile] = useState('')
   
@@ -25,8 +25,11 @@ function CandidateGitHubProfile({ onGitHubInputChange }) {
   
   useEffect(() => {
     if (Object.keys(gitHubDetails).length > 0) {
-      console.log({ gitHubDetails });
-      console.log(gitHubDetails.repos_url)
+      console.log(gitHubDetails.avatar_url);
+      console.log(gitHubDetails.id);
+      console.log(gitHubDetails.followers);
+      console.log(gitHubDetails.following);
+      console.log( gitHubDetails.repos_url );
     }
   }, [gitHubDetails]);
 
@@ -38,19 +41,19 @@ function CandidateGitHubProfile({ onGitHubInputChange }) {
 
   const fetchGitHub = async (username) => {
     
-      const resource = {
-        method: 'GET',
-        url: `https://api.github.com/users/${username}`,
-      };
-      try {
-        const response = await axios.request(resource);
-        setGitHubDetails(response.data);
-        fetchGitHubRepos(username)
-      } catch (error) {
-        console.error(error);
-      }
-      
-  }
+    const resource = {
+      method: 'GET',
+      url: `https://api.github.com/users/${username}`,
+    };
+    try {
+      const response = await axios.request(resource);
+      onGitHubDetailsChange(response.data);
+      setGitHubDetails(response.data)
+    } catch (error) {
+      console.error(error);
+    }
+    
+}
 
   const fetchGitHubRepos = async (username) => {
     

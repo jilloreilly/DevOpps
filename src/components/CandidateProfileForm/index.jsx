@@ -65,6 +65,16 @@ function CandidateProfileForm() {
     }));
   }
 
+  const handleGitHubDetailsChange = (gitHubDetails) => {
+    setProfileFormData(prevState => ({
+      ...prevState,
+      gitHubAvatar: gitHubDetails.avatar_url,
+      gitHubRepos: gitHubDetails.repos_url,
+      gitHubFollowers: gitHubDetails.followers,
+      gitHubFollowing: gitHubDetails.following
+    }));
+  };
+
   return (
     <>
    <div className="max-w-[1280px] container my-5 mx-auto px-6">
@@ -204,7 +214,8 @@ function CandidateProfileForm() {
           </div>
           
           <CandidateSkills groupSelected={parentGroupSelected} setGroupSelected={setParentGroupSelected} onChange={handleSkillsChange}/>
-          <CandidateGitHubProfile onGitHubInputChange={handleGitHubInputChange}/>
+          <CandidateGitHubProfile onGitHubInputChange={handleGitHubInputChange} onGitHubDetailsChange={handleGitHubDetailsChange}/>
+
   
         <div className="mt-6 flex items-center justify-end gap-x-6">
           <button id ="submitProfile"
