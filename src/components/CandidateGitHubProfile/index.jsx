@@ -56,23 +56,6 @@ function CandidateGitHubProfile({ onGitHubInputChange, onGitHubDetailsChange }) 
     
 }
 
-  const fetchGitHubRepos = async (username) => {
-    
-    const resource = {
-      method: 'GET',
-      url: `https://api.github.com/users/${username}/repos`,
-    };
-    try {
-      const response = await axios.request(resource);
-      console.log(response.data)
-      setGitHubRepoDetails(response.data);
-    } catch (error) {
-      alert('No GitHub Repo Found')
-      console.error(error);
-    }
-    
-}
-
   const propsNotPassed = !gitHubDetails || !gitHubDetails.avatar_url || !gitHubDetails.repos_url || !gitHubDetails.followers;
 
   return (
