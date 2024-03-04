@@ -7,7 +7,7 @@ function CandidateProfileForm() {
 
   const navigate = useNavigate();
 
-  const existingUsers = JSON.parse(localStorage.getItem('profileFormData')) || []
+  const existingUsers = JSON.parse(localStorage.getItem('candidateData')) || []
 
   const [profileFormData, setProfileFormData] = useState({
     name: '',
@@ -46,7 +46,7 @@ function CandidateProfileForm() {
     e.preventDefault();
     console.log('Form Data: ', profileFormData)
     existingUsers.push(profileFormData)
-    localStorage.setItem('profileFormData', JSON.stringify(existingUsers));
+    localStorage.setItem('candidateData', JSON.stringify(existingUsers));
     navigate(`/candidate/profile/98531516`);
   }
 
