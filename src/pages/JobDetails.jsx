@@ -1,5 +1,4 @@
-import { useLocation } from 'react-router-dom';
-
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function JobDetails() {
 
@@ -8,29 +7,44 @@ function JobDetails() {
   let data = jobData.jobs;
 
   console.log(data);
+
+  // Back button
+
+  // const backBtn = () => {
+  //   const navigate = useNavigate();
+
+  //   const handleClick = () => {
+  //     navigate(-1);
+  //   };
+  // }
+
   
   return (
   <>
-    <div className="container flex items-center justify-center w-full">
+    <div className="container my-5 mx-auto">
       <h1>Job Details</h1>
 
-      <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        {/* <a href="#">
-            <img className="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
-        </a> */}
+      <div className="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         
-        <div className="p-5">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{data.title}</h5>
-          <p>Company: {data.company}</p>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{data.description}</p>
-          <p>Location: {data.location}</p>
-          <p>Employment Type: {data.employmentType}</p>
-          <p>Date posted: {data.datePosted}</p>
-          <p>Salary: {data.salaryRange == "" ?  "Competitive" : data.salaryRange}</p>
-          {/* <ul>
-            <li><a href={jobData.url}>{jobData.jobProvider}</a></li>
-          </ul> */}
-        </div>
+          <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{data.title}</h2>
+          <p><i class="fa-regular fa-building"></i> <strong>Company:</strong> {data.company}</p>
+          <p className="my-4 font-normal text-gray-700 dark:text-gray-400">{data.description}</p>
+          <div className='flex flex-row justify-evenly py-3'>
+            <p><i class="fa-regular fa-compass"></i> <strong>Location:</strong> {data.location}</p>
+            <p>Employment Type: {data.employmentType}</p>
+            <p><i class="fa-regular fa-calendar"></i> Date posted: {data.datePosted}</p>
+            <p><i class="fa-regular fa-money-bill-1"></i> <strong>Salary range:</strong> {data.salaryRange == "" ?  "Competitive" : data.salaryRange}</p>
+          </div>
+          <div>
+            <h3>Apply here</h3>
+            <ul>
+            {data.jobProviders.map(provider => (
+              <li key={provider.jobProvider}><a href={provider.url} target='_blank'>{provider.jobProvider} <i class="fa-regular fa-share-from-square"></i></a></li>
+            ))}
+          </ul>
+          </div>
+          
+        
       </div>
     </div>
   </>
