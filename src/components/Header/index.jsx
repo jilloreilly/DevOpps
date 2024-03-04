@@ -29,12 +29,12 @@ export default function App() {
         {isMenuOpen ? (
           <NavbarContent>
             <NavbarItem>
-              <Link color="foreground" href="/employer/search">
+              <Link color="foreground" href="//employer/search">
                 Employer
               </Link>
             </NavbarItem>
             <NavbarItem>
-              <Link color="foreground" href="/candidate">
+              <Link color="foreground" href="/candidate/create-profile">
                 Candidate
               </Link>
             </NavbarItem>
@@ -47,7 +47,7 @@ export default function App() {
               </Link>
             </NavbarItem>   
             <NavbarItem>
-              <Link color="foreground" href="/candidate">
+              <Link color="foreground" href="/candidate/create-profile">
                 Candidate
               </Link>
             </NavbarItem>

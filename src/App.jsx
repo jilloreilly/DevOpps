@@ -1,9 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MyHeader from './components/Header';
 import MyFooter from './components/Footer';
-import { Candidate, Custom404, Home, JobSearch, JobResults, EmployerSearch, JobDetails } from './pages';
-import './App.css';
+import CandidateProfileForm from './components/CandidateProfileForm';
+import { Custom404, Home, JobSearch, EmployerSearch, JobDetails, Candidate } from './pages';
+import './App.css'
 import React from 'react';
+import userData from '../candidates.json'
 
 function App() {
   return (
@@ -11,16 +13,16 @@ function App() {
       <MyHeader />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/candidate' element={<Candidate />} />
-        <Route path='/job-results' element={<JobResults />} />
+        <Route path='/candidate/create-profile' element={<CandidateProfileForm />} />
+        <Route path="/candidate/profile/:id" element={<Candidate userData={userData} />} />
+        <Route path='/job-results' element={<JobSearch />} />
         <Route path='/employer/search' element={<EmployerSearch />} />
-        <Route path='/404' element={<Custom404 />} />
-        <Route path='/job/search' element={<JobSearch />} />
-        <Route path='/job-details/:id' element={<JobDetails />} />
+        <Route path="/job-details/:id" element={<JobDetails />} />
+        <Route path='*' element={<Custom404 />} />
       </Routes>
       <MyFooter />
     </Router>
   );
 }
 
-export default App;
+export default App
