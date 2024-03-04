@@ -1,13 +1,54 @@
+import { useState, useEffect } from 'react';
 
 function JobDetails(props) {
 
   let data = props.selectedJob;
+
+  // Add to favourites 
+
+  const [favourites, setFavourites] = useState ([])
+  const [isChecked, setIsChecked] = useState(false)
+
+  useEffect( () => {
+    const storedFavourites = JSON.parse(localStorage.getItem('favourites')) || [];
+    if (storedFavourites.length > 0){ 
+      setFavourites(storedFavourites);
+      if (storedFavourites.find(favourite => favourite.id == data.id)) {
+        setIsChecked(true)
+      }
+    }
+  } , []);
+
+  // Function to handle adding a job to favourites
+  const addToFavourites = (id) =>{
+    if (favourites.find(favourite => favourite.id == data.id ) === undefined) {
+      setFavourites([...favourites, data])
+      setIsChecked(true)
+    } else {
+      const updatedFavourites = favourites.filter(favourite => favourite.id !== data.id);
+      setFavourites(updatedFavourites);
+      setIsChecked(false)
+    }  
+  }
+
+  // Function to remove a job from favourites
+  const removeFromFavourites = (jobID) => {
+    const updatedFavourites = favourites.filter((job)=> job.id !== jobID );
+    setFavourites(updatedFavourites);
+  };
+
+  // Save favourites to localStorage whenever favourites change
+  useEffect(()=> {
+    localStorage.setItem("favourites", JSON.stringify(favourites));
+  }, [favourites]);
+
 
   window.scrollTo({ top: 0 });
   
   return (
   <>
     <div className="w-full p-6 mt-3 bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
+    <div className="" onClick={addToFavourites}><i className={isChecked ? "fa-solid fa-heart" : "fa-regular fa-heart"}></i></div>
       <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{data.title}</h2>
       <p><i className="fa-regular fa-building"></i> <strong>Company:</strong> {data.company}</p>
       <p className="my-4 font-normal text-gray-700 dark:text-gray-400">{data.description}</p>
