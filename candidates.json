@@ -7,7 +7,14 @@
     "city": "London",
     "experience": "Junior",
     "role": "Frontend Developer",
-    "technology": ["JavaScript", "React", "HTML", "CSS"]
+    "technology": ["JavaScript", "React", "HTML", "CSS"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 2,
@@ -17,7 +24,14 @@
     "city": "Manchester",
     "experience": "Senior",
     "role": "Backend Developer",
-    "technology": ["Python", "Django"]
+    "technology": ["Python", "Django"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 3,
@@ -27,7 +41,14 @@
     "city": "Birmingham",
     "experience": "Mid",
     "role": "Backend Developer",
-    "technology": ["Java"]
+    "technology": ["Java"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 4,
@@ -37,7 +58,14 @@
     "city": "Glasgow",
     "experience": "Senior",
     "role": "Backend Developer",
-    "technology": ["C#", ".NET", "ASP.NET"]
+    "technology": ["C#", ".NET", "ASP.NET"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 5,
@@ -47,7 +75,14 @@
     "city": "Liverpool",
     "experience": "Junior",
     "role": "Backend Developer",
-    "technology": ["PHP", "Laravel"]
+    "technology": ["PHP", "Laravel"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 6,
@@ -57,7 +92,14 @@
     "city": "Bristol",
     "experience": "Lead",
     "role": "Backend Developer",
-    "technology": ["Java"]
+    "technology": ["Java"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 7,
@@ -67,7 +109,14 @@
     "city": "Oxford",
     "experience": "Senior",
     "role": "Backend Developer",
-    "technology": ["React Native"]
+    "technology": ["React Native"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 8,
@@ -77,7 +126,14 @@
     "city": "Cambridge",
     "experience": "Mid",
     "role": "Backend Developer",
-    "technology": ["C++"]
+    "technology": ["C++"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 9,
@@ -87,7 +143,14 @@
     "city": "Edinburgh",
     "experience": "Junior",
     "role": "Frontend Developer",
-    "technology": ["HTML", "CSS", "Bootstrap", "Sass"]
+    "technology": ["HTML", "CSS", "Bootstrap", "Sass"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 10,
@@ -97,7 +160,14 @@
     "city": "Cardiff",
     "experience": "Lead",
     "role": "Database Administrator",
-    "technology": ["SQL", "MySQL"]
+    "technology": ["SQL", "MySQL"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 11,
@@ -107,7 +177,14 @@
     "city": "London",
     "experience": "Senior",
     "role": "Frontend Developer",
-    "technology": ["React"]
+    "technology": ["React"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 12,
@@ -117,7 +194,14 @@
     "city": "Manchester",
     "experience": "Junior",
     "role": "Frontend Developer",
-    "technology": ["Angular", "TypeScript"]
+    "technology": ["Angular", "TypeScript"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 13,
@@ -127,7 +211,14 @@
     "city": "Birmingham",
     "experience": "Mid",
     "role": "Frontend Developer",
-    "technology": ["Vue.js"]
+    "technology": ["Vue.js"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 14,
@@ -137,7 +228,14 @@
     "city": "Glasgow",
     "experience": "Junior",
     "role": "Backend Developer",
-    "technology": ["Node.js", "Express.js"]
+    "technology": ["Node.js", "Express.js"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 15,
@@ -147,7 +245,14 @@
     "city": "Liverpool",
     "experience": "Senior",
     "role": "Fullstack Developer",
-    "technology": ["JavaScript", "React Native"]
+    "technology": ["JavaScript", "React Native"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 16,
@@ -157,7 +262,14 @@
     "city": "London",
     "experience": "Mid",
     "role": "Frontend Developer",
-    "technology": ["JavaScript", "Angular", "HTML", "CSS"]
+    "technology": ["JavaScript", "Angular", "HTML", "CSS"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 17,
@@ -167,7 +279,14 @@
     "city": "London",
     "experience": "Senior",
     "role": "Frontend Developer",
-    "technology": ["JavaScript", "Vue.js"]
+    "technology": ["JavaScript", "Vue.js"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 18,
@@ -177,7 +296,14 @@
     "city": "London",
     "experience": "Junior",
     "role": "Frontend Developer",
-    "technology": ["JavaScript", "React", "HTML", "CSS"]
+    "technology": ["JavaScript", "React", "HTML", "CSS"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 19,
@@ -187,7 +313,14 @@
     "city": "Manchester",
     "experience": "Senior",
     "role": "Backend Developer",
-    "technology": ["Python", "Django"]
+    "technology": ["Python", "Django"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 20,
@@ -197,7 +330,14 @@
     "city": "London",
     "experience": "Mid",
     "role": "Backend Developer",
-    "technology": ["Java"]
+    "technology": ["Java"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 21,
@@ -207,7 +347,14 @@
     "city": "London",
     "experience": "Senior",
     "role": "Fullstack Developer",
-    "technology": ["JavaScript", "Vue.js"]
+    "technology": ["JavaScript", "Vue.js"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 22,
@@ -217,7 +364,14 @@
     "city": "London",
     "experience": "Junior",
     "role": "Frontend Developer",
-    "technology": ["JavaScript", "React", "HTML", "CSS"]
+    "technology": ["JavaScript", "React", "HTML", "CSS"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 23,
@@ -227,7 +381,14 @@
     "city": "London",
     "experience": "Senior",
     "role": "Backend Developer",
-    "technology": ["Python", "Django"]
+    "technology": ["Python", "Django"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 24,
@@ -237,7 +398,14 @@
     "city": "London",
     "experience": "Mid",
     "role": "Backend Developer",
-    "technology": ["Java"]
+    "technology": ["Java"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 25,
@@ -247,7 +415,14 @@
     "city": "London",
     "experience": "Senior",
     "role": "Backend Developer",
-    "technology": ["C#", ".NET", "ASP.NET"]
+    "technology": ["C#", ".NET", "ASP.NET"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 26,
@@ -257,7 +432,14 @@
     "city": "London",
     "experience": "Junior",
     "role": "Backend Developer",
-    "technology": ["PHP", "Laravel"]
+    "technology": ["PHP", "Laravel"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 27,
@@ -267,7 +449,14 @@
     "city": "London",
     "experience": "Lead",
     "role": "Backend Developer",
-    "technology": ["Java"]
+    "technology": ["Java"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 28,
@@ -277,7 +466,14 @@
     "city": "London",
     "experience": "Senior",
     "role": "Backend Developer",
-    "technology": ["React Native"]
+    "technology": ["React Native"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 29,
@@ -287,7 +483,14 @@
     "city": "London",
     "experience": "Mid",
     "role": "Backend Developer",
-    "technology": ["C++"]
+    "technology": ["C++"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 30,
@@ -297,7 +500,14 @@
     "city": "London",
     "experience": "Junior",
     "role": "Frontend Developer",
-    "technology": ["HTML", "CSS", "Bootstrap", "Sass"]
+    "technology": ["HTML", "CSS", "Bootstrap", "Sass"],
+    "gitHubUsername": "",
+    "gitHubURL": "",
+    "gitHubAvatar": "",
+    "gitHubRepos": [], 
+    "gitHubRepoUrls": [],
+    "gitHubFollowers": 3,
+    "gitHubFollowing": 12 
   },
   {
     "id": 98531516,
