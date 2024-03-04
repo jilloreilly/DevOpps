@@ -19,7 +19,7 @@ function Candidate({ userData } ) {
     }
   
     return (
-      <div className="container my-5 mx-auto">
+      <div className="max-w-[1280px] container my-5 mx-auto px-6">
         <img className="rounded-full my-5" src={user.gitHubAvatar}></img>
         <h2 className="text-3xl font-semibold leading-7 text-gray-900 sm:text-4xl mb-4">{user.name}</h2>
         <p>Email: {user.email}</p>
@@ -30,9 +30,9 @@ function Candidate({ userData } ) {
         <button className="mt-4 flex-none rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500" onClick={findJobs}>Find matching jobs</button>
 
         <h2 className="mt-3 text-2xl font-semibold">Skills:</h2>
-        <ul className="mt-5 flex flex-wrap flex-row items-center justify-center gap-4">
+        <ul className="mt-5 flex flex-wrap flex-row items-center justify-start gap-4">
         {user.technology.map(tech => (
-          <div className="text-indigo-700 max-w-fit inline-flex items-center justify-start box-border whitespace-nowrap border-medium p-3 h-7 rounded-full border-indigo-100 bg-indigo-100 hover:bg-indigo-300 hover:border-indigo-300 relative select-none text-medium transition-colors-opacity before:transition-width motion-reduce:transition-none" key={tech}>{tech}</div>
+          <div className="text-indigo-700 max-w-fit inline-flex items-center justify-center box-border whitespace-nowrap border-medium p-3 h-7 rounded-full border-indigo-100 bg-indigo-100 hover:bg-indigo-300 hover:border-indigo-300 relative select-none text-medium transition-colors-opacity before:transition-width motion-reduce:transition-none" key={tech}>{tech}</div>
         ))}
       </ul>
         <h2 className="mt-3 text-2xl font-semibold">GitHub Repos:</h2>
