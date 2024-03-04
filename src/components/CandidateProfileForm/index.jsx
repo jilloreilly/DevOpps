@@ -68,6 +68,7 @@ function CandidateProfileForm() {
   const handleGitHubDetailsChange = (gitHubDetails) => {
     setProfileFormData(prevState => ({
       ...prevState,
+      gitHubUsername: gitHubDetails.login,
       gitHubAvatar: gitHubDetails.avatar_url,
       gitHubRepos: gitHubDetails.repos_url,
       gitHubFollowers: gitHubDetails.followers,

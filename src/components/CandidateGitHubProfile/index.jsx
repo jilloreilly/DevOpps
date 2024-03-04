@@ -25,6 +25,7 @@ function CandidateGitHubProfile({ onGitHubInputChange, onGitHubDetailsChange }) 
   
   useEffect(() => {
     if (Object.keys(gitHubDetails).length > 0) {
+      console.log(gitHubDetails.login);
       console.log(gitHubDetails.avatar_url);
       console.log(gitHubDetails.id);
       console.log(gitHubDetails.followers);
