@@ -143,7 +143,7 @@ function EmployerSearch() {
           <div className="w-full md:w-1/5">
             <div className="bg-gray-500">
               <div className="bg-gray-500">
-                <h1 className='italic font-bold text-lg md:text-2xl'>Filter By: </h1>
+                <h1 className='italic font-bold text-lg md:text-2xl text-center'>Filter By: </h1>
                 <div className='bg-gray-300 grid grid-cols-1 md:grid-cols-2'>
                   <div>
                     <h2 className='italic font-bold text-sm md:text-base text-center'>Technology</h2>
