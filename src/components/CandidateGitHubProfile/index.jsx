@@ -21,7 +21,8 @@ function CandidateGitHubProfile({ onGitHubInputChange, onGitHubDetailsChange }) 
   }
   
   const [gitHubDetails, setGitHubDetails] = useState({});
-  const [gitHubRepoDetails, setGitHubRepoDetails] = useState([]);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [isError, setIsError] = useState(false);
   
   useEffect(() => {
     if (Object.keys(gitHubDetails).length > 0) {
@@ -34,12 +35,6 @@ function CandidateGitHubProfile({ onGitHubInputChange, onGitHubDetailsChange }) 
     }
   }, [gitHubDetails]);
 
-  useEffect(() => {
-    if (Object.keys(gitHubRepoDetails).length > 0) {
-      console.log({ gitHubRepoDetails });
-    }
-  }, [gitHubRepoDetails]);
-
   const fetchGitHub = async (username) => {
     
     const resource = {
@@ -50,8 +45,14 @@ function CandidateGitHubProfile({ onGitHubInputChange, onGitHubDetailsChange }) 
       const response = await axios.request(resource);
       onGitHubDetailsChange(response.data);
       setGitHubDetails(response.data)
+      setErrorMessage('Github Account found!')
+      setIsError(false)
     } catch (error) {
       console.error(error);
+      setErrorMessage("No Github account found");
+      setIsError(true)
+        return;
+      
     }
     
 }
@@ -93,29 +94,9 @@ function CandidateGitHubProfile({ onGitHubInputChange, onGitHubDetailsChange }) 
       </div>
       
 
-      {propsNotPassed ? (
-        <div></div>
-      ) : (
-          <>
-          <GitHubSuccess
-            // id={gitHubDetails.id}
-            // url={gitHubDetails.html_url}
-            // login={gitHubDetails.login}
-            // avatar={gitHubDetails.avatar_url}
-            // repos={gitHubDetails.repos_url}
-            // followers={gitHubDetails.followers}
-            // following={gitHubDetails.following}
-            />
-            <GitHubError />
-            {/* <h3 className="mt-5 font-bold sm:text-2xl">Repos</h3>
-            <ul className="mt-5 flex flex-wrap flex-row items-center justify-center gap-4">
-        {gitHubRepoDetails.map(repo => (
-          <button className="bg-blue-100 hover:bg-blue-200 text-blue-800 text-xs font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400 inline-flex items-center justify-center" key={repo.id}>{repo.name}</button>
-        ))}
-      </ul> */}
-        </>
-      )
-      }
+      {errorMessage && (<p className={`font-bold mt-5 w-4/12 mx-auto bg-${isError ? 'red' : 'teal'}-100 border-t-4 border-${isError ? 'red' : 'teal'}-500 rounded-b text-${isError ? 'red' : 'teal'}-900 px-4 py-3 shadow-md`}>
+        {errorMessage}
+      </p>)}
 
     </>
 
