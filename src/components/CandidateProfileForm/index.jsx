@@ -17,7 +17,11 @@ function CandidateProfileForm() {
     salaryRange: '',
     workplace: '',
     technology: [],
-    gitHubProfile: ''
+    gitHubUsername: '',
+    gitHubAvatar: '',
+    gitHubRepos: '',
+    gitHubFollowers: '',
+    gitHubFollowing: '',
 
   });
 

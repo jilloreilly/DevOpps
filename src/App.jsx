@@ -19,7 +19,6 @@ function App() {
         .then(response => {
           return response.json()
         }).then(data => {
-          console.log(data)
           setCandidateArray(data)
         })
     } 
@@ -34,7 +33,6 @@ function App() {
 
   const saveArrayToLocal = () => {
     localStorage.setItem('candidateData', JSON.stringify(candidateArray));
-    console.log('Array saved to localStorage');
   };
 
   saveArrayToLocal();
