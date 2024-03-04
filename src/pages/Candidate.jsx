@@ -1,11 +1,12 @@
 import React from 'react'
-import { useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 function Candidate({ userData }) {
 
-  console.log(userData)
+  console.log({ userData })
+
+  userData = JSON.parse(localStorage.getItem('candidateData'))
 
   const navigate = useNavigate();
   
@@ -40,11 +41,11 @@ function Candidate({ userData }) {
         ))}
       </ul>
         <h2 className="mt-3 text-2xl font-semibold">GitHub Repos:</h2>
-        <ul className="mt-5 flex flex-wrap flex-row items-center justify-start gap-3">
+        {/* <ul className="mt-5 flex flex-wrap flex-row items-center justify-start gap-3">
          {user.gitHubRepos.map(repo => (
           <a className="bg-blue-100 hover:bg-blue-200 text-blue-800 text-xs font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400 inline-flex items-center justify-center" key={repo}>{repo} </a>
         ))}
-      </ul>
+      </ul> */}
       </div>
     );
   }

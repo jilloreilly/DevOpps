@@ -20,6 +20,7 @@ function App() {
           return response.json()
         }).then(data => {
           setCandidateArray(data)
+          saveArrayToLocal(data);
         })
     } 
 
@@ -31,11 +32,11 @@ function App() {
     }
   }, []);
 
-  const saveArrayToLocal = () => {
-    localStorage.setItem('candidateData', JSON.stringify(candidateArray));
+  const saveArrayToLocal = (arrayData) => {
+    localStorage.setItem('candidateData', JSON.stringify(arrayData));
   };
 
-  saveArrayToLocal();
+  // saveArrayToLocal();
 
   return (
     <Router>
