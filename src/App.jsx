@@ -7,11 +7,9 @@ import './App.css'
 import React from 'react';
 import userData from '../candidates.json'
 
-
 function App() {
-
   return (
-    <Router >
+    <Router>
       <MyHeader />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -23,7 +21,7 @@ function App() {
       </Routes>
       <MyFooter />
     </Router>
-  )
+  );
 }
 
 export default App
