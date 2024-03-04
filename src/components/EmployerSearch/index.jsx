@@ -136,7 +136,7 @@ function EmployerSearch() {
 
       <div>
         <div>
-          <h1 className="text-3xl md:text-5xl font-bold font-serif">Employee Search</h1>
+          <h1 className="text-3xl md:text-5xl font-bold font-serif text-center p-5 emp-search">Employee Search</h1>
         </div>
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/5">
