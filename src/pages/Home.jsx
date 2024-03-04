@@ -79,7 +79,7 @@ function Home() {
           <Link to='employer/search'><div className="employer bg-blue-600 p-4 shadow-md rounded-lg h-96 flex justify-center items-center mr-3">
             <div className="text-gray-700">I am an employer.</div>
           </div></Link>
-          <Link to='candidate'><div className="employee bg-blue-600 p-4 shadow-md rounded-lg h-96 flex justify-center items-center ml-3">
+          <Link to='/candidate/create-profile'><div className="employee bg-blue-600 p-4 shadow-md rounded-lg h-96 flex justify-center items-center ml-3">
             <div className="text-gray-700">I am a candidate.</div>
           </div></Link>
         </div>

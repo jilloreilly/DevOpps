@@ -15,7 +15,7 @@ const MyFooter = () => {
                 <div className='flex flex-col items-center w-1/3'>
                     <h3 className='text-lg p-3'>Quick Links</h3>
                     <Link to="/employer/search" className="text-black p-2">Employers</Link>
-                    <Link to="candidate" className="text-black p-2">Candidates</Link>
+                    <Link to="/candidate/create-profile" className="text-black p-2">Candidates</Link>
                     <Link to="/" className="text-black p-2">Job Search</Link>
                 </div>
             </div>
