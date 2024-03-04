@@ -1,12 +1,12 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+//import { useLocation, useNavigate } from 'react-router-dom';
 
-function JobDetails() {
+function JobDetails(props) {
 
-  const location = useLocation();
-  const { jobData } = location.state;
-  let data = jobData.jobs;
+  //const location = useLocation();
+  //const { jobData } = location.state;
+  let data = props.selectedJob;
 
-  console.log(data);
+  //console.log(props);
 
   // Back button
 
@@ -18,11 +18,11 @@ function JobDetails() {
   //   };
   // }
 
+  window.scrollTo({ top: 0 });
   
   return (
   <>
     <div className="container my-5 mx-auto">
-      <h1>Job Details</h1>
 
       <div className="w-full p-6 bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
         
