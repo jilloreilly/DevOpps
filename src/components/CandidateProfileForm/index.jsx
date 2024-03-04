@@ -7,7 +7,7 @@ function CandidateProfileForm() {
 
   const navigate = useNavigate();
 
-  const existingUsers = JSON.parse(localStorage.getItem('candidateData')) || []
+  const candidateArray = JSON.parse(localStorage.getItem('candidateData')) || []
 
   const [profileFormData, setProfileFormData] = useState({
     name: '',
@@ -45,8 +45,8 @@ function CandidateProfileForm() {
   const handleProfileSubmit = (e) => {
     e.preventDefault();
     console.log('Form Data: ', profileFormData)
-    existingUsers.push(profileFormData)
-    localStorage.setItem('candidateData', JSON.stringify(existingUsers));
+    candidateArray.push(profileFormData)
+    localStorage.setItem('candidateData', JSON.stringify(candidateArray));
     navigate(`/candidate/profile/${profileFormData.gitHubUsername}`);
   }
 

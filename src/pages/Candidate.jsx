@@ -1,15 +1,17 @@
 import React from 'react'
+import { useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 function Candidate({ userData }) {
-  
+
   console.log(userData)
 
   const navigate = useNavigate();
   
   const { gitHubUsername } = useParams()
   const user = userData.find(user => user.gitHubUsername === gitHubUsername);
+  
 
   const findJobs = () => {
     navigate(`/job-results/?title=${user.role}&location=${user.city}`);

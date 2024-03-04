@@ -37,7 +37,6 @@ function App() {
 
   saveArrayToLocal();
 
-
   return (
     <Router>
       <MyHeader />
