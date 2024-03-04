@@ -1,22 +1,7 @@
-//import { useLocation, useNavigate } from 'react-router-dom';
 
 function JobDetails(props) {
 
-  //const location = useLocation();
-  //const { jobData } = location.state;
   let data = props.selectedJob;
-
-  //console.log(props);
-
-  // Back button
-
-  // const backBtn = () => {
-  //   const navigate = useNavigate();
-
-  //   const handleClick = () => {
-  //     navigate(-1);
-  //   };
-  // }
 
   window.scrollTo({ top: 0 });
   
@@ -36,12 +21,10 @@ function JobDetails(props) {
             <p><i className="fa-regular fa-money-bill-1"></i> <strong>Salary range:</strong> {data.salaryRange == "" ?  "Competitive" : data.salaryRange}</p>
           </div>
           <div className='flex flex-row justify-evenly py-3 border-b-1'>
-            <h3>Apply here</h3>
-            {/* <ul> */}
+            <h3 className="font-semibold">Apply here</h3>
             {data.jobProviders.map(provider => (
               <p key={provider.jobProvider}><a href={provider.url} target='_blank'>{provider.jobProvider} <i className="fa-regular fa-share-from-square"></i></a></p>
             ))}
-          {/* </ul> */}
           </div>
           
         
