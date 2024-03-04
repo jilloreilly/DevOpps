@@ -24,7 +24,7 @@ function JobDetails() {
     <div className="container my-5 mx-auto">
       <h1>Job Details</h1>
 
-      <div className="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="w-full p-6 bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
         
           <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{data.title}</h2>
           <p><i class="fa-regular fa-building"></i> <strong>Company:</strong> {data.company}</p>
