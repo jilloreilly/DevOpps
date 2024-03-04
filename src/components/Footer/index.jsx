@@ -9,7 +9,7 @@ const MyFooter = () => {
                 {/* Left section for logo +/- text */}
                 <div className="w-2/3 flex flex-col items-center justify-center pb-2">
                     <p className='p-5 md:p-1 text-center text-large md:text-base'>DevOpps simplifies the hiring process by enabling developers to find their ideal job matches while assisting employers in discovering top talent. </p>
-                    <p>LOGO</p>
+                    <img src='/images/logo.png'/>
                 </div>
                 {/* Right section for quick links */}
                 <div className='flex flex-col items-center w-1/3 pt-2'>

@@ -73,6 +73,8 @@ function Home() {
       </div>
 
       <div className='container px-8 sm:px-2 mx-auto'>
+
+        {/* candidate/employer section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-32 py-5 ">
           <Link to='/employer/search'>
             <div className="employer p-4 m-3 shadow-md rounded-lg h-96 relative flex justify-center items-center">
@@ -91,16 +93,14 @@ function Home() {
               </div>
             </div>
           </Link>
-
-
-
         </div>
 
+{/* Popular cities text */}
         <div className='text-center flex items-center justify-center flex-col'>
           <h2 className='w-1/2 mb-3 font-bold '>Popular cities</h2>
           <h3 className='w-1/2 mb-5'>Our popular cities section enables candidates to explore job openings in their preferred locations. Click on a city to initiate a targeted job search and uncover exciting career prospects near you.</h3>
         </div>
-
+{/* Popular cities grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 m-24 sm:m-5">
           <a className="relative london-box rounded-lg" onClick={() => handleCityClick('London')}><div>
             <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
