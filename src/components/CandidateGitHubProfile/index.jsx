@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
-import { GitHubSuccess } from "./GitHubSuccess";
-import { GitHubError } from "./GitHubError";
 
 function CandidateGitHubProfile({ onGitHubInputChange, onGitHubDetailsChange }) {
   
