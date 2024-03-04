@@ -52,4 +52,14 @@ body {
   }
 
   /* employer/employee cards */
-
+.employee {
+  background-image: url('/images/candidate.jpg');
+}
+.employer {
+  background-image: url('/images/employer.jpg');
+}
+.employee, .employer {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
