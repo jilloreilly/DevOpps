@@ -12,7 +12,7 @@ function CandidateProfileForm() {
   const [profileFormData, setProfileFormData] = useState({
     name: '',
     email: '',
-    location: '',
+    city: '',
     role: '',
     salaryRange: '',
     workplace: '',
@@ -120,16 +120,16 @@ function CandidateProfileForm() {
               </div>
   
               <div className="sm:col-span-4">
-                <label htmlFor="location" className="block text-sm font-medium leading-6 text-gray-900">
-                  Location
+                <label htmlFor="city" className="block text-sm font-medium leading-6 text-gray-900">
+                  City
                 </label>
                 <div className="mt-2">
                     <input
                       required
-                    id="location"
-                      name="location"
+                    id="city"
+                      name="city"
                       type="text"
-                      value={profileFormData.location}
+                      value={profileFormData.city}
                       onChange={handleProfileChange}
                     className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   >

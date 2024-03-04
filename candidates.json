@@ -310,6 +310,7 @@
     "salaryRange": 100000,
     "workplace": "Hybrid",
     "technology": ["HTML", "CSS", "Javascript", "Bootstrap", "Sass"],
+    "gitHubUsername": "RichLlew182",
     "gitHubURL": "https://api.github.com/users/RichLlew182",
     "gitHubAvatar": "https://avatars.githubusercontent.com/u/98531516?v=4",
     "gitHubRepos": ["Bootstrap Portfolio", "clicky-memory-game"], 
