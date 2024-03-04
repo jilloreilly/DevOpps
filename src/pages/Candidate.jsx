@@ -1,17 +1,29 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 function Candidate({ userData }) {
 
   console.log({ userData })
+  
+  const [newUserData, setNewUserData] = useState(() => {
+    const localStorageData = localStorage.getItem('candidateData');
+    return localStorageData ? JSON.parse(localStorageData) : [];
+  });
 
-  userData = JSON.parse(localStorage.getItem('candidateData'))
+  useEffect(() => {
+    // Update local storage whenever userData changes
+    localStorage.setItem('candidateData', JSON.stringify(newUserData));
+  }, [newUserData]);
+
+  console.log({ userData })
+  console.log( {newUserData})
 
   const navigate = useNavigate();
   
   const { gitHubUsername } = useParams()
-  const user = userData.find(user => user.gitHubUsername === gitHubUsername);
+  const user = newUserData.find(user => user.gitHubUsername === gitHubUsername);
   
 
   const findJobs = () => {
