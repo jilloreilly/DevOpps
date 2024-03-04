@@ -9,7 +9,7 @@ function Candidate({ userData }) {
   const navigate = useNavigate();
   
   const { gitHubUsername } = useParams()
-  const user = userData.find(user => user.gitHubUsername === parseInt(gitHubUsername));
+  const user = userData.find(user => user.gitHubUsername === gitHubUsername);
 
   const findJobs = () => {
     navigate(`/job-results/?title=${user.role}&location=${user.city}`);
