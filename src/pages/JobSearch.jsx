@@ -153,7 +153,7 @@ function JobSearch() {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="container max-w-[1280px] mx-auto">
 
       <h1 className="text-3xl font-semibold leading-7 text-gray-900 sm:text-4xl mb-6">Job Search</h1>
 
