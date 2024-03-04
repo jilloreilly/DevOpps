@@ -16,7 +16,7 @@ export default function App() {
         />
         {/* Render the NavbarBrand */}
         <NavbarBrand>
-        <Link href="/" className="font-bold text-inherit">DevOpps</Link>
+        <Link href="/" className="font-bold text-inherit" style={{width: '25%', height:'25%'}}><img src='../images/logo.png' alt='devOpps' /> devOpps </Link>
         </NavbarBrand>
         {/* Render NavbarMenuToggle as the last item on larger screens */}
         <NavbarItem className="hidden sm:flex">
@@ -29,7 +29,7 @@ export default function App() {
         {isMenuOpen ? (
           <NavbarContent>
             <NavbarItem>
-              <Link color="foreground" href="/employer/search">
+              <Link color="foreground" href="//employer/search">
                 Employer
               </Link>
             </NavbarItem>
