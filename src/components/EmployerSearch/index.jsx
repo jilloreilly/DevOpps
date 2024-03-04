@@ -78,6 +78,7 @@ function EmployerSearch() {
     setResults([]);
     setShowResults(false);
     setErrorMessage('');
+    setShowImage(true);
 
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach(checkbox => {
@@ -145,9 +146,9 @@ function EmployerSearch() {
                 <h1 className='italic font-bold text-lg md:text-2xl'>Filter By: </h1>
                 <div className='bg-gray-300 grid grid-cols-1 md:grid-cols-2'>
                   <div>
-                    <h2 className='italic font-bold text-sm md:text-base'>Technology:</h2>
+                    <h2 className='italic font-bold text-sm md:text-base text-center'>Technology</h2>
                     {availableTechnologies.slice(0, showAllTechnologies ? availableTechnologies.length : 10).map((technology, index) => (
-                      <div key={index} className=''>
+                      <div key={index} className='text-center'>
                         <input
                           type="checkbox"
                           id={`technology-${index}`}
@@ -155,7 +156,7 @@ function EmployerSearch() {
                           onChange={handleTechnologyChange}
                           className="mr-2"
                         />
-                        <label htmlFor={`technology-${index}`}>{technology}</label>
+                        <label  htmlFor={`technology-${index}`}>{technology}</label>
                       </div>
                     ))}
                     {availableTechnologies.length > 10 &&
@@ -163,9 +164,9 @@ function EmployerSearch() {
                     }
                   </div>
                   <div>
-                    <h2 className='italic font-bold text-sm md:text-base'>City:</h2>
+                    <h2 className='italic font-bold text-sm md:text-base text-center'>City</h2>
                     {Array.from(new Set(people.map((person) => person.city))).map((city, index) => (
-                      <div key={index} className="">
+                      <div key={index} className='text-center'>
                         <input
                           type="checkbox"
                           id={`city-${index}`}
@@ -178,10 +179,10 @@ function EmployerSearch() {
                     ))}
                   </div>
                   <div>
-                    <h2 className='italic font-bold text-sm md:text-base'>Experience:</h2>
+                    <h2 className='italic font-bold text-sm md:text-base text-center'>Experience</h2>
                     <div>
                       {Array.from(new Set(people.map((person) => person.experience))).map((experience, index) => (
-                        <div key={index} className="">
+                        <div key={index} className='text-center'>
                           <input
                             type="checkbox"
                             id={`experience-${index}`}
@@ -195,8 +196,8 @@ function EmployerSearch() {
                     </div>
                   </div>
                   <div>
-                    <h2 className='italic font-bold text-sm md:text-base'>Role:</h2>
-                    <div>
+                    <h2 className='italic font-bold text-sm md:text-base text-center'>Role</h2>
+                    <div className='text-center'>
                       {Array.from(new Set(people.map((person) => person.role))).map((role, index) => (
                         <div key={index} className="">
                           <input
