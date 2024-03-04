@@ -30,7 +30,6 @@ body {
 
 .london-box {    
     background-image: url('/images/London.jpg');
-    height: 450px;
   }
   .bristol-box {    
     background-image: url('/images/Bristol.jpg');
@@ -44,11 +43,15 @@ body {
   .edinburgh-box {    
     background-image: url('/images/Edinburgh.jpg');
   }
-  .bristol-box, .cardiff-box, .edinburgh-box, .manchester-box, .london-box {
+  .cambridge-box {    
+    background-image: url('/images/Cambridge.jpg');
+  }
+  .bristol-box, .cardiff-box, .edinburgh-box, .manchester-box, .london-box, .cambridge-box {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     cursor: pointer;
+    height: 300px;
   }
 
   /* employer/employee cards */
