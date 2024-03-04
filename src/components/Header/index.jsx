@@ -29,7 +29,7 @@ export default function App() {
         {isMenuOpen ? (
           <NavbarContent>
             <NavbarItem>
-              <Link color="foreground" href="/employer/search">
+              <Link color="foreground" href="//employer/search">
                 Employer
               </Link>
             </NavbarItem>
