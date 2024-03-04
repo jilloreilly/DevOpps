@@ -18,6 +18,9 @@ function JobSearch() {
   const [formData, setFormData] = useState({
     query: '',
     location: '',
+    distance: '',
+    remoteOnly: false,
+    posted: '',
     employmentTypes: '',
   });
 
@@ -61,6 +64,14 @@ function JobSearch() {
     }));
   };
 
+  const handleCheckboxChange = (event) => {
+    const { name, checked } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: checked,
+    }));
+  };
+
   // Handle Clear button
   const handleJobSearchClear = () => {
     setFormData({ query: '', location: '' });
@@ -94,11 +105,16 @@ function JobSearch() {
 
     // So long as we have a query and location, we can search
     if (query && location) {
-
+      
+      //console.log(formData)
+      
       // Get jobs from API
       const response = await getJobs({
         query: query,
         location: location,
+        distance: formData.distance,
+        remoteOnly: formData.remoteOnly ? 'true' : 'false',
+        posted: formData.posted,
         employmentTypes: formData.employmentTypes,
         index: page
       });
@@ -180,13 +196,13 @@ function JobSearch() {
                     </div>
                   </div>
 
-                  {/* <div className="col-span-full">
+                  <div className="col-span-full">
                     <label htmlFor="Distance" className="block text-sm font-medium leading-6 text-gray-900 text-left">
                       Distance (km)
                     </label>
                     <div className="mt-2">
                       <input
-                        value={formData.distance}
+                        value={formData.distance || ''}
                         onChange={handleInputChange}
                         name="distance"
                         type="text"
@@ -202,8 +218,8 @@ function JobSearch() {
                         Remote Only
                       </label>
                       <input
-                        value={formData.remoteOnly}
-                        onChange={handleInputChange}
+                        checked={formData.remoteOnly || false}
+                        onChange={handleCheckboxChange}
                         name="remoteOnly"
                         type="checkbox"
                         placeholder="Distance from location (optional)"
@@ -230,7 +246,7 @@ function JobSearch() {
                         <option value="month">One month</option>
                       </select>
                     </div>
-                  </div> */}
+                  </div>
 
                   <EmploymentTypes value={formData.employmentTypes || ''} onChange={handleInputChange} />                  
 
