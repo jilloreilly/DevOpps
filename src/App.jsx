@@ -16,27 +16,42 @@ function App() {
     // Function to load data from JSON file
     const loadDataFromJSON = async () => {
       fetch('../../candidates.json')
-        .then(response => {
-          return response.json()
-        }).then(data => {
-          setCandidateArray(data)
+        .then(response => response.json())
+        .then(data => {
+          setCandidateArray(data);
           saveArrayToLocal(data);
         })
+        .catch(error => console.error('Error loading data:', error));
     } 
 
     loadDataFromJSON();
 
+    // Load initial data from local storage
     const localStorageData = localStorage.getItem('candidateData');
-    if (!localStorageData) {
+    if (localStorageData) {
+      setCandidateArray(JSON.parse(localStorageData));
+    } else {
       localStorage.setItem('candidateData', JSON.stringify([]));
     }
+
+    // Event listener to update state when local storage changes
+    const handleLocalStorageChange = (event) => {
+      if (event.key === 'candidateData') {
+        setCandidateArray(JSON.parse(event.newValue));
+      }
+    };
+
+    window.addEventListener('storage', handleLocalStorageChange);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('storage', handleLocalStorageChange);
+    };
   }, []);
 
   const saveArrayToLocal = (arrayData) => {
     localStorage.setItem('candidateData', JSON.stringify(arrayData));
   };
-
-  // saveArrayToLocal();
 
   return (
     <Router>
