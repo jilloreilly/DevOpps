@@ -114,27 +114,28 @@ function EmployerSearch() {
 
   return (
     <div>
-      <div className="text-center">
-        <h1 className="text-3xl font-bold">Find the ideal candidate in just a few clicks</h1>
+      <div className="text-center top-div">
+      <div>
+        <h1 className="text-3xl font-bold text-white font-serif ">Find the ideal candidate in just a few clicks</h1>
       </div>
       <div className="flex flex-wrap justify-center">
         <div className="w-full sm:w-1/2 md:w-auto flex flex-col items-center mx-4 my-4">
           <img className="w-24 h-24 mb-4 align-middle" src="../../public/images/geolocation.svg" alt="Geolocation image" />
-          <h3 className="text-lg font-bold mb-2">Geolocation</h3>
-          <p className="text-center">Utilize the geolocation filter to identify<br /> candidates closer to your company.</p>
+          <h3 className="text-lg font-bold mb-2 text-white font-serif">Geolocation</h3>
+          <p className="text-center text-white">Utilize the geolocation filter to identify<br /> candidates closer to your company.</p>
         </div>
         <div className="w-full sm:w-1/2 md:w-auto flex flex-col items-center mx-4 my-4">
           <img className="w-24 h-24 mb-4 align-middle" src="../../public/images/filters.svg" alt="Accuracy image" />
-          <h3 className="text-lg font-bold mb-2">Accuracy</h3>
-          <p className="text-center">Enhance your search by combining<br /> multiple filters: Desired technology,<br /> Location, Experience, Area of activity</p>
+          <h3 className="text-lg font-bold mb-2 text-white font-serif">Accuracy</h3>
+          <p className="text-center text-white">Enhance your search by combining<br /> multiple filters: Desired technology,<br /> Location, Experience, Area of activity</p>
         </div>
         <div className="w-full sm:w-1/2 md:w-auto flex flex-col items-center mx-4 my-4">
           <img className="w-24 h-24 mb-4 align-middle" src="../../public/images/candidates.svg" alt="Artificial intelligence image" />
-          <h3 className="text-lg font-bold mb-2">Artificial intelligence</h3>
-          <p className="text-center">With the help of artificial intelligence,<br /> we pinpoint and present the most suitable <br />candidates for your vacancy,<br /> streamlining your selection process</p>
+          <h3 className="text-lg font-bold mb-2 text-white font-serif">Artificial intelligence</h3>
+          <p className="text-center text-white">With the help of artificial intelligence,<br /> we pinpoint and present the most suitable <br />candidates for your vacancy,<br /> streamlining your selection process</p>
         </div>
       </div>
-
+</div>
       <div>
         <div>
           <h1 className="text-3xl md:text-5xl font-bold font-serif text-center p-5 emp-search">Employee Search</h1>
