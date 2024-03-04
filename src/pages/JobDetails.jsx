@@ -31,7 +31,7 @@ function JobDetails() {
           <p className="my-4 font-normal text-gray-700 dark:text-gray-400">{data.description}</p>
           <div className='flex flex-row justify-evenly py-3 border-t-1 border-b-1'>
             <p><i class="fa-regular fa-compass"></i> <strong>Location:</strong> {data.location}</p>
-            <p>Employment Type: {data.employmentType}</p>
+            <p><i class="fa-regular fa-clock"></i> <strong>Employment Type:</strong> {data.employmentType}</p>
             <p><i class="fa-regular fa-calendar"></i> Date posted: {data.datePosted}</p>
             <p><i class="fa-regular fa-money-bill-1"></i> <strong>Salary range:</strong> {data.salaryRange == "" ?  "Competitive" : data.salaryRange}</p>
           </div>
