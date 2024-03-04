@@ -2,8 +2,14 @@ import { useState, useEffect } from 'react';
 import getJobs from "../services/getJobs.js";
 import JobSearchResults from "../components/JobSearch/Results.jsx";
 import EmploymentTypes from '../components/JobSearch/EmploymentTypes.jsx';
+import JobDetails from './JobDetails.jsx';
 
 function JobSearch() {
+
+  const [selectedJob, setSelectedJob] = useState(null);
+  const handleJobSelection = (job) => {
+    setSelectedJob(job);
+  };
 
   // Job search results
   const [jobs, setJobs] = useState([]);
@@ -151,6 +157,12 @@ function JobSearch() {
 
       <h1 className="text-3xl font-semibold leading-7 text-gray-900 sm:text-4xl mb-6">Job Search</h1>
 
+      {selectedJob ? (
+        <>
+          <button onClick={() => setSelectedJob(null)} className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Back to Search</button>
+          <JobDetails selectedJob={selectedJob} />
+        </>
+        ) : (
       <div className="flex flex-col md:flex-row lg:flex-row">
         <aside className="w-full md:w-3/12">
 
@@ -293,11 +305,12 @@ function JobSearch() {
           <div className="text-left">
             {
               // Show appropriate messages or results
-              isSearching ? "Searching..." : (jobs.length === 0 && !isSearching && !isReset) ? "No jobs found" : <JobSearchResults jobs={jobs} />
+              isSearching ? "Searching..." : (jobs.length === 0 && !isSearching && !isReset) ? "No jobs found" : <JobSearchResults jobs={jobs} handleJobSelection={handleJobSelection} />
             }
           </div>
         </section>
       </div>
+     )}
     </div>
   );
 }
