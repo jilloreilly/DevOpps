@@ -2,12 +2,14 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
-function Candidate({ userData } ) {
+function Candidate({ userData }) {
+  
+  console.log(userData)
 
   const navigate = useNavigate();
   
-  const { id } = useParams()
-  const user = userData.find(user => user.id === parseInt(id));
+  const { gitHubUsername } = useParams()
+  const user = userData.find(user => user.gitHubUsername === parseInt(gitHubUsername));
 
   const findJobs = () => {
     navigate(`/job-results/?title=${user.role}&location=${user.city}`);

@@ -47,7 +47,7 @@ function CandidateProfileForm() {
     console.log('Form Data: ', profileFormData)
     existingUsers.push(profileFormData)
     localStorage.setItem('candidateData', JSON.stringify(existingUsers));
-    navigate(`/candidate/profile/98531516`);
+    navigate(`/candidate/profile/${profileFormData.gitHubUsername}`);
   }
 
   const handleSkillsChange = (name, value) => {

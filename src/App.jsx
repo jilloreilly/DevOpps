@@ -44,7 +44,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/candidate/create-profile' element={<CandidateProfileForm />} />
-        <Route path="/candidate/profile/:id" element={<Candidate userData={candidateArray} />} />
+        <Route path="/candidate/profile/:gitHubUsername" element={<Candidate userData={candidateArray} />} />
         <Route path='/job-results' element={<JobSearch />} />
         <Route path='/employer/search' element={<EmployerSearch />} />
         <Route path='*' element={<Custom404 />} />
