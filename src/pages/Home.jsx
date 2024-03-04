@@ -34,39 +34,42 @@ function Home() {
 
   return (
     <>
-      <div className="h-screen flex items-center justify-start hero-background">
-        <div className="w-1/2 px-20 py-20 flex flex-col"> 
-          <h1 className="text-5xl font-medium text-white mb-8">Welcome to DevOpps</h1>
-          <h3 className="text-2xl font-light text-white mb-14">From job seekers to recruiters, DevOpps offers a comprehensive platform for all your tech hiring needs, making job searches and candidate sourcing hassle-free.</h3>
-          <div className=' bg-gray-200 rounded-lg p-5'>
-  <h2 className='text-gray-800 pb-3 mx-2'>Search available positions:</h2>
+      <div className="h-screen flex items-center justify-start hero-background relative">
+  <div className="absolute inset-0 bg-white opacity-20"></div>
+  <div className="w-1/2 px-20 py-20 flex flex-col relative z-10">
+    <h1 className="text-5xl font-medium text-white mb-8">Welcome to DevOpps</h1>
+    <h3 className="text-2xl font-light text-white mb-14">From job seekers to recruiters, DevOpps offers a comprehensive platform for all your tech hiring needs, making job searches and candidate sourcing hassle-free.</h3>
+    <div className=' bg-gray-200 rounded-lg p-5'>
+      <h2 className='text-gray-800 pb-3 mx-2'>Search available positions:</h2>
+      <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex flex-row items-center">
+        <Dropdown>
+          <DropdownTrigger>
+            <Button variant="bordered" className="w-full bg-gray-200 text-gray-600 hover:text-gray-300 hover:bg-gray-400 h-12 mx-2 rounded-medium border border-gray-400">
+              {selectedOption || 'Select a job type'}
+            </Button>
+          </DropdownTrigger>
+          <DropdownMenu aria-label="Static Actions">
+            <DropdownItem key="Software Developer" onClick={() => setSelectedOption('Software Developer')}>
+              Software Developer
+            </DropdownItem>
+            <DropdownItem key="Front End Developer" onClick={() => setSelectedOption('Front End Developer')}>
+              Front End Developer
+            </DropdownItem>
+            <DropdownItem key="Back End Developer" onClick={() => setSelectedOption('Back End Developer')}>
+              Back End Developer
+            </DropdownItem>
+            <DropdownItem key="Full Stack Developer" onClick={() => setSelectedOption('Full Stack Developer')}>
+              Full Stack Developer
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+        <Input type="location" label="Enter your location" value={location} onChange={(e) => setLocation(e.target.value)} className="text-gray-600 hover:text-gray-300 rounded-medium h-12 mx-1 border border-gray-400 w-full" />
+        <Button type="submit" className="hover:bg-gray-400 shadow-md text-gray-800 font-bold rounded-medium h-12 w-full border border-gray-400 mx-2">Search</Button>
+      </form>
+    </div>
 
-          <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex flex-row items-center">
-  <Dropdown>
-    <DropdownTrigger>
-      <Button variant="bordered" className="w-full bg-gray-200 text-gray-600 hover:text-gray-300 hover:bg-gray-400 h-12 mx-2 rounded-medium border border-gray-400">
-        {selectedOption || 'Select a job type'}
-      </Button>
-    </DropdownTrigger>
-    <DropdownMenu aria-label="Static Actions">
-      <DropdownItem key="Software Developer" onClick={() => setSelectedOption('Software Developer')}>
-        Software Developer
-      </DropdownItem>
-      <DropdownItem key="Front End Developer" onClick={() => setSelectedOption('Front End Developer')}>
-        Front End Developer
-      </DropdownItem>
-      <DropdownItem key="Back End Developer" onClick={() => setSelectedOption('Back End Developer')}>
-        Back End Developer
-      </DropdownItem>
-      <DropdownItem key="Full Stack Developer" onClick={() => setSelectedOption('Full Stack Developer')}>
-        Full Stack Developer
-      </DropdownItem>
-    </DropdownMenu>
-  </Dropdown>
-  <Input type="location" label="Enter your location" value={location} onChange={(e) => setLocation(e.target.value)} className="text-gray-600 hover:text-gray-300 rounded-medium h-12 mx-1 border border-gray-400 w-full" />
-  <Button type="submit" className="hover:bg-gray-400 shadow-md text-gray-800 font-bold rounded-medium h-12 w-full border border-gray-400 mx-2">Search</Button>
-</form>
-</div>
+
+
 
 
 
