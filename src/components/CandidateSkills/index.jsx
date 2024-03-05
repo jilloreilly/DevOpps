@@ -35,13 +35,10 @@ export default function CandidateSkills({ groupSelected, setGroupSelected }) {
         <CustomCheckbox value="Bootstrap">Bootstrap</CustomCheckbox>
         <CustomCheckbox value="Tailwind CSS">Tailwind CSS</CustomCheckbox>
       </CheckboxGroup>
-      <p className="mt-4 mb-4 ml-1 text-default-500">
+      <p className="mt-4 ml-1 text-default-500">
         Selected Skills: {groupSelected.join(", ")}
       </p>
-      <div className="border-b border-gray-900/10 pb-12">
-            
-            
-            </div>
+      <div className="border-b border-gray-900/10 pb-12"></div>
     </div>
   );
 }

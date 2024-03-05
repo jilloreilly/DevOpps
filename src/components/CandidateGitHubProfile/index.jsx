@@ -90,7 +90,7 @@ function CandidateGitHubProfile({ onGitHubInputChange, onGitHubDetailsChange }) 
       </div>
       
 
-      {errorMessage && (<p className={`font-bold mt-8 w-4/12 bg-${isError ? 'red' : 'teal'}-100 border-t-4 border-${isError ? 'red' : 'teal'}-500 rounded-b text-${isError ? 'red' : 'teal'}-900 px-4 py-3 shadow-md`}>
+      {errorMessage && (<p className={`font-bold mt-8 w-96 bg-${isError ? 'red' : 'teal'}-100 border-t-4 border-${isError ? 'red' : 'teal'}-500 rounded-b text-${isError ? 'red' : 'teal'}-900 px-4 py-3 shadow-md`}>
         {errorMessage}
       </p>)}
       <div className="border-b border-gray-900/10 pb-12"></div>
