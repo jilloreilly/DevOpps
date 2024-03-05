@@ -18,7 +18,7 @@ const MyFooter = () => {
                     <h3 className='text-lg md:text-base p-3 sm:p-1'>Quick Links</h3>
                     <Link to="/employer/search" className="text-base md:text-sm text-black p-2 sm:p-1 hover:text-gray-300">Employers</Link>
                     <Link to="/candidate/create-profile" className="text-base md:text-sm text-black p-2 sm:p-1 hover:text-gray-300">Candidates</Link>
-                    <Link to="/" className=" text-base md:text-sm text-black p-2 hover:text-gray-300">Job Search</Link>
+                    <Link to="/employer/search" className=" text-base md:text-sm text-black p-2 hover:text-gray-300">Job Search</Link>
                 </div>
             </div>
             {/* Bottom copyright and links */}
