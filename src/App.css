@@ -8,6 +8,13 @@ body {
   font-weight: 300;
 }
 
+/* Hide on small (possible .hidden class conflict between next ui and tailwind) */
+@media (max-width: 767px) {
+  .smhide {
+    display: none;
+  }
+}
+
 /* hero image */
 .hero-background {
     background-image: url('/images/background.jpg');
