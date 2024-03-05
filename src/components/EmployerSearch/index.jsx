@@ -222,7 +222,7 @@ function EmployerSearch() {
             </div>
             <div className="mt-6">
               <button onClick={handleSearch} className="flex-none rounded-md  bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 mr-2">Search</button>
-              <button onClick={handleClear} className="flex-none rounded-md  bg-red-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500 mr-2">Clear</button>
+              <button onClick={handleClear} className="flex-none rounded-md  bg-gray-200 text-gray-600 hover:bg-gray-300 px-3 py-2 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 mr-2">Clear</button>
             </div>
             {errorMessage && (
               <div className="text-red-500 mt-2">{errorMessage}</div>
@@ -235,7 +235,7 @@ function EmployerSearch() {
                   <h2 className="text-3xl font-bold mb-2">Results</h2>
                   <div className="mt-6">
                     {results.map((person) => (
-                      <div key={person.id} className=" w-full mb-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-4">
+                      <div key={person.id} className=" w-full mb-3 bg-white border border-gray-200 text-gray-600 rounded-lg hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-4">
                         <h4 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{person.name}</h4>
                         <h5 className="mb-4 text-1xl font-bold tracing-normal text-gray-500 dark:text-white">{person.role}</h5>
                         <div className="flex flex-col w-full justify-start gap-2.5 text-sm leading-normal">
