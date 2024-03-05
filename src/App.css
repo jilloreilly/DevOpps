@@ -32,7 +32,7 @@ body {
 
 .hero-background h1,
 .hero-background h3 {
-  text-shadow: 1px 1px #333;
+  text-shadow: 1px 1px 25px #333;
 }
 
 .hide {
