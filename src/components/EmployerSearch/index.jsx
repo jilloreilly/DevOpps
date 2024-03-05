@@ -118,13 +118,13 @@ function EmployerSearch() {
     <div className ="container mx-auto max-w-[1280px] px-6">
           <h1 className=" text-3xl font-semibold leading-7 text-white sm:text-4xl">Employer Search</h1>
           <p className="mt-3 leading-6 text-white">
-                This information will be displayed publicly so be careful what you share.
+          Find the ideal candidate in just a few clicks!
               </p>
        
     </div>
    
    </div>
-      <div className="text-center top-div">
+      {/* <div className="text-center top-div">
       <div>
         <h1 className="text-3xl font-bold text-white font-serif ">Find the ideal candidate in just a few clicks</h1>
       </div>
@@ -145,21 +145,18 @@ function EmployerSearch() {
           <p className="text-center text-white">With the help of artificial intelligence,<br /> we pinpoint and present the most suitable <br />candidates for your vacancy,<br /> streamlining your selection process</p>
         </div>
       </div>
-</div>
-      <div>
-        <div>
-          <h1 className="text-3xl md:text-5xl font-bold font-serif text-center p-5 emp-search">Employee Search</h1>
-        </div>
-        <div className="flex flex-col md:flex-row">
-          <div className="w-full md:w-1/5">
-            <div className="bg-gray-500">
-              <div className="bg-gray-500">
-                <h3 className=' font-bold text-lg md:text-2xl text-center'>Filter By: </h3>
-                <div className='bg-gray-300 grid grid-cols-1 md:grid-cols-2'>
+</div> */}
+      <div className="max-w-[1280px] container mt-12 mx-auto px-6 f">
+        <div className="flex flex-col md:flex-row lg:flex-row gap-12">
+          <div className="w-full md:w-3/12">
+            <div>
+              <div>
+                <h3 className='font-bold text-lg md:text-2xl text-left'>Filter By: </h3>
+                <div className='grid mt-6 grid-cols-1 md:grid-cols-2'>
                   <div>
-                    <h2 className=' font-bold text-sm md:text-base text-center'>Technology</h2>
+                    <h2 className=' font-bold text-sm md:text-base text-left'>Technology</h2>
                     {availableTechnologies.slice(0, showAllTechnologies ? availableTechnologies.length : 10).map((technology, index) => (
-                      <div key={index} className='text-center'>
+                      <div key={index} className='text-left'>
                         <input
                           type="checkbox"
                           id={`technology-${index}`}
@@ -175,9 +172,9 @@ function EmployerSearch() {
                     }
                   </div>
                   <div>
-                    <h2 className=' font-bold text-sm md:text-base text-center'>City</h2>
+                    <h2 className=' font-bold text-sm md:text-base text-left'>City</h2>
                     {Array.from(new Set(people.map((person) => person.city))).map((city, index) => (
-                      <div key={index} className='text-center'>
+                      <div key={index} className='text-left'>
                         <input
                           type="checkbox"
                           id={`city-${index}`}
@@ -190,10 +187,10 @@ function EmployerSearch() {
                     ))}
                   </div>
                   <div>
-                    <h2 className=' font-bold text-sm md:text-base text-center'>Experience</h2>
+                    <h2 className=' font-bold text-sm md:text-base text-left'>Experience</h2>
                     <div>
                       {Array.from(new Set(people.map((person) => person.experience))).map((experience, index) => (
-                        <div key={index} className='text-center'>
+                        <div key={index} className='text-left'>
                           <input
                             type="checkbox"
                             id={`experience-${index}`}
@@ -207,8 +204,8 @@ function EmployerSearch() {
                     </div>
                   </div>
                   <div>
-                    <h2 className=' font-bold text-sm md:text-base text-center'>Role</h2>
-                    <div className='text-center'>
+                    <h2 className=' font-bold text-sm md:text-base text-left'>Role</h2>
+                    <div className='text-left'>
                       {Array.from(new Set(people.map((person) => person.role))).map((role, index) => (
                         <div key={index} className="">
                           <input
@@ -234,7 +231,7 @@ function EmployerSearch() {
               <div className="text-red-500 mt-2">{errorMessage}</div>
             )}
           </div>
-          <div className="w-full md:w-4/5 lg:w-3/5 mx-auto">
+          <div className="w-full md:w-9/12">
             <div>
               {showResults && results.length > 0 ? (
                 <div>
