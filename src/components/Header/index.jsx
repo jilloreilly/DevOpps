@@ -7,8 +7,8 @@ export default function Header() {
 
   const menuItems = [
     { name: "Job Search", link: "/job-results" },
-    { name: "Create Candidate Profile", link: "/candidate/create-profile" },
     { name: "Employee Search", link: "/employer/search" },
+    { name: "Create Profile", link: "/candidate/create-profile" },
   ];
 
   return (
@@ -50,7 +50,9 @@ export default function Header() {
           <NavbarMenuItem key={`${item.name}-${index}`}>
             <Link
               className="w-full"
-              color="foreground"
+              color={
+                index === 2 ? "secondary" : index === menuItems.length - 1 ? "secondary" : "foreground"
+              }
               href={item.link}
               size="lg"
             >
