@@ -42,7 +42,26 @@ function JobDetails(props) {
     localStorage.setItem("favourites", JSON.stringify(favourites));
   }, [favourites]);
 
-  
+  // Format paragraphs looking for double lines
+  function formatParagraphs(text) {
+
+    if (typeof text === 'string') {
+
+      // Split double new lines into array
+      const paragraphs = text.split("\n\n");
+
+      // Format each array item into a paragraph
+      const formattedText = paragraphs.map((paragraph, i) => (
+        <p key={i} className="pb-4">{paragraph}</p>
+      ));
+
+      return formattedText;
+    } else {
+      return text;
+    }
+  };
+
+  const description = formatParagraphs(data.description);
 
   //window.scrollTo({ top: 0 });
   
@@ -53,7 +72,7 @@ function JobDetails(props) {
         <div>
           <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{data.title}</h2>
           <p><i className="fa-regular fa-building text-indigo-500"></i> <strong>Company:</strong> {data.company}</p>
-          <p className="my-4 font-normal text-gray-700 dark:text-gray-400">{data.description}</p>
+          <div className="my-4 font-normal text-gray-700 dark:text-gray-400">{description}</div>
         </div>
         <div className="favourite" onClick={addToFavourites}><i className={isChecked ? "fa-solid fa-heart text-indigo-500" : "fa-regular fa-heart text-indigo-500"}></i></div>
       </div>
