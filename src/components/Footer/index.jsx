@@ -5,7 +5,7 @@ const MyFooter = () => {
     return (
         <footer className="bg-blue-100 text-black pt-3 mt-20 relative bottom-0 left-0 w-full">
             {/* Top section for logo and links within website */}
-            <div className="container mx-auto flex justify-around lg:flex-row md:flex-row items-center sm:flex-col p-10 md:p-5 sm:p-2">
+            <div className="container mx-auto flex flex-wrap justify-around lg:flex-row md:flex-row items-center sm:flex-col p-10 md:p-5 sm:p-2">
                 {/* Left section for logo +/- text */}
                 <div className="w-1/3 flex flex-row items-center justify-center pb-2">
                     <p className='p-5 md:p-1 text-center text-large md:text-base'>devOpps simplifies the hiring process by enabling developers to find their ideal job matches while assisting employers in discovering top talent. </p>

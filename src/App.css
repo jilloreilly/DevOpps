@@ -84,7 +84,15 @@ body {
 .results-header {
   background: url('/images/results-header.jpg') center 75% no-repeat;
 }
-
+/* news carousel */
 .control-dots {
   display: none !important;
+}
+
+/* Candidate banner  */
+.candidate-banner {
+  background-image: url('/images/candidate-banner.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }

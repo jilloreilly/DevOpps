@@ -18,8 +18,8 @@ export default function NewsSlider() {
         <div className="w-1/2 mx-auto py-0 relative">
             <Carousel showArrows={true} showThumbs={false} showStatus={false} className='lg:h-48 md:h-48 sm:h-48 bg-gray-800 rounded'>
                 {news.map((article, index) => (
-                    <div key={index} className=" p-4 rounded relative flex flex-col justify-center items-center">
-                        <h2 className="text-white text-xl font-semibold mb-4 text-center mt-4">{article.title}</h2>
+                    <div key={index} className=" p-6 rounded relative flex flex-col justify-center items-center">
+                        <h2 className="text-white text-xl md:text-l sm:text-md font-semibold mb-4 text-center mt-4 p-5">{article.title}</h2>
                         <a href={article.url} target="_blank" rel="noopener noreferrer">
                             <button className="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 mt-2">Go to Article</button>
                         </a>
