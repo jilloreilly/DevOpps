@@ -78,3 +78,7 @@ body {
 .results-header {
   background: url('/images/results-header.jpg') center 75% no-repeat;
 }
+
+.control-dots {
+  display: none !important;
+}
