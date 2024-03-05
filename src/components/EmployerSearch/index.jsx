@@ -114,13 +114,11 @@ function EmployerSearch() {
 
   return (
     <div>
-      <div className=" bg-indigo-500  py-24 mx-auto ">
-        <div className="container mx-auto max-w-[1280px] px-6">
-          <h1 className=" text-3xl font-semibold leading-7 text-white sm:text-4xl">Employer Search</h1>
-          <p className="mt-3 leading-6 text-white">
-            Find the ideal candidate in just a few clicks!
-          </p>
-
+      <div className=" bg-indigo-500  py-24 mx-auto employer-header">
+        <div className ="container mx-auto max-w-[1280px] px-6">
+          <h1 className="text-3xl font-semibold leading-7 text-white sm:text-4xl">Employee Search</h1>
+          <p className="mt-3 leading-6 text-white">Find the ideal candidate in just a few clicks!</p>
+              
           {/* <div className="mt-3 icons text-center top-div">
     
       <div className="flex flex-wrap justify-between">
