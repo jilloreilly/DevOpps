@@ -72,13 +72,13 @@ function Home() {
                     </DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
-                <Input type="location" label="Enter your location" value={location} onChange={(e) => setLocation(e.target.value)} className="text-gray-600 hover:text-gray-300 rounded-medium h-12 mx-1 border border-gray-400 w-full" />
-                <Button type="submit" className="hover:bg-gray-400 shadow-md text-gray-800 font-bold rounded-medium h-12 w-full border border-gray-400 mx-2">Search</Button>
+                <Input type="location" label="Enter your location" value={location} onChange={(e) => setLocation(e.target.value)} className="text-gray-600 hover:text-gray-300 rounded-medium h-12 mb-3 sm:mb-0 mx-1 border border-gray-400 w-full" />
+                <Button type="submit" className="hover:bg-indigo-300 hover:border-indigo:300 shadow-md font-medium rounded-medium h-12 w-full border border-indigo-500 bg-indigo-500 text-white mx-2">Search</Button>
               </form>
             </div>
           </div>
 
-          {errorMessage && <p className="text-white">{errorMessage}</p>}
+          {errorMessage && <p className="mt-3 text-white">{errorMessage}</p>}
         </div>
       </div>
 
@@ -151,7 +151,7 @@ function Home() {
       
       {/* tech header */}
       <div className='text-center flex items-center justify-center flex-col'>
-          <h2 className='lg:w-1/2 mb-3 pb-5 font-bold text-3xl'>Latest Tech News:</h2>
+          <h2 className='lg:w-1/2 mb-3 pb-5 font-bold mt-5 text-3xl'>Latest Tech News:</h2>
         </div>
 
         <NewsSlider/>
