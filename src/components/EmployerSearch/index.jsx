@@ -262,7 +262,7 @@ function EmployerSearch() {
             </div>
       {showImage && (
         <div className="flex items-center justify-center">
-          <img src="../../public/images/search.png" alt="Search Image" />
+          <img src="../../images/search.png" alt="Search Image" />
         </div>
       )}
           </div>
