@@ -102,9 +102,9 @@ function CandidateProfileForm() {
           </div>
   
           <div className="border-b border-gray-900/10 pb-12">
-            <h2 className="text-2xl mt-5 font-bold sm:text-3xl">Personal Information</h2>
+            <h2 className="text-2xl mt-12 font-bold sm:text-3xl">Personal Information</h2>
   
-            <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-12">
+            <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-12">
               <div className="sm:col-span-4">
                 <label htmlFor="firstName" className="block text-sm font-medium leading-6 text-gray-900">
                    Name
@@ -227,7 +227,8 @@ function CandidateProfileForm() {
           </div>
           </div>
           
-          <CandidateSkills groupSelected={parentGroupSelected} setGroupSelected={setParentGroupSelected} onChange={handleSkillsChange}/>
+          <CandidateSkills groupSelected={parentGroupSelected} setGroupSelected={setParentGroupSelected} onChange={handleSkillsChange} />
+         
           <CandidateGitHubProfile onGitHubInputChange={handleGitHubInputChange} onGitHubDetailsChange={handleGitHubDetailsChange}/>
 
   

@@ -6,9 +6,9 @@ export default function CandidateSkills({ groupSelected, setGroupSelected }) {
  
   return (
     <div className="flex flex-col gap-1 w-full">
-      <h2 className="text-2xl mt-5 font-bold sm:text-3xl">Add your Skills</h2>
+      <h2 className="text-2xl mt-12 font-bold sm:text-3xl">Add your Skills</h2>
       <CheckboxGroup
-        className="mt-5 gap-1 justify-center"
+        className="mt-12 gap-1 justify-center"
         orientation="horizontal"
         name="technology"
         value={groupSelected}
@@ -38,6 +38,10 @@ export default function CandidateSkills({ groupSelected, setGroupSelected }) {
       <p className="mt-4 mb-4 ml-1 text-default-500">
         Selected Skills: {groupSelected.join(", ")}
       </p>
+      <div className="border-b border-gray-900/10 pb-12">
+            
+            
+            </div>
     </div>
   );
 }
