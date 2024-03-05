@@ -23,13 +23,13 @@ export default function Header() {
 
       <div className="smhide md:block pr-3" justify="center">
         <NavbarBrand>
-          {<Link href="/"><img className="h-16 w-auto" src='/images/logo.png' alt='devOpps' /><p className="text-3xl ml-2 font-semibold text-foreground devopps">devOpps</p></Link>}          
+          {<Link href="/"><img className="h-12 w-auto" src='/images/logo.png' alt='devOpps' /><p className="text-3xl ml-2 font-semibold text-foreground devopps">devOpps</p></Link>}          
         </NavbarBrand>
       </div>
 
       <div className="md:hidden gap-4" justify="center">
         <NavbarBrand>
-          {<Link href="/"><img className="h-20 w-auto" src='/images/logo.png' alt='devOpps' /><p className="font-bold text-foreground">devOpps</p></Link>}          
+          {<Link href="/"><img className="h-12 w-auto" src='/images/logo.png' alt='devOpps' /><p className="font-bold text-foreground">devOpps</p></Link>}          
         </NavbarBrand>
       </div>
 
