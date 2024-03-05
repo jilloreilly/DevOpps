@@ -42,7 +42,7 @@ body {
     background-image: url('/images/Bristol.jpg');
   }
   .manchester-box {    
-    background-image: url('./images/Manchester.jpg');
+    background-image: url('/images/Manchester.jpg');
   }
   .cardiff-box {    
     background-image: url('/images/Cardiff.jpg');
@@ -77,4 +77,8 @@ body {
 /* Results header */
 .results-header {
   background: url('/images/results-header.jpg') center 75% no-repeat;
+}
+
+.control-dots {
+  display: none !important;
 }
