@@ -93,7 +93,15 @@ body {
   text-shadow: 1px 1px #333;
   background-size: cover;
 }
-
+/* news carousel */
 .control-dots {
   display: none !important;
+}
+
+/* Candidate banner  */
+.candidate-banner {
+  background-image: url('/images/candidate-banner.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }

@@ -66,7 +66,7 @@ function Candidate() {
   
   return (
       <>
-    <div className=" bg-indigo-500  py-24 mx-auto ">
+    <div className="candidate-banner py-24 mx-auto ">
     <div className ="container mx-auto max-w-[1280px] px-6">
        <h1 className=" text-3xl font-semibold leading-7 text-white sm:text-4xl">{user.name} - {user.role}</h1>
        
