@@ -7,17 +7,22 @@ function CandidateProfileForm() {
 
   const navigate = useNavigate();
 
-  const existingUsers = JSON.parse(localStorage.getItem('profileFormData')) || []
+  const candidateArray = JSON.parse(localStorage.getItem('candidateData')) || []
 
   const [profileFormData, setProfileFormData] = useState({
     name: '',
     email: '',
-    location: '',
+    city: '',
     role: '',
+    experience: '',
     salaryRange: '',
     workplace: '',
     technology: [],
-    gitHubProfile: ''
+    gitHubUsername: '',
+    gitHubAvatar: '',
+    gitHubRepos: '',
+    gitHubFollowers: '',
+    gitHubFollowing: '',
 
   });
 
@@ -38,12 +43,20 @@ function CandidateProfileForm() {
     })
   }
 
+  const [isSaving, setIsSaving] = useState(false);
+
   const handleProfileSubmit = (e) => {
     e.preventDefault();
+    setIsSaving(true); 
     console.log('Form Data: ', profileFormData)
-    existingUsers.push(profileFormData)
-    localStorage.setItem('profileFormData', JSON.stringify(existingUsers));
-    navigate(`/candidate/profile/98531516`);
+    candidateArray.push(profileFormData)
+    localStorage.setItem('candidateData', JSON.stringify(candidateArray));
+    console.log(candidateArray)
+
+    setTimeout(() => {
+      navigate(`/candidate/profile/${profileFormData.gitHubUsername}`);
+      setIsSaving(false); 
+    }, 1500)
   }
 
   const handleSkillsChange = (name, value) => {
@@ -61,22 +74,42 @@ function CandidateProfileForm() {
     }));
   }
 
+  const handleGitHubDetailsChange = (gitHubDetails) => {
+    setProfileFormData(prevState => ({
+      ...prevState,
+      gitHubUsername: gitHubDetails.login,
+      gitHubAvatar: gitHubDetails.avatar_url,
+      gitHubRepos: gitHubDetails.repos_url,
+      gitHubFollowers: gitHubDetails.followers,
+      gitHubFollowing: gitHubDetails.following
+    }));
+  };
+
   return (
     <>
-   <div className="container my-5 mx-auto">
+      <div className=" bg-indigo-500  py-24 mx-auto ">
+       <div className ="container mx-auto max-w-[1280px] px-6">
+          <h1 className=" text-3xl font-semibold leading-7 text-white sm:text-4xl">Candidate - Create Profile</h1>
+          <p className="mt-3 leading-6 text-white">
+                This information will be displayed publicly so be careful what you share.
+              </p>
+       </div>
+      
+      </div>
+   
+        
+      <div className="max-w-[1280px] container mt-5 mx-auto px-6">
       <form id="candidate-profile-form" onSubmit={handleProfileSubmit}>
         <div>
           <div className="border-b border-gray-900/10 pb-12">
-            <h1 className="text-3xl font-semibold leading-7 text-gray-900 sm:text-4xl">Candidate - Create Profile</h1>
-            <p className="mt-3 text-sm leading-6 text-gray-600">
-              This information will be displayed publicly so be careful what you share.
-            </p>
+            
+            
           </div>
   
           <div className="border-b border-gray-900/10 pb-12">
-            <h2 className="text-2xl mt-5 font-bold sm:text-3xl">Personal Information</h2>
+            <h2 className="text-2xl mt-12 font-bold sm:text-3xl">Personal Information</h2>
   
-            <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-12">
+            <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-12">
               <div className="sm:col-span-4">
                 <label htmlFor="firstName" className="block text-sm font-medium leading-6 text-gray-900">
                    Name
@@ -116,16 +149,16 @@ function CandidateProfileForm() {
               </div>
   
               <div className="sm:col-span-4">
-                <label htmlFor="location" className="block text-sm font-medium leading-6 text-gray-900">
-                  Location
+                <label htmlFor="city" className="block text-sm font-medium leading-6 text-gray-900">
+                  City
                 </label>
                 <div className="mt-2">
                     <input
                       required
-                    id="location"
-                      name="location"
+                    id="city"
+                      name="city"
                       type="text"
-                      value={profileFormData.location}
+                      value={profileFormData.city}
                       onChange={handleProfileChange}
                     className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   >
@@ -133,12 +166,12 @@ function CandidateProfileForm() {
                 </div>
                 </div>
   
-                <div className="sm:col-span-4">
+                <div className="sm:col-span-3">
                 <label htmlFor="role" className="block text-sm font-medium leading-6 text-gray-900">
                   Role
                 </label>
                 <div className="mt-2">
-                    <input
+                    <select
                       required
                     id="role"
                       name="role"
@@ -146,33 +179,42 @@ function CandidateProfileForm() {
                       value={profileFormData.role}
                       onChange={handleProfileChange}
                     className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  >
-                  </input>
+                    >
+                       <option>Please select</option>
+                      <option>Software Developer</option>
+                      <option>Front End Developer</option>
+                      <option>Back End Developer</option>
+                      <option>Full Stack Developer</option>
+                      <option>DevOps Engineer</option>
+                      <option>Cloud Architect</option>
+                  </select>
                 </div>
                 </div>
-  
-                <div className="sm:col-span-4">
-                <label htmlFor="salaryRange" className="block text-sm font-medium leading-6 text-gray-900">
-                  Expected Salary
+
+                <div className="sm:col-span-3">
+                <label htmlFor="experience" className="block text-sm font-medium leading-6 text-gray-900">
+                  Experience
                 </label>
-                  <div className="relative mt-2">
-                  <span className="absolute inset-y-0 start-0 top-0 flex items-center ps-2.5 pointer-events-none">£</span>
-          
-    
-                    <input
+                <div className="mt-2">
+                    <select
                       required
-                    id="salaryRange"
-                      name="salaryRange"
-                      type="number"
-                      value={profileFormData.salaryRange}
+                    id="experience"
+                      name="experience"
+                      type="text"
+                      value={profileFormData.experience}
                       onChange={handleProfileChange}
-                    className="block w-full rounded-md border-0 py-1.5 px-2 ps-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  >
-                  </input>
+                    className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    >
+                       <option>Please select</option>
+                      <option>Junior</option>
+                      <option>Mid</option>
+                      <option>Senior</option>
+                      <option>Lead</option>
+                  </select>
                 </div>
                 </div>
   
-                <div className="sm:col-span-4">
+                <div className="sm:col-span-3">
                 <label htmlFor="workplace" className="block text-sm font-medium leading-6 text-gray-900">
                   Workplace preference
                 </label>
@@ -193,20 +235,43 @@ function CandidateProfileForm() {
                   </select>
                 </div>
                 </div>
+
+                <div className="sm:col-span-3">
+                <label htmlFor="salaryRange" className="block text-sm font-medium leading-6 text-gray-900">
+                  Expected Salary
+                </label>
+                  <div className="relative mt-2">
+                  <span className="absolute inset-y-0 start-0 top-0 flex items-center ps-2.5 pointer-events-none">£</span>
+          
+    
+                    <input
+                      required
+                    id="salaryRange"
+                      name="salaryRange"
+                      type="number"
+                      value={profileFormData.salaryRange}
+                      onChange={handleProfileChange}
+                    className="block w-full rounded-md border-0 py-1.5 px-2 ps-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  >
+                  </input>
+                </div>
+                </div>
                 
   
             </div>
           </div>
           </div>
           
-          <CandidateSkills groupSelected={parentGroupSelected} setGroupSelected={setParentGroupSelected} onChange={handleSkillsChange}/>
-          <CandidateGitHubProfile onGitHubInputChange={handleGitHubInputChange}/>
+          <CandidateSkills groupSelected={parentGroupSelected} setGroupSelected={setParentGroupSelected} onChange={handleSkillsChange} />
+         
+          <CandidateGitHubProfile onGitHubInputChange={handleGitHubInputChange} onGitHubDetailsChange={handleGitHubDetailsChange}/>
+
   
         <div className="mt-6 flex items-center justify-end gap-x-6">
           <button id ="submitProfile"
             className="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            Save
+            {isSaving ? 'Saving...' : 'Save'}
           </button>
         </div>
       </form>  
