@@ -82,14 +82,23 @@ function CandidateProfileForm() {
 
   return (
     <>
-   <div className="max-w-[1280px] container my-5 mx-auto px-6">
+      <div className=" bg-indigo-500  py-24 mx-auto ">
+       <div className ="container mx-auto max-w-[1280px] px-6">
+          <h1 className=" text-3xl font-semibold leading-7 text-white sm:text-4xl">Candidate - Create Profile</h1>
+          <p className="mt-3 leading-6 text-white">
+                This information will be displayed publicly so be careful what you share.
+              </p>
+       </div>
+      
+      </div>
+   
+        
+      <div className="max-w-[1280px] container my-5 mx-auto px-6">
       <form id="candidate-profile-form" onSubmit={handleProfileSubmit}>
         <div>
           <div className="border-b border-gray-900/10 pb-12">
-            <h1 className="text-3xl font-semibold leading-7 text-gray-900 sm:text-4xl">Candidate - Create Profile</h1>
-            <p className="mt-3 text-sm leading-6 text-gray-600">
-              This information will be displayed publicly so be careful what you share.
-            </p>
+            
+            
           </div>
   
           <div className="border-b border-gray-900/10 pb-12">

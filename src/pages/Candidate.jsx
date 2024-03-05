@@ -65,7 +65,7 @@ function Candidate() {
     }
   
     return (
-      <div className="max-w-[1280px] container my-5 mx-auto px-6">
+      <div className="max-w-[1280px] container my-10 mx-auto px-6">
         <img className="rounded-full my-5" src={user.gitHubAvatar}></img>
         <h2 className="text-3xl font-semibold leading-7 text-gray-900 sm:text-4xl mb-4">{user.name}</h2>
         <p>Email: {user.email}</p>
