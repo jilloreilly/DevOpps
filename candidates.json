@@ -523,8 +523,7 @@
     "gitHubUsername": "RichLlew182",
     "gitHubURL": "https://api.github.com/users/RichLlew182",
     "gitHubAvatar": "https://avatars.githubusercontent.com/u/98531516?v=4",
-    "gitHubRepos": ["Bootstrap Portfolio", "clicky-memory-game"], 
-    "gitHubRepoUrls": ["https://github.com/RichLlew182/Bootstrap-Portfolio","https://github.com/RichLlew182/clicky-memory-game"],
+    "gitHubRepos": "https://api.github.com/users/RichLlew182/repos",
     "gitHubFollowers": 3,
     "gitHubFollowing": 12 
   }

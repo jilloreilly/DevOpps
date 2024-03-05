@@ -1,11 +1,10 @@
 import React from 'react'
+import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
-function Candidate({ userData }) {
-
-  console.log({ userData })
+function Candidate() {
   
   const [newUserData, setNewUserData] = useState(() => {
     const localStorageData = localStorage.getItem('candidateData');
@@ -17,7 +16,6 @@ function Candidate({ userData }) {
     localStorage.setItem('candidateData', JSON.stringify(newUserData));
   }, [newUserData]);
 
-  console.log({ userData })
   console.log( {newUserData})
 
   const navigate = useNavigate();
@@ -29,6 +27,37 @@ function Candidate({ userData }) {
   const findJobs = () => {
     navigate(`/job-results/?title=${user.role}&location=${user.city}`);
   }
+
+  const [repos, setRepos] = useState([]);
+
+  const fetchGitHubRepos = async () => {
+    
+    const resource = {
+      method: 'GET',
+      url: `${user.gitHubRepos}`,
+    };
+    try {
+      const response = await axios.request(resource);
+      console.log(response.data)
+      setRepos(response.data)
+    } catch (error) {
+      console.error(error);
+      return;
+      
+    }
+  }
+
+  useEffect(() => {
+    // Call the fetch function when the component mounts
+    if (user) {
+      fetchGitHubRepos();
+    }
+  }, [user]); 
+
+  useEffect(() => {
+    // You can use this effect to call fetchGitHubRepos() once on component mount
+    fetchGitHubRepos();
+  }, []); 
   
   
     if (!user) {
@@ -53,11 +82,11 @@ function Candidate({ userData }) {
         ))}
       </ul>
         <h2 className="mt-3 text-2xl font-semibold">GitHub Repos:</h2>
-        {/* <ul className="mt-5 flex flex-wrap flex-row items-center justify-start gap-3">
-         {user.gitHubRepos.map(repo => (
-          <a className="bg-blue-100 hover:bg-blue-200 text-blue-800 text-xs font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400 inline-flex items-center justify-center" key={repo}>{repo} </a>
+        <ul className="mt-5 flex flex-wrap flex-row items-center justify-start gap-3">
+         {repos.map(repo => (
+          <a href={repo.html_url} target="_blank" className="bg-blue-100 hover:bg-blue-200 text-blue-800 text-xs font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400 inline-flex items-center justify-center" key={repo.id}>{repo.name} </a>
         ))}
-      </ul> */}
+      </ul>
       </div>
     );
   }
