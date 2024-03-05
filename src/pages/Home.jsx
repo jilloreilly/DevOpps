@@ -72,7 +72,7 @@ function Home() {
                 </DropdownMenu>
               </Dropdown>
               <Input type="location" label="Enter your location" value={location} onChange={(e) => setLocation(e.target.value)} className="text-gray-600 hover:text-gray-300 rounded-medium h-12 mx-1 border border-gray-400 w-full" />
-              <Button type="submit" className="hover:bg-gray-400 shadow-md text-gray-800 font-bold rounded-medium h-12 w-full border border-gray-400 mx-2">Search</Button>
+              <Button type="submit" className="bg-indigo-600 hover:bg-indigo-400 shadow-lg text-white rounded-medium h-12 w-full border border-indigo-200 mx-2">Search</Button>
             </form>
           </div>
 

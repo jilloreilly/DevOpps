@@ -16,12 +16,12 @@ export default function NewsSlider() {
 
     return (
         <div className="w-1/2 mx-auto py-0 relative">
-            <Carousel showArrows={true} showThumbs={false} showStatus={false} className='lg:h-48 md:h-48 sm:h-48 bg-gray-800 rounded'>
+            <Carousel showArrows={true} showThumbs={false} showStatus={false} className='lg:h-64 md:h-52 sm:h-52 bg-gray-800 rounded'>
                 {news.map((article, index) => (
                     <div key={index} className=" p-6 rounded relative flex flex-col justify-center items-center">
                         <h2 className="text-white text-xl md:text-l sm:text-md font-semibold mb-4 text-center mt-4 p-5">{article.title}</h2>
                         <a href={article.url} target="_blank" rel="noopener noreferrer">
-                            <button className="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 mt-2">Go to Article</button>
+                            <button className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 mt-2">Go to Article</button>
                         </a>
                     </div>
                 ))}
