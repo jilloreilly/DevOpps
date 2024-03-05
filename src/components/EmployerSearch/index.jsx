@@ -151,7 +151,7 @@ function EmployerSearch() {
           <div className="w-full md:w-4/12 ">
             <div>
               <div>
-                <h3 className='font-bold text-lg md:text-2xl text-left'>Filter By: </h3>
+                <h3 className='font-bold text-3xl text-left'>Filter By: </h3>
                 <div className='grid mt-6 grid-cols-1 sm:grid-cols-2'>
                   <div>
                     <h4 className='mb-3 font-medium text-sm md:text-base text-left'>Technology</h4>
@@ -238,9 +238,10 @@ function EmployerSearch() {
                   <h2 className="text-3xl font-bold mb-2">Results</h2>
                   <div className="mt-6">
                     {results.map((person) => (
-                      <div key={person.id} className=" w-full mb-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-3">
-                        <h4 className="mb-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{person.name} - {person.role}</h4>
-                        <div className="flex flex-col w-full justify-start gap-3 text-sm leading-normal">
+                      <div key={person.id} className=" w-full mb-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-4">
+                        <h4 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{person.name}</h4>
+                        <h5 className="mb-4 text-1xl font-bold tracing-normal text-gray-500 dark:text-white">{person.role}</h5>
+                        <div className="flex flex-col w-full justify-start gap-2.5 text-sm leading-normal">
                           <p><i class="fa-regular fa-compass" aria-hidden="true"></i> Location: {person.city}</p>
                           <p>Experience: {person.experience}</p>
                           <p>Technology: {person.technology.join(', ')}</p>
