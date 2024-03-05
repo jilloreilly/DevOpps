@@ -114,6 +114,16 @@ function EmployerSearch() {
 
   return (
     <div>
+      <div className=" bg-indigo-500  py-24 mx-auto ">
+    <div className ="container mx-auto max-w-[1280px] px-6">
+          <h1 className=" text-3xl font-semibold leading-7 text-white sm:text-4xl">Employer Search</h1>
+          <p className="mt-3 leading-6 text-white">
+                This information will be displayed publicly so be careful what you share.
+              </p>
+       
+    </div>
+   
+   </div>
       <div className="text-center top-div">
       <div>
         <h1 className="text-3xl font-bold text-white font-serif ">Find the ideal candidate in just a few clicks</h1>
@@ -144,10 +154,10 @@ function EmployerSearch() {
           <div className="w-full md:w-1/5">
             <div className="bg-gray-500">
               <div className="bg-gray-500">
-                <h1 className='italic font-bold text-lg md:text-2xl text-center'>Filter By: </h1>
+                <h3 className=' font-bold text-lg md:text-2xl text-center'>Filter By: </h3>
                 <div className='bg-gray-300 grid grid-cols-1 md:grid-cols-2'>
                   <div>
-                    <h2 className='italic font-bold text-sm md:text-base text-center'>Technology</h2>
+                    <h2 className=' font-bold text-sm md:text-base text-center'>Technology</h2>
                     {availableTechnologies.slice(0, showAllTechnologies ? availableTechnologies.length : 10).map((technology, index) => (
                       <div key={index} className='text-center'>
                         <input
@@ -165,7 +175,7 @@ function EmployerSearch() {
                     }
                   </div>
                   <div>
-                    <h2 className='italic font-bold text-sm md:text-base text-center'>City</h2>
+                    <h2 className=' font-bold text-sm md:text-base text-center'>City</h2>
                     {Array.from(new Set(people.map((person) => person.city))).map((city, index) => (
                       <div key={index} className='text-center'>
                         <input
@@ -180,7 +190,7 @@ function EmployerSearch() {
                     ))}
                   </div>
                   <div>
-                    <h2 className='italic font-bold text-sm md:text-base text-center'>Experience</h2>
+                    <h2 className=' font-bold text-sm md:text-base text-center'>Experience</h2>
                     <div>
                       {Array.from(new Set(people.map((person) => person.experience))).map((experience, index) => (
                         <div key={index} className='text-center'>
@@ -197,7 +207,7 @@ function EmployerSearch() {
                     </div>
                   </div>
                   <div>
-                    <h2 className='italic font-bold text-sm md:text-base text-center'>Role</h2>
+                    <h2 className=' font-bold text-sm md:text-base text-center'>Role</h2>
                     <div className='text-center'>
                       {Array.from(new Set(people.map((person) => person.role))).map((role, index) => (
                         <div key={index} className="">
