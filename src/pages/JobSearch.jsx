@@ -344,7 +344,7 @@ function JobSearch() {
             {showButton && (
         <div className={`scrollToTop`}>
           <button
-            className='fixed bottom-5 right-7 z-50 cursor-pointer p-4' onClick={handleScrollToTop}><i className="fa-regular fa-circle-up text-large"></i></button>
+            className='fixed bottom-5 right-7 z-50 cursor-pointer p-4' onClick={handleScrollToTop}><i className="fa-regular fa-circle-up text-indigo-500 text-large"></i></button>
         </div>
       )}
           </div>
