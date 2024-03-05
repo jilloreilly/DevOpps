@@ -14,6 +14,7 @@ function CandidateProfileForm() {
     email: '',
     city: '',
     role: '',
+    experience: '',
     salaryRange: '',
     workplace: '',
     technology: [],
@@ -161,7 +162,7 @@ function CandidateProfileForm() {
                 </div>
                 </div>
   
-                <div className="sm:col-span-4">
+                <div className="sm:col-span-3">
                 <label htmlFor="role" className="block text-sm font-medium leading-6 text-gray-900">
                   Role
                 </label>
@@ -185,29 +186,31 @@ function CandidateProfileForm() {
                   </select>
                 </div>
                 </div>
-  
-                <div className="sm:col-span-4">
-                <label htmlFor="salaryRange" className="block text-sm font-medium leading-6 text-gray-900">
-                  Expected Salary
+
+                <div className="sm:col-span-3">
+                <label htmlFor="experience" className="block text-sm font-medium leading-6 text-gray-900">
+                  Experience
                 </label>
-                  <div className="relative mt-2">
-                  <span className="absolute inset-y-0 start-0 top-0 flex items-center ps-2.5 pointer-events-none">£</span>
-          
-    
-                    <input
+                <div className="mt-2">
+                    <select
                       required
-                    id="salaryRange"
-                      name="salaryRange"
-                      type="number"
-                      value={profileFormData.salaryRange}
+                    id="experience"
+                      name="experience"
+                      type="text"
+                      value={profileFormData.experience}
                       onChange={handleProfileChange}
-                    className="block w-full rounded-md border-0 py-1.5 px-2 ps-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  >
-                  </input>
+                    className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    >
+                       <option>Please select</option>
+                      <option>Junior</option>
+                      <option>Mid</option>
+                      <option>Senior</option>
+                      <option>Lead</option>
+                  </select>
                 </div>
                 </div>
   
-                <div className="sm:col-span-4">
+                <div className="sm:col-span-3">
                 <label htmlFor="workplace" className="block text-sm font-medium leading-6 text-gray-900">
                   Workplace preference
                 </label>
@@ -226,6 +229,27 @@ function CandidateProfileForm() {
                       <option>Remote</option>
                       <option>Hybrid</option>
                   </select>
+                </div>
+                </div>
+
+                <div className="sm:col-span-3">
+                <label htmlFor="salaryRange" className="block text-sm font-medium leading-6 text-gray-900">
+                  Expected Salary
+                </label>
+                  <div className="relative mt-2">
+                  <span className="absolute inset-y-0 start-0 top-0 flex items-center ps-2.5 pointer-events-none">£</span>
+          
+    
+                    <input
+                      required
+                    id="salaryRange"
+                      name="salaryRange"
+                      type="number"
+                      value={profileFormData.salaryRange}
+                      onChange={handleProfileChange}
+                    className="block w-full rounded-md border-0 py-1.5 px-2 ps-6 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  >
+                  </input>
                 </div>
                 </div>
                 
