@@ -80,7 +80,7 @@ function Candidate() {
 
        <div className='w-full md:w-7/12 leading-7'>
        <h2 className="my-6 text-2xl font-semibold">Details:</h2>
-          <p><i class="fa-solid fa-envelope mr-1 w-6 text-indigo-500" aria-hidden="true"></i>Email: {user.email}</p>
+          <p><i class="fa-solid fa-envelope mr-1 w-6 text-indigo-500" aria-hidden="true"></i>Email: <a href={"mailto:" + user.email}>{user.email}</a></p>
           <p><i class="fa-solid fa-location-dot mr-1 w-6 text-indigo-500" aria-hidden="true"></i>City: {user.city}</p>
           <p><i class="fa-solid fa-graduation-cap mr-1 w-6 text-indigo-500" aria-hidden="true"></i>Experience: {user.experience}</p>
           <p><i class="fa-regular fa-building mr-1 w-6 text-indigo-500" aria-hidden="true"></i>Workplace Preference: {user.workplace}</p>
