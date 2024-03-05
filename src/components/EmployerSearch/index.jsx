@@ -156,7 +156,7 @@ function EmployerSearch() {
                   <div>
                     <h4 className='mb-3 font-medium text-sm md:text-base text-left'>Technology</h4>
                     {availableTechnologies.slice(0, showAllTechnologies ? availableTechnologies.length : 10).map((technology, index) => (
-                      <div key={index} className='text-left'>
+                      <div key={index} className='text-sm mb-1'>
                         <input
                           type="checkbox"
                           id={`technology-${index}`}
@@ -174,7 +174,7 @@ function EmployerSearch() {
                   <div>
                     <h4 className='mb-3 font-medium text-sm md:text-base text-left'>City</h4>
                     {Array.from(new Set(people.map((person) => person.city))).map((city, index) => (
-                      <div key={index} className='text-left'>
+                      <div key={index} className='text-sm mb-1'>
                         <input
                           type="checkbox"
                           id={`city-${index}`}
@@ -190,7 +190,7 @@ function EmployerSearch() {
                     <h4 className='my-3 font-medium text-sm md:text-base text-left'>Experience</h4>
                     <div>
                       {Array.from(new Set(people.map((person) => person.experience))).map((experience, index) => (
-                        <div key={index} className='text-left'>
+                        <div key={index} className='text-sm mb-1'>
                           <input
                             type="checkbox"
                             id={`experience-${index}`}
@@ -203,11 +203,11 @@ function EmployerSearch() {
                       ))}
                     </div>
                   </div>
-                  <div>
+                  <div className="gap-2">
                     <h4 className='my-3 font-medium text-sm md:text-base text-left'>Role</h4>
-                    <div className='text-left'>
+                    <div className='text-sm'>
                       {Array.from(new Set(people.map((person) => person.role))).map((role, index) => (
-                        <div key={index} className="">
+                        <div key={index} className="mb-1">
                           <input
                             type="checkbox"
                             id={`role-${index}`}
@@ -235,13 +235,13 @@ function EmployerSearch() {
             <div>
               {showResults && results.length > 0 ? (
                 <div>
-                  <h1 className="text-3xl font-bold mb-2">Results</h1>
+                  <h2 className="text-3xl font-bold mb-2">Results</h2>
                   <div className="mt-6">
                     {results.map((person) => (
                       <div key={person.id} className="flex flex-col w-full mb-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-3">
-                        <h4 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{person.name}</h4>
+                        <h4 className="mb-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{person.name}</h4>
                           <p className="text-sm">Email: {person.email}</p>
-                        <div className="flex flex-row w-full justify-between text-sm leading-normal">
+                        <div className="mt-3 flex flex-row w-full justify-between text-sm leading-normal">
                           <p>City: {person.city}</p>
                           <p>Experience: {person.experience}</p>
                           <p>Technology: {person.technology.join(', ')}</p>
