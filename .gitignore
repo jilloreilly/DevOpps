@@ -23,5 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 
-# Config file
-*.env
+.env.local

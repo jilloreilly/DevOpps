@@ -1,59 +1,66 @@
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, Link } from "@nextui-org/react";
-import React from 'react';
+import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link } from "@nextui-org/react";
+import { useState } from "react";
 
 
-export default function App() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const menuItems = [
+    { name: "Job Search", link: "/job-results" },
+    { name: "Employee Search", link: "/employer/search" },
+    { name: "Create Profile", link: "/candidate/create-profile" },
+  ];
 
   return (
-    <Navbar>
-      <NavbarContent>
-        {/* Render the NavbarMenuToggle only on smaller screens */}
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        />
-        {/* Render the NavbarBrand */}
-        <NavbarBrand>
-        <Link href="/" className="font-bold text-inherit">DevOpps</Link>
-        </NavbarBrand>
-        {/* Render NavbarMenuToggle as the last item on larger screens */}
-        <NavbarItem className="hidden sm:flex">
-          <NavbarMenuToggle
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          />
-        </NavbarItem>
-        {/* Renders NavbarMenu only if menu is open */}
-        {isMenuOpen ? (
-          <NavbarContent>
-            <NavbarItem>
-              <Link color="foreground" href="//employer/search">
-                Employer
-              </Link>
-            </NavbarItem>
-            <NavbarItem>
-              <Link color="foreground" href="/candidate/create-profile">
-                Candidate
-              </Link>
-            </NavbarItem>
-          </NavbarContent>
-        ) : (
-          <NavbarContent className="hidden sm:flex gap-4" justify="center">
-            <NavbarItem>
-              <Link color="foreground" href="/employer/search">
-                Employer
-              </Link>
-            </NavbarItem>   
-            <NavbarItem>
-              <Link color="foreground" href="/candidate/create-profile">
-                Candidate
-              </Link>
-            </NavbarItem>
-          </NavbarContent>
-        )}
+    <Navbar
+      isBordered
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
+    >
+      <NavbarContent className="md:hidden" justify="start">
+        <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
       </NavbarContent>
+
+      <div className="smhide md:block pr-3" justify="center">
+        <NavbarBrand>
+          {<Link href="/"><img className="h-16 w-auto" src='/images/logo.png' alt='devOpps' /><p className="text-3xl ml-2 font-semibold text-foreground devopps">devOpps</p></Link>}          
+        </NavbarBrand>
+      </div>
+
+      <div className="md:hidden gap-4" justify="center">
+        <NavbarBrand>
+          {<Link href="/"><img className="h-20 w-auto" src='/images/logo.png' alt='devOpps' /><p className="font-bold text-foreground">devOpps</p></Link>}          
+        </NavbarBrand>
+      </div>
+
+      <NavbarContent justify="end">
+        <NavbarItem className="smhide md:flex" >
+          <Link href="/employer/search" color="foreground">Employer</Link>
+        </NavbarItem>
+        <NavbarItem className="smhide md:flex">
+          <Link href="/candidate/create-profile" color="foreground">Candidate</Link>
+        </NavbarItem>
+        <NavbarItem className="smhide md:flex">
+          {<Link href="/job-results" color="foreground">Job Search</Link>}
+        </NavbarItem>
+      </NavbarContent>
+
+      <NavbarMenu>
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item.name}-${index}`}>
+            <Link
+              className="w-full"
+              color={
+                index === 2 ? "secondary" : index === menuItems.length - 1 ? "secondary" : "foreground"
+              }
+              href={item.link}
+              size="lg"
+            >
+              {item.name}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
     </Navbar>
   );
 }

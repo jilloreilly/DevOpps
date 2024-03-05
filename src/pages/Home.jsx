@@ -9,6 +9,8 @@ import {
   DropdownItem
 } from "@nextui-org/react";
 import { Input } from "@nextui-org/react";
+import NewsSlider from '../components/NewsSlider'
+
 
 
 function Home() {
@@ -37,9 +39,9 @@ function Home() {
       <div className="h-full flex items-center justify-center xl:justify-start lg:justify-center md:justify-center sm:justify-center hero-background relative">
         <div className="absolute  inset-0 bg-white opacity-20"></div>
         <div className="w-1/2 xl:p-20 lg:p-5 flex flex-col relative z-10">
-          <h1 className="text-5xl font-medium text-white mb-8">Welcome to DevOpps</h1>
-          <h3 className="text-2xl font-light text-white mb-14">From job seekers to recruiters, DevOpps offers a comprehensive platform for all your tech hiring needs, making job searches and candidate sourcing hassle-free.</h3>
-          <div className=' bg-gray-200 rounded-lg p-5'>
+          <h1 className="text-5xl font-medium text-white mb-8">Welcome to devOpps</h1>
+          <h3 className="text-2xl font-light text-white mb-14">From job seekers to recruiters, devOpps offers a comprehensive platform for all your tech hiring needs, making job searches and candidate sourcing hassle-free.</h3>
+          <div className=' bg-white rounded-lg p-5'>
             <h2 className='text-gray-800 pb-3 mx-2'>Search available positions:</h2>
             <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex flex-row items-center">
               <Dropdown>
@@ -60,6 +62,12 @@ function Home() {
                   </DropdownItem>
                   <DropdownItem key="Full Stack Developer" onClick={() => setSelectedOption('Full Stack Developer')}>
                     Full Stack Developer
+                  </DropdownItem>
+                  <DropdownItem key="Full Stack Developer" onClick={() => setSelectedOption('DevOps Engineer')}>
+                    DevOps Engineer
+                  </DropdownItem>
+                  <DropdownItem key="Full Stack Developer" onClick={() => setSelectedOption('Cloud Architect')}>
+                    Cloud Architect
                   </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
@@ -94,42 +102,58 @@ function Home() {
             </div>
           </Link>
         </div>
+</div>
 
+<div className="container px-8 sm:px-2 mx-auto">
 {/* Popular cities text */}
         <div className='text-center flex items-center justify-center flex-col'>
-          <h2 className='w-1/2 mb-3 font-bold '>Popular cities</h2>
+          <h2 className='w-1/2 mb-3 font-bold text-xl'>Popular cities</h2>
           <h3 className='w-1/2 mb-5'>Our popular cities section enables candidates to explore job openings in their preferred locations. Click on a city to initiate a targeted job search and uncover exciting career prospects near you.</h3>
         </div>
+</div>
+
+
 {/* Popular cities grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 m-24 sm:m-5">
+<div className="container grid lg:grid-cols-3 md:grid-cols-3 md:grid-rows-2 sm:grid-cols-1 sm:grid-rows-6 gap-4 pb-20 m-24 sm:m-5">
           <a className="relative london-box rounded-lg" onClick={() => handleCityClick('London')}><div>
             <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
-            <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">London</h2>
+            <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white text-2xl">London</h2>
           </div></a>
 
-          <div className="sm:col-span-1 grid grid-cols-1 gap-2">
+          {/* <div className="sm:col-span-1 grid grid-cols-1 gap-2"> */}
             <a className="relative bristol-box rounded-lg" onClick={() => handleCityClick('Bristol')}><div>
               <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0 "></div>
-              <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Bristol</h2>
+              <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white text-2xl">Bristol</h2>
             </div></a>
             <a className="relative edinburgh-box rounded-lg" onClick={() => handleCityClick('Edinburgh')}><div>
               <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
-              <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Edinburgh</h2>
+              <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-2xl text-white">Edinburgh</h2>
             </div></a>
-          </div>
+          {/* </div> */}
 
-          <div className="sm:col-span-1 grid grid-cols-1 gap-2">
+          {/* <div className="sm:col-span-1 grid grid-cols-1 gap-2"> */}
             <a className="relative cardiff-box rounded-lg" onClick={() => handleCityClick('Cardiff')}><div>
               <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
-              <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Cardiff</h2>
+              <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white text-2xl">Cardiff</h2>
             </div></a>
             <a className="relative manchester-box rounded-lg" onClick={() => handleCityClick('Manchester')}><div>
               <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
-              <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white">Manchester</h2>
+              <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white text-2xl">Manchester</h2>
+            </div></a>
+            <a className="relative cambridge-box rounded-lg" onClick={() => handleCityClick('Cambridge')}><div>
+              <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
+              <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white text-2xl">Cambridge</h2>
             </div></a>
           </div>
+        {/* </div> */}
+      
+      {/* tech header */}
+      <div className='text-center flex items-center justify-center flex-col'>
+          <h2 className='w-1/2 mb-3 pb-5 font-bold text-xl'>Latest Tech News:</h2>
         </div>
-      </div>
+
+        <NewsSlider/>
+
     </>
   );
 }

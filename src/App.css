@@ -8,13 +8,26 @@ body {
   font-weight: 300;
 }
 
+/* Hide on small (possible .hidden class conflict between next ui and tailwind) */
+@media (max-width: 767px) {
+  .smhide {
+    display: none;
+  }
+}
+
+/*  Navbar */
+.devopps {
+  /* background-image: linear-gradient(60deg, #5556f7, #a954eb);
+  background-clip: text;
+  color: transparent; */
+}
+
 /* hero image */
 .hero-background {
     background-image: url('/images/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
 }
 
 .hero-background h1,
@@ -30,13 +43,12 @@ body {
 
 .london-box {    
     background-image: url('/images/London.jpg');
-    height: 450px;
   }
   .bristol-box {    
     background-image: url('/images/Bristol.jpg');
   }
   .manchester-box {    
-    background-image: url('./images/Manchester.jpg');
+    background-image: url('/images/Manchester.jpg');
   }
   .cardiff-box {    
     background-image: url('/images/Cardiff.jpg');
@@ -44,11 +56,15 @@ body {
   .edinburgh-box {    
     background-image: url('/images/Edinburgh.jpg');
   }
-  .bristol-box, .cardiff-box, .edinburgh-box, .manchester-box, .london-box {
+  .cambridge-box {    
+    background-image: url('/images/Cambridge.jpg');
+  }
+  .bristol-box, .cardiff-box, .edinburgh-box, .manchester-box, .london-box, .cambridge-box {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     cursor: pointer;
+    height: 300px;
   }
 
   /* employer/employee cards */
@@ -62,4 +78,13 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+/* Results header */
+.results-header {
+  background: url('/images/results-header.jpg') center 75% no-repeat;
+}
+
+.control-dots {
+  display: none !important;
 }
