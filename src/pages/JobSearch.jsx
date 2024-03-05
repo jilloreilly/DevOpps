@@ -220,6 +220,8 @@ function JobSearch() {
                             <option value="Front End Developer">Front End Developer</option>
                             <option value="Back End Developer">Back End Developer</option>
                             <option value="Full Stack Developer">Full Stack Developer</option>
+                            <option value="DevOps Engineer">DevOps Engineer</option>
+                            <option value="Cloud Architect">Cloud Architect</option>
                           </select>
                         </div>
                       </div>
@@ -340,13 +342,14 @@ function JobSearch() {
                   isSearching ? "Searching..." : (jobs.length === 0 && !isSearching && !isReset) ? "No jobs found" : <JobSearchResults jobs={jobs} handleJobSelection={handleJobSelection} />
                 }
               </div>
+
+              {showButton && (
+                <div className={`scrollToTop`}>
+                  <button className='fixed bottom-5 right-7 z-50 cursor-pointer p-4' onClick={handleScrollToTop}><i className="fa-regular fa-circle-up text-indigo-500 text-large"></i></button>
+                </div>
+              )}
             </section>
-            {showButton && (
-        <div className={`scrollToTop`}>
-          <button
-            className='fixed bottom-5 right-7 z-50 cursor-pointer p-4' onClick={handleScrollToTop}><i className="fa-regular fa-circle-up text-indigo-500 text-large"></i></button>
-        </div>
-      )}
+            
           </div>
         )}
       </div>
