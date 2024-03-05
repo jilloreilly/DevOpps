@@ -8,7 +8,7 @@ function JobDetails(props) {
 
   const [favourites, setFavourites] = useState ([])
   const [isChecked, setIsChecked] = useState(false)
-
+  
   useEffect( () => {
     const storedFavourites = JSON.parse(localStorage.getItem('favourites')) || [];
     if (storedFavourites.length > 0){ 
@@ -42,8 +42,9 @@ function JobDetails(props) {
     localStorage.setItem("favourites", JSON.stringify(favourites));
   }, [favourites]);
 
+  
 
-  window.scrollTo({ top: 0 });
+  //window.scrollTo({ top: 0 });
   
   return (
   <>
@@ -51,24 +52,26 @@ function JobDetails(props) {
       <div className='flex flex-row'>
         <div>
           <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{data.title}</h2>
-          <p><i className="fa-regular fa-building"></i> <strong>Company:</strong> {data.company}</p>
+          <p><i className="fa-regular fa-building text-indigo-500"></i> <strong>Company:</strong> {data.company}</p>
           <p className="my-4 font-normal text-gray-700 dark:text-gray-400">{data.description}</p>
         </div>
-        <div className="favourite" onClick={addToFavourites}><i className={isChecked ? "fa-solid fa-heart" : "fa-regular fa-heart"}></i></div>
+        <div className="favourite" onClick={addToFavourites}><i className={isChecked ? "fa-solid fa-heart text-indigo-500" : "fa-regular fa-heart text-indigo-500"}></i></div>
       </div>
       <div className='flex flex-row justify-evenly py-3 border-t-1 border-b-1'>
-        <p><i className="fa-regular fa-compass"></i> <strong>Location:</strong> {data.location}</p>
-        <p><i className="fa-regular fa-clock"></i> <strong>Employment Type:</strong> {data.employmentType}</p>
-        <p><i className="fa-regular fa-calendar"></i> Date posted: {data.datePosted}</p>
-        <p><i className="fa-regular fa-money-bill-1"></i> <strong>Salary range:</strong> {data.salaryRange == "" ?  "Competitive" : data.salaryRange}</p>
+        <p><i className="fa-regular fa-compass text-indigo-500"></i> <strong>Location:</strong> {data.location}</p>
+        <p><i className="fa-regular fa-clock text-indigo-500"></i> <strong>Employment Type:</strong> {data.employmentType}</p>
+        <p><i className="fa-regular fa-calendar text-indigo-500"></i> Date posted: {data.datePosted}</p>
+        <p><i className="fa-regular fa-money-bill-1 text-indigo-500"></i> <strong>Salary range:</strong> {data.salaryRange == "" ?  "Competitive" : data.salaryRange}</p>
       </div>
       <div className='flex flex-row justify-evenly py-3 border-b-1'>
         <h3 className="font-semibold">Apply here</h3>
         {data.jobProviders.map(provider => (
-          <p key={provider.jobProvider}><a href={provider.url} target='_blank'>{provider.jobProvider} <i className="fa-regular fa-share-from-square"></i></a></p>
+          <p key={provider.jobProvider}><a href={provider.url} target='_blank' className='text-sm'>{provider.jobProvider} <i className="fa-regular fa-share-from-square text-indigo-500"></i></a></p>
         ))}
       </div>
     </div>
+    
+    
   </>
     );
   }
