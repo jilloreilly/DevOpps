@@ -148,11 +148,11 @@ function EmployerSearch() {
 </div> */}
       <div className="max-w-[1280px] container mt-12 mx-auto px-6 f">
         <div className="flex flex-col md:flex-row lg:flex-row gap-12">
-          <div className="w-full md:w-4/12">
+          <div className="w-full md:w-4/12 ">
             <div>
               <div>
                 <h3 className='font-bold text-lg md:text-2xl text-left'>Filter By: </h3>
-                <div className='grid mt-6 grid-cols-1 md:grid-cols-2'>
+                <div className='grid mt-6 grid-cols-1 sm:grid-cols-2'>
                   <div>
                     <h4 className='mb-3 font-medium text-sm md:text-base text-left'>Technology</h4>
                     {availableTechnologies.slice(0, showAllTechnologies ? availableTechnologies.length : 10).map((technology, index) => (
@@ -168,7 +168,7 @@ function EmployerSearch() {
                       </div>
                     ))}
                     {availableTechnologies.length > 10 &&
-                      <button onClick={() => setShowAllTechnologies(!showAllTechnologies)} className="text-blue-500 underline"> {showAllTechnologies ? 'Show Less' : 'Show More'}</button>
+                      <button onClick={() => setShowAllTechnologies(!showAllTechnologies)} className="text-blue-500 underline text-sm"> {showAllTechnologies ? 'Show Less' : 'Show More'}</button>
                     }
                   </div>
                   <div>
@@ -238,14 +238,16 @@ function EmployerSearch() {
                   <h2 className="text-3xl font-bold mb-2">Results</h2>
                   <div className="mt-6">
                     {results.map((person) => (
-                      <div key={person.id} className="flex flex-col w-full mb-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-3">
-                        <h4 className="mb-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{person.name}</h4>
-                          <p className="text-sm">Email: {person.email}</p>
-                        <div className="mt-3 flex flex-row w-full justify-between text-sm leading-normal">
-                          <p>City: {person.city}</p>
+                      <div key={person.id} className=" w-full mb-3 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-3">
+                        <h4 className="mb-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{person.name} - {person.role}</h4>
+                        <div className="flex flex-col w-full justify-start gap-3 text-sm leading-normal">
+                          <p><i class="fa-regular fa-compass" aria-hidden="true"></i> Location: {person.city}</p>
                           <p>Experience: {person.experience}</p>
                           <p>Technology: {person.technology.join(', ')}</p>
-                          <p>Role: {person.role}</p>
+                        </div>
+                        <div className="mt-5">
+                          <a href={"mailto:" + person.email} className="inline-block flex-none rounded-md  bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 mr-2">Contact
+                        </a>
                         </div>
                       </div>
                     ))}
