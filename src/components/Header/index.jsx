@@ -1,5 +1,6 @@
 import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link } from "@nextui-org/react";
 import { useState } from "react";
+import './index.css'
 
 
 export default function Header() {
@@ -29,7 +30,7 @@ export default function Header() {
 
       <div className="md:hidden gap-4" justify="center">
         <NavbarBrand>
-          {<Link href="/"><img className="h-12 w-auto" src='/images/logo.png' alt='devOpps' /><p className="font-bold text-foreground">devOpps</p></Link>}          
+          {<Link href="/"><img className="h-14 w-auto" src='/images/logo.png' alt='devOpps' /><p className="font-bold text-2xl text-foreground">devOpps</p></Link>}          
         </NavbarBrand>
       </div>
 
