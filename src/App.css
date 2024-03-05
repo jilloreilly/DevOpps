@@ -15,13 +15,19 @@ body {
   }
 }
 
+/*  Navbar */
+.devopps {
+  /* background-image: linear-gradient(60deg, #5556f7, #a954eb);
+  background-clip: text;
+  color: transparent; */
+}
+
 /* hero image */
 .hero-background {
     background-image: url('/images/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
 }
 
 .hero-background h1,

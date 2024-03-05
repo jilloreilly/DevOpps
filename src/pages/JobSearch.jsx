@@ -162,10 +162,10 @@ function JobSearch() {
   return (
 
     <>
-      <div className="bg-indigo-500 py-24 mx-auto results-header">
-        <div className="container mx-auto max-w-[1280px] px-6">
-          <h1 className=" text-3xl font-semibold leading-7 text-white sm:text-4xl">Search results</h1>
-        </div>
+    <div className="bg-indigo-500 py-24 mx-auto results-header">
+      <div className ="container mx-auto max-w-[1280px] px-6">
+        <h1 className=" text-3xl font-semibold leading-7 text-white sm:text-4xl">Job Search</h1>
+      </div>
       </div>
 
       <div className="max-w-[1280px] container mx-auto mb-1 px-6">
