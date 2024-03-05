@@ -1,5 +1,6 @@
 import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link } from "@nextui-org/react";
 import { useState } from "react";
+import './index.css'
 
 
 export default function Header() {
