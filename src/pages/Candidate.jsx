@@ -75,16 +75,17 @@ function Candidate() {
    </div>
       <div className="max-w-[1280px] container mt-12 mx-auto px-6 flex flex-col md:flex-row lg:flex-row gap-12 ">
 
-       <div className="w-full md:w-5/12"> <img className="rounded-full mb-6" src={user.gitHubAvatar}></img></div>
+       <div className="w-full md:w-5/12"> <img className="rounded-full mb-6 w-full object-cover" src={user.gitHubAvatar}></img></div>
 
 
-       <div className='w-full md:w-7/12'>
+       <div className='w-full md:w-7/12 leading-7'>
        <h2 className="my-6 text-2xl font-semibold">Details:</h2>
-          <p>Email: {user.email}</p>
-          <p>City: {user.city}</p>
-          <p>Experience: {user.experience}</p>
-          <p>Workplace Preference: {user.workplace}</p>
-          <button className="mt-6 flex-none rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500" onClick={findJobs}>Find matching jobs</button>
+          <p><i class="fa-solid fa-envelope mr-1 w-6 text-indigo-500" aria-hidden="true"></i>Email: {user.email}</p>
+          <p><i class="fa-solid fa-location-dot mr-1 w-6 text-indigo-500" aria-hidden="true"></i>City: {user.city}</p>
+          <p><i class="fa-solid fa-graduation-cap mr-1 w-6 text-indigo-500" aria-hidden="true"></i>Experience: {user.experience}</p>
+          <p><i class="fa-regular fa-building mr-1 w-6 text-indigo-500" aria-hidden="true"></i>Workplace Preference: {user.workplace}</p>
+          <p><i class="fa-regular fa-money-bill-1 mr-1 w-6 text-indigo-500" aria-hidden="true"></i>Salary Exectations: £{user.salaryRange}</p>
+          {/* <button className="mt-6 flex-none rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500" onClick={findJobs}>Find matching jobs</button> */}
   
           <h2 className="mt-6 text-2xl font-semibold">Skills:</h2>
           <ul className="mt-6 flex flex-wrap flex-row items-center justify-start gap-4">
