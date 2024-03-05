@@ -73,3 +73,8 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+/* Results header */
+.results-header {
+  background: url('/images/results-header.jpg') center 75% no-repeat;
+}
