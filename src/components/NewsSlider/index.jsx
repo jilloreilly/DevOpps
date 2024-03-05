@@ -21,7 +21,7 @@ export default function NewsSlider() {
                     <div key={index} className="p-8 rounded relative flex flex-col justify-center items-center">
                         <h2 className="text-white text-xl font-semibold mb-4 text-center mt-4">{article.title}</h2>
                         <a href={article.url} target="_blank" rel="noopener noreferrer">
-                            <button className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 mt-2">Go to Article</button>
+                            <button className="bg-indigo-500 text-white font-medium text-small px-4 py-2 rounded hover:bg-indigo-400 transition duration-300 mt-2">Go to Article</button>
                         </a>
                     </div>
                 ))}
