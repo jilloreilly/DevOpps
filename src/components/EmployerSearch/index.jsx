@@ -120,7 +120,8 @@ function EmployerSearch() {
           <p className="mt-3 leading-6 text-white">
           Find the ideal candidate in just a few clicks!
               </p>
-              <div className="mt-3 icons text-center top-div">
+              
+          {/* <div className="mt-3 icons text-center top-div">
     
       <div className="flex flex-wrap justify-between">
         <div className="w-full sm:w-1/2 md:w-auto flex flex-col items-center mx-4 my-4">
@@ -139,7 +140,7 @@ function EmployerSearch() {
           <p className="text-center text-white">With the help of artificial intelligence,<br /> we pinpoint and present the most suitable <br />candidates for your vacancy,<br /> streamlining your selection process</p>
         </div>
       </div>
-</div>
+</div> */}
     </div>
     
    </div>
