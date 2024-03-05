@@ -1,14 +1,7 @@
-// import { Link } from "react-router-dom";
-// import { useState } from 'react';
-
-export default function JobList(props) {
+export default function JobList({data}) {
   
-  const jobs = props.data;
-
-  console.log(jobs);
-
-
-  
+  const jobs = data;
+    
   return (
     <>
     
