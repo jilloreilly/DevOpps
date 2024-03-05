@@ -41,7 +41,7 @@ function Home() {
         <div className="w-1/2 xl:p-20 lg:p-5 flex flex-col relative z-10">
           <h1 className="text-5xl font-medium text-white mb-8">Welcome to devOpps</h1>
           <h3 className="text-2xl font-light text-white mb-14">From job seekers to recruiters, devOpps offers a comprehensive platform for all your tech hiring needs, making job searches and candidate sourcing hassle-free.</h3>
-          <div className=' bg-gray-200 rounded-lg p-5'>
+          <div className=' bg-white rounded-lg p-5'>
             <h2 className='text-gray-800 pb-3 mx-2'>Search available positions:</h2>
             <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex flex-row items-center">
               <Dropdown>
