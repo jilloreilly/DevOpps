@@ -159,12 +159,31 @@ function JobSearch() {
     setPage(page + delta)
   };
 
+  // Back to top button
+  const [showButton, setShowButton] = useState(false)
+
+  useEffect( () => {
+    const handleScrollBtnVisibility = () => {
+      window.pageYOffset > 300 ? setShowButton(true) : setShowButton(false);
+    };
+
+    window.addEventListener("scroll", handleScrollBtnVisibility);
+
+    return () => {
+      window.removeEventListener("scroll", handleScrollBtnVisibility);
+    };
+    }, []);
+
+    const handleScrollToTop = () => {
+      window.scrollTo({ top:0, behavior:"smooth"});
+    };
+
   return (
 
     <>
     <div className="bg-indigo-500 py-24 mx-auto results-header">
       <div className ="container mx-auto max-w-[1280px] px-6">
-        <h1 className=" text-3xl font-semibold leading-7 text-white sm:text-4xl">Job Search</h1>
+        <h1 className="text-3xl font-semibold leading-7 text-white sm:text-4xl">Job Search</h1>
       </div>
       </div>
 
@@ -322,6 +341,12 @@ function JobSearch() {
                 }
               </div>
             </section>
+            {showButton && (
+        <div className={`scrollToTop`}>
+          <button
+            className='fixed bottom-5 right-7 z-50 cursor-pointer p-4' onClick={handleScrollToTop}><i className="fa-regular fa-circle-up text-large"></i></button>
+        </div>
+      )}
           </div>
         )}
       </div>
