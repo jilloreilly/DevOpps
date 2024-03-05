@@ -80,41 +80,41 @@ function Home() {
         </div>
       </div>
 
-      <div className='container px-8 sm:px-2 mx-auto'>
+      <div className='container max-w-[1280px] px-6  mx-auto'>
 
         {/* candidate/employer section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-32 py-5 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 my-24 py-5 ">
           <Link to='/employer/search'>
-            <div className="employer p-4 m-3 shadow-md rounded-lg h-96 relative flex justify-center items-center">
+            <div className="employer p-4 shadow-md rounded-lg h-96 relative flex justify-center items-center">
               <div className="absolute inset-0 bg-white opacity-20 hover:opacity-10"></div>
-              <div className="absolute inset-x-0 bg-gray-700 opacity-70 py-2 text-gray-200 text-center ">
+              <h2 className="absolute  text-2xl inset-x-0 bg-gray-700 opacity-70 py-2 text-gray-200 text-center ">
                 I am an employer.
-              </div>
+              </h2>
             </div>
           </Link>
 
           <Link to='/candidate/create-profile'>
-            <div className="employee p-4 m-3 shadow-md rounded-lg h-96 relative flex justify-center items-center">
+            <div className="employee p-4 shadow-md rounded-lg h-96 relative flex justify-center items-center">
               <div className="absolute inset-0 bg-white opacity-20 hover:opacity-10"></div>
-              <div className="absolute inset-x-0 bg-gray-700 opacity-70 py-2 text-gray-200 text-center ">
+              <h2 className="absolute text-2xl inset-x-0 bg-gray-700 opacity-70 py-2 text-gray-200 text-center ">
                 I am a candidate.
-              </div>
+              </h2>
             </div>
           </Link>
         </div>
 </div>
 
-<div className="container px-8 sm:px-2 mx-auto">
+<div className="container max-w-[1280px] px-6 sm:px-2 mx-auto">
 {/* Popular cities text */}
         <div className='text-center flex items-center justify-center flex-col'>
-          <h2 className='w-1/2 mb-3 font-bold text-xl'>Popular cities</h2>
-          <h3 className='w-1/2 mb-5'>Our popular cities section enables candidates to explore job openings in their preferred locations. Click on a city to initiate a targeted job search and uncover exciting career prospects near you.</h3>
+          <h2 className='w-1/2 mb-4 text-3xl font-bold'>Popular cities</h2>
+          <p className='w-1/2 mb-5'>Our popular cities section enables candidates to explore job openings in their preferred locations. Click on a city to initiate a targeted job search and uncover exciting career prospects near you.</p>
         </div>
 </div>
 
 
 {/* Popular cities grid */}
-<div className="container grid lg:grid-cols-3 md:grid-cols-3 md:grid-rows-2 sm:grid-cols-1 sm:grid-rows-6 gap-4 pb-20 m-24 sm:m-5">
+<div className="container max-w-[1280px] grid lg:grid-cols-3 md:grid-cols-3 md:grid-rows-2 sm:grid-cols-1 sm:grid-rows-6 gap-8 pb-20 m-24 px-6 sm:my-5">
           <a className="relative london-box rounded-lg" onClick={() => handleCityClick('London')}><div>
             <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
             <h2 className="absolute bottom-0 right-0 mr-2 mb-2 text-white text-2xl">London</h2>
