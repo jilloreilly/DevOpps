@@ -30,15 +30,22 @@ function JobSearch() {
     employmentTypes: '',
   });
 
-  // Get querystring values and set form data on first render
+  // Get querystring values and set form data on first render or do a default initial search
   useEffect(() => {
     const queryString = new URLSearchParams(window.location.search);
     const qsTitle = queryString.get('title') || '';
     const qsLocation = queryString.get('location') || '';
-    setFormData({
-      query: qsTitle,
-      location: qsLocation,
-    });
+    if (qsTitle && qsLocation) {
+      setFormData({
+        query: qsTitle,
+        location: qsLocation,
+      });
+    } else {
+      setFormData({
+        query: 'Software Developer',
+        location: 'UK',
+      });
+    }
   }, []);
 
   // Track if a search is in progress to disable buttons and prevent accidental multi-searching 
@@ -155,169 +162,169 @@ function JobSearch() {
   return (
 
     <>
-    <div className="bg-indigo-500 py-24 mx-auto results-header">
-      <div className ="container mx-auto max-w-[1280px] px-6">
-        <h1 className=" text-3xl font-semibold leading-7 text-white sm:text-4xl">Search results</h1>
+      <div className="bg-indigo-500 py-24 mx-auto results-header">
+        <div className="container mx-auto max-w-[1280px] px-6">
+          <h1 className=" text-3xl font-semibold leading-7 text-white sm:text-4xl">Search results</h1>
+        </div>
       </div>
-    </div>
 
-    <div className="max-w-[1280px] container mx-auto mb-1 px-6">
+      <div className="max-w-[1280px] container mx-auto mb-1 px-6">
 
-      {selectedJob ? (
-        <>
-          <button onClick={() => setSelectedJob(null)} className="rounded-md bg-indigo-600 px-3 py-2 my-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Back to Search</button>
-          <JobDetails selectedJob={selectedJob} />
-        </>
-      ) : (
-        <div className="flex flex-col md:flex-row lg:flex-row">
-          <aside className="w-full md:w-3/12">
+        {selectedJob ? (
+          <>
+            <button onClick={() => setSelectedJob(null)} className="rounded-md bg-indigo-600 px-3 py-2 my-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Back to Search</button>
+            <JobDetails selectedJob={selectedJob} />
+          </>
+        ) : (
+          <div className="flex flex-col md:flex-row lg:flex-row">
+            <aside className="w-full md:w-3/12">
 
-            <form onSubmit={handleSearchFormSubmit} className="bg-white rounded-lg p-2 mr-2">
-              <div className="space-y-12">
-                <div className="border-b border-gray-900/10 pb-6">
-                  <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+              <form onSubmit={handleSearchFormSubmit} className="bg-white rounded-lg p-2 mr-2">
+                <div className="space-y-12">
+                  <div className="border-b border-gray-900/10 pb-6">
+                    <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 
-                    <div className="col-span-full">
-                      <label htmlFor="query" className="block text-sm font-medium leading-6 text-gray-900 text-left">
-                        Job Title
-                      </label>
-                      <div className="mt-2">
-                        <select
-                          value={formData.query}
-                          onChange={handleInputChange}
-                          name="query"
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                          required
-                        >
-                          <option value="">Select a Role</option>
-                          <option value="Software Developer">Software Developer</option>
-                          <option value="Front End Developer">Front End Developer</option>
-                          <option value="Back End Developer">Back End Developer</option>
-                          <option value="Full Stack Developer">Full Stack Developer</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div className="col-span-full">
-                      <label htmlFor="location" className="block text-sm font-medium leading-6 text-gray-900 text-left">
-                        Location
-                      </label>
-                      <div className="mt-2">
-                        <input
-                          value={formData.location}
-                          onChange={handleInputChange}
-                          name="location"
-                          type="text"
-                          placeholder="City, Country"
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                          required />
-                      </div>
-                    </div>
-
-                    <div className="col-span-full">
-                      <label htmlFor="Distance" className="block text-sm font-medium leading-6 text-gray-900 text-left">
-                        Distance (km)
-                      </label>
-                      <div className="mt-2">
-                        <input
-                          value={formData.distance || ''}
-                          onChange={handleInputChange}
-                          name="distance"
-                          type="text"
-                          placeholder="Distance from location (optional)"
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="col-span-full">
-                      <div className="mt-2">
-                        <label htmlFor="remoteOnly" className="text-sm font-medium leading-6 text-gray-900 text-left">
-                          Remote Only
+                      <div className="col-span-full">
+                        <label htmlFor="query" className="block text-sm font-medium leading-6 text-gray-900 text-left">
+                          Job Title
                         </label>
-                        <input
-                          checked={formData.remoteOnly || false}
-                          onChange={handleCheckboxChange}
-                          name="remoteOnly"
-                          type="checkbox"
-                          placeholder="Distance from location (optional)"
-                          className="rounded-md border-0 py-1.5 ml-3 px-2 text-gray-900 shadow-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                        />
+                        <div className="mt-2">
+                          <select
+                            value={formData.query}
+                            onChange={handleInputChange}
+                            name="query"
+                            className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                            required
+                          >
+                            <option value="">Select a Role</option>
+                            <option value="Software Developer">Software Developer</option>
+                            <option value="Front End Developer">Front End Developer</option>
+                            <option value="Back End Developer">Back End Developer</option>
+                            <option value="Full Stack Developer">Full Stack Developer</option>
+                          </select>
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="col-span-full">
-                      <label htmlFor="datePosted" className="block text-sm font-medium leading-6 text-gray-900 text-left">
-                        Posted
-                      </label>
-                      <div className="mt-2">
-                        <select
-                          value={formData.datePosted}
-                          onChange={handleInputChange}
-                          name="datePosted"
-                          className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                        >
-                          <option value="">Show jobs posted...</option>
-                          <option value="today">Today</option>
-                          <option value="3days">Last 3 days</option>
-                          <option value="week">One week</option>
-                          <option value="month">One month</option>
-                        </select>
+                      <div className="col-span-full">
+                        <label htmlFor="location" className="block text-sm font-medium leading-6 text-gray-900 text-left">
+                          Location
+                        </label>
+                        <div className="mt-2">
+                          <input
+                            value={formData.location}
+                            onChange={handleInputChange}
+                            name="location"
+                            type="text"
+                            placeholder="City, Country"
+                            className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                            required />
+                        </div>
                       </div>
+
+                      <div className="col-span-full">
+                        <label htmlFor="Distance" className="block text-sm font-medium leading-6 text-gray-900 text-left">
+                          Distance (km)
+                        </label>
+                        <div className="mt-2">
+                          <input
+                            value={formData.distance || ''}
+                            onChange={handleInputChange}
+                            name="distance"
+                            type="text"
+                            placeholder="Distance from location (optional)"
+                            className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="col-span-full">
+                        <div className="mt-2">
+                          <label htmlFor="remoteOnly" className="text-sm font-medium leading-6 text-gray-900 text-left">
+                            Remote Only
+                          </label>
+                          <input
+                            checked={formData.remoteOnly || false}
+                            onChange={handleCheckboxChange}
+                            name="remoteOnly"
+                            type="checkbox"
+                            placeholder="Distance from location (optional)"
+                            className="rounded-md border-0 py-1.5 ml-3 px-2 text-gray-900 shadow-sm placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="col-span-full">
+                        <label htmlFor="datePosted" className="block text-sm font-medium leading-6 text-gray-900 text-left">
+                          Posted
+                        </label>
+                        <div className="mt-2">
+                          <select
+                            value={formData.datePosted}
+                            onChange={handleInputChange}
+                            name="datePosted"
+                            className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                          >
+                            <option value="">Show jobs posted...</option>
+                            <option value="today">Today</option>
+                            <option value="3days">Last 3 days</option>
+                            <option value="week">One week</option>
+                            <option value="month">One month</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <EmploymentTypes value={formData.employmentTypes || ''} onChange={handleInputChange} />
+
                     </div>
-
-                    <EmploymentTypes value={formData.employmentTypes || ''} onChange={handleInputChange} />
-
                   </div>
                 </div>
-              </div>
 
-              <div className="mt-6 flex justify-start gap-x-6">
-                <button type="button"
-                  onClick={handleJobSearchClear}
-                  className="rounded-md px-3 py-2 text-sm font-semibold bg-gray-200 text-gray-600 hover:bg-gray-300 focus:ring-gray-400">
-                  Clear
-                </button>
+                <div className="mt-6 flex justify-start gap-x-6">
+                  <button type="button"
+                    onClick={handleJobSearchClear}
+                    className="rounded-md px-3 py-2 text-sm font-semibold bg-gray-200 text-gray-600 hover:bg-gray-300 focus:ring-gray-400">
+                    Clear
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={isSearching}
+                    className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                    Find Jobs
+                  </button>
+                </div>
+              </form>
+
+            </aside>
+
+            <section className="w-full md:w-9/12">
+              <div id="next-page-nav" className={`flex justify-end items-center my-3 ${jobs.length < 10 ? "hidden" : "block"}`}>
                 <button
-                  type="submit"
-                  disabled={isSearching}
-                  className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                  Find Jobs
+                  id="prev-button"
+                  onClick={() => requestPageChange(-1)}
+                  disabled={page < 1 || isSearching}
+                  className="rounded-md bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                  Previous
+                </button>
+                <div className="inline-block mx-2">Page {page + 1}</div>
+                <button
+                  id="next-button"
+                  onClick={() => requestPageChange(+1)}
+                  disabled={jobs.length < 10 || isSearching}
+                  className="rounded-md bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                  Next
                 </button>
               </div>
-            </form>
 
-          </aside>
-
-          <section className="w-full md:w-9/12">
-            <div id="next-page-nav" className={`flex justify-end items-center my-3 ${jobs.length < 10 ? "hidden" : "block"}`}>
-              <button
-                id="prev-button"
-                onClick={() => requestPageChange(-1)}
-                disabled={page < 1 || isSearching}
-                className="rounded-md bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                Previous
-              </button>
-              <div className="inline-block mx-2">Page {page + 1}</div>
-              <button
-                id="next-button"
-                onClick={() => requestPageChange(+1)}
-                disabled={jobs.length < 10 || isSearching}
-                className="rounded-md bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                Next
-              </button>
-            </div>
-
-            <div className="text-left">
-              {
-                // Show appropriate messages or results
-                isSearching ? "Searching..." : (jobs.length === 0 && !isSearching && !isReset) ? "No jobs found" : <JobSearchResults jobs={jobs} handleJobSelection={handleJobSelection} />
-              }
-            </div>
-          </section>
-        </div>
-      )}
-    </div>
+              <div className="text-left">
+                {
+                  // Show appropriate messages or results
+                  isSearching ? "Searching..." : (jobs.length === 0 && !isSearching && !isReset) ? "No jobs found" : <JobSearchResults jobs={jobs} handleJobSelection={handleJobSelection} />
+                }
+              </div>
+            </section>
+          </div>
+        )}
+      </div>
     </>
   );
 }
