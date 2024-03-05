@@ -97,10 +97,10 @@ function EmployerSearch() {
       setErrorMessage('Please select at least one filter or enter a search term.');
       return;
     }
-
+  
     const filteredResults = people.filter((person) =>
       (search.trim() === '' || person.name.toLowerCase().includes(search.toLowerCase())) &&
-      (filteredTechnologies.length === 0 || filteredTechnologies.includes(person.technology[0])) &&
+      (filteredTechnologies.length === 0 || filteredTechnologies.some(tech => person.technology.includes(tech))) &&
       (filteredCities.length === 0 || filteredCities.includes(person.city)) &&
       (filteredExperiences.length === 0 || filteredExperiences.includes(person.experience)) &&
       (filteredRoles.length === 0 || filteredRoles.includes(person.role))
@@ -115,12 +115,12 @@ function EmployerSearch() {
   return (
     <div>
       <div className=" bg-indigo-500  py-24 mx-auto ">
-    <div className ="container mx-auto max-w-[1280px] px-6">
+        <div className="container mx-auto max-w-[1280px] px-6">
           <h1 className=" text-3xl font-semibold leading-7 text-white sm:text-4xl">Employer Search</h1>
           <p className="mt-3 leading-6 text-white">
-          Find the ideal candidate in just a few clicks!
-              </p>
-              
+            Find the ideal candidate in just a few clicks!
+          </p>
+
           {/* <div className="mt-3 icons text-center top-div">
     
       <div className="flex flex-wrap justify-between">
@@ -141,10 +141,10 @@ function EmployerSearch() {
         </div>
       </div>
 </div> */}
-    </div>
-    
-   </div>
-       
+        </div>
+
+      </div>
+
       <div className="max-w-[1280px] container mt-12 mx-auto px-6 f">
         <div className="flex flex-col md:flex-row lg:flex-row gap-12">
           <div className="w-full md:w-4/12 ">
@@ -163,7 +163,7 @@ function EmployerSearch() {
                           onChange={handleTechnologyChange}
                           className="mr-2"
                         />
-                        <label  htmlFor={`technology-${index}`}>{technology}</label>
+                        <label htmlFor={`technology-${index}`}>{technology}</label>
                       </div>
                     ))}
                     {availableTechnologies.length > 10 &&
@@ -247,7 +247,7 @@ function EmployerSearch() {
                         </div>
                         <div className="mt-5">
                           <a href={"mailto:" + person.email} className="inline-block flex-none rounded-md  bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 mr-2">Contact
-                        </a>
+                          </a>
                         </div>
                       </div>
                     ))}
@@ -260,11 +260,11 @@ function EmployerSearch() {
                 </div>
               ) : null}
             </div>
-      {showImage && (
-        <div className="flex items-center justify-center">
-          <img src="../../images/search.png" alt="Search Image" />
-        </div>
-      )}
+            {showImage && (
+              <div className="flex items-center justify-center">
+                <img src="../../images/search.png" alt="Search Image" />
+              </div>
+            )}
           </div>
         </div>
       </div>
