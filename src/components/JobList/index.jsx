@@ -13,7 +13,6 @@ export default function JobList({data}) {
         <div className="flex flex-row w-full justify-between leading-normal">
           <p><i className="fa-regular fa-compass"></i> <strong>Location:</strong> {jobs.location}</p>
           <p><i className="fa-regular fa-clock"></i><strong>Employment type:</strong> {jobs.employmentType}</p>
-          <p><i className="fa-regular fa-clock"></i><strong>Employment type:</strong> {jobs.employmentType}</p>
           <p><i className="fa-regular fa-calendar"></i> <strong>Date posted:</strong> {jobs.datePosted}</p>
           <p><i className="fa-regular fa-money-bill-1"></i> <strong>Salary range:</strong> {jobs.salaryRange == "" ?  "Competitive" : jobs.salaryRange}</p>
         </div>
