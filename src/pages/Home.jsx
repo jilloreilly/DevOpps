@@ -63,6 +63,12 @@ function Home() {
                   <DropdownItem key="Full Stack Developer" onClick={() => setSelectedOption('Full Stack Developer')}>
                     Full Stack Developer
                   </DropdownItem>
+                  <DropdownItem key="Full Stack Developer" onClick={() => setSelectedOption('DevOps Engineer')}>
+                    DevOps Engineer
+                  </DropdownItem>
+                  <DropdownItem key="Full Stack Developer" onClick={() => setSelectedOption('Cloud Architect')}>
+                    Cloud Architect
+                  </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
               <Input type="location" label="Enter your location" value={location} onChange={(e) => setLocation(e.target.value)} className="text-gray-600 hover:text-gray-300 rounded-medium h-12 mx-1 border border-gray-400 w-full" />
