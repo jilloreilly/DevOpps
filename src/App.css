@@ -82,7 +82,16 @@ body {
 
 /* Results header */
 .results-header {
-  background: url('/images/results-header.jpg') center 75% no-repeat;
+  background: url('/images/results-header.jpg') center 100% no-repeat;
+  text-shadow: 1px 1px #333;
+  background-size: cover;
+}
+
+/* Employer header */
+.employer-header {
+  background: url('/images/employer-header.jpg') center 55% no-repeat;
+  text-shadow: 1px 1px #333;
+  background-size: cover;
 }
 /* news carousel */
 .control-dots {
