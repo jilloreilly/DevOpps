@@ -233,7 +233,7 @@ function EmployerSearch() {
               {showResults && results.length > 0 ? (
                 <div>
                   <h2 className="text-3xl font-bold mb-2">Results</h2>
-                  <div className="mt-6">ç
+                  <div className="mt-6">
                     {results.map((person) => (
                       <div key={person.id} className=" w-full mb-3 bg-white border border-gray-200 text-gray-600 rounded-lg hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-4">
                         <h4 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{person.name}</h4>
