@@ -85,7 +85,7 @@ function JobDetails(props) {
       <div className='flex flex-row sm:flex-col md:flex-row lg:flex-row justify-evenly py-3 border-b-1'>
         <h3 className="font-semibold">Apply here</h3>
         {data.jobProviders.map(provider => (
-          <p key={provider.jobProvider}><a href={provider.url} target='_blank' className='text-sm'>{provider.jobProvider} <i className="fa-regular fa-share-from-square text-indigo-500"></i></a></p>
+          <p key={provider.jobProvider}><a href={provider.url} target='_blank' className='text-sm hover:text-indigo-400'>{provider.jobProvider} <i className="fa-regular fa-share-from-square text-indigo-500"></i></a></p>
         ))}
       </div>
     </div>
