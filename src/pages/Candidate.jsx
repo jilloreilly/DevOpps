@@ -43,7 +43,13 @@ function Candidate() {
   
   
     if (!user) {
-      return <div>User not found</div>;
+      return <> <div className="candidate-banner py-24 mx-auto ">
+      <div className ="container mx-auto max-w-[1280px] px-6">
+         <h1 className=" text-3xl font-semibold leading-7 text-white sm:text-4xl">User not Found!</h1>
+         
+      </div>
+     
+     </div></>
     }
   
   return (
