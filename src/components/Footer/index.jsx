@@ -24,11 +24,11 @@ const MyFooter = () => {
             {/* Bottom copyright and links */}
             <div className="text-black text-center mt-4 md:mt-2 p-5 md:p-2 text-sm">
                 <p className='pb-3'>devOpps is a collaberative project, designed and developed by: 
-                    <Link to='https://www.linkedin.com/in/sarah-egleston/' target='blank'> Sarah Egleston, </Link>
-                    <Link to=''>Jill O'Reilly, </Link>
-                    <Link to=''>Will Mowlam, </Link>
-                    <Link to=''>Ramon Sanguini de Andrade </Link> and
-                    <Link to=''> Richard Llewellyn. </Link></p>
+                    <Link to='https://www.github.com/segleston' target='blank'> Sarah Egleston, </Link>
+                    <Link to='https://www.github.com/jilloreilly'>Jill O'Reilly, </Link>
+                    <Link to='https://www.github.com/willmowlam'>Will Mowlam, </Link>
+                    <Link to='https://www.github.com/ramonsaguini'>Ramon Sanguini de Andrade </Link> and
+                    <Link to='https://www.github.com/RichLlew182'> Richard Llewellyn. </Link></p>
                 <p>&copy; 2024 devOpps. All rights reserved.</p>
             </div>
         </footer>
