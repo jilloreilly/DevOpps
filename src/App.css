@@ -152,6 +152,8 @@ body {
   display: none !important;
 }
 
+
+
 /* Candidate banner  */
 .candidate-banner {
   background-image: url('/images/candidate-banner.webp');
@@ -165,4 +167,19 @@ body {
 
 .load-spinner {
   display: flex !important;
+}
+
+@media (max-width: 440px) {
+  .article-abstract {
+    display: none;
+  }
+  .article-title {
+    font-size: small !important;
+    font-weight: 400 !important;
+  }
+  .article-button {
+    font-size: small !important;
+    padding: 3px !important;
+    font-weight: 300 !important;
+  }
 }
