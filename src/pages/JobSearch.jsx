@@ -337,7 +337,7 @@ function JobSearch() {
                 </button>
               </div>
 
-              <div className="text-left">
+              <div className="text-center mt-20 ">
                 {
                   // Show appropriate messages or results
                   isSearching ? "Searching..." : (jobs.length === 0 && !isSearching && !isReset) ? "No jobs found" : <JobSearchResults jobs={jobs} handleJobSelection={handleJobSelection} />
