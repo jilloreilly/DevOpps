@@ -145,7 +145,7 @@ function EmployerSearch() {
 
       <div className="max-w-[1280px] container mt-12 mx-auto px-6 f">
         <div className="flex flex-col md:flex-row lg:flex-row gap-12">
-          <div className="w-full md:w-4/12 ">
+          <div className="w-full md:w6/12 lg:w-4/12">
             <div>
               <div>
                 <h3 className='font-bold text-3xl text-left'>Filter By: </h3>
@@ -228,7 +228,7 @@ function EmployerSearch() {
               <div className="text-red-500 mt-2">{errorMessage}</div>
             )}
           </div>
-          <div className="w-full md:w-8/12">
+          <div className="w-full md:w6/12 lg:w-8/12">
             <div>
               {showResults && results.length > 0 ? (
                 <div>

@@ -3,30 +3,12 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import userData from '../../candidates.json'
 
 function Candidate() {
   
-  const [newUserData, setNewUserData] = useState(() => {
-    const localStorageData = localStorage.getItem('candidateData');
-    return localStorageData ? JSON.parse(localStorageData) : [];
-  });
-
-  useEffect(() => {
-    // Update local storage whenever userData changes
-    localStorage.setItem('candidateData', JSON.stringify(newUserData));
-  }, [newUserData]);
-
-  console.log( {newUserData})
-
-  const navigate = useNavigate();
-  
   const { gitHubUsername } = useParams()
-  const user = newUserData.find(user => user.gitHubUsername === gitHubUsername);
-  
-
-  const findJobs = () => {
-    navigate(`/job-results/?title=${user.role}&location=${user.city}`);
-  }
+  const user = userData.find(user => user.gitHubUsername === gitHubUsername);
 
   const [repos, setRepos] = useState([]);
 
