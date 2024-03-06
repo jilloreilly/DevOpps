@@ -116,7 +116,7 @@ function Home() {
 
 
 {/* Popular cities grid */}
-<div className="container max-w-[1280px] grid lg:grid-cols-3 md:grid-cols-2 md:grid-rows-2 sm:grid-cols-1 sm:grid-rows-6 gap-8 my-5 md:my-20 px-6  mx-auto">
+<div className="container max-w-[1280px] grid lg:grid-cols-3 md:grid-cols-2 md:grid-rows-2 sm:grid-cols-1 sm:grid-rows-6 gap-8 my-5 md:my-20 px-6 mx-auto city">
           <a className="relative london-box rounded-lg" onClick={() => handleCityClick('London')}><div>
             <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
             <h2 className="absolute bottom-0 right-0 mr-3 mb-3 text-white text-2xl">London</h2>

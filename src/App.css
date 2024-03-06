@@ -67,6 +67,10 @@ body {
     height: 300px;
   }
 
+  .city h2 {
+    text-shadow: 1px 2px #333;
+  }
+
   /* employer/employee cards */
 .employee {
   background-image: url('/images/candidate.jpg');
