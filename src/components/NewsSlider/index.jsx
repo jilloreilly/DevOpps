@@ -26,14 +26,6 @@ export default function NewsSlider() {
                     </div>
                 ))}
             </Carousel>
-            <div className="flex justify-between mt-5">
-                <button className="bg-indigo-600 text-white w-28 px-4 py-2 rounded shadow" onClick={() => { }}>
-                    Previous
-                </button>
-                <button className="bg-indigo-600 text-white w-28 px-4 py-2 rounded shadow" onClick={() => { }}>
-                    Next
-                </button>
-            </div>
         </div>
     );
 }
