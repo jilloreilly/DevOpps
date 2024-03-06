@@ -9,6 +9,7 @@ function JobSearch() {
 
   const [selectedJob, setSelectedJob] = useState(null);
   const handleJobSelection = (job) => {
+    window.scrollTo({ top:0 }); // Go to top of job details page
     setSelectedJob(job);
   };
 
