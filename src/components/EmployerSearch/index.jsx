@@ -235,18 +235,23 @@ function EmployerSearch() {
                   <h2 className="text-3xl font-bold mb-2">Results</h2>
                   <div className="mt-6">
                     {results.map((person) => (
-                      <div key={person.id} className=" w-full mb-3 bg-white border border-gray-200 text-gray-600 rounded-lg hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-4">
-                        <h4 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{person.name}</h4>
-                        <h5 className="mb-4 text-1xl font-bold tracing-normal text-gray-500 dark:text-white">{person.role}</h5>
-                        <div className="flex flex-col w-full justify-start gap-2.5 text-sm leading-normal">
-                          <p><i class="fa-regular fa-compass text-indigo-500 font-bold" aria-hidden="true"></i> Location: {person.city}</p>
-                          <p><i class="fa-solid fa-graduation-cap text-indigo-500 font-bold"></i> Experience: {person.experience}</p>
-                          <p><i class="fa-solid fa-microchip text-indigo-500 font-bold"></i> Technology: {person.technology.join(', ')}</p>
-                        </div>
-                        <div className="mt-5">
-                          <a href={"mailto:" + person.email} className="inline-block flex-none rounded-md  bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 mr-2">Contact
-                          </a>
-                        </div>
+                      <div key={person.id} className="gap-10 flex flex-col sm:flex-row md:flex-col lg:flex-row w-full mb-3 bg-white border border-gray-200 text-gray-600 rounded-lg hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-4">
+                        <div className="flex flex-col justify-center"><img className="profile-photo aspect-square rounded-full max-h-[220px]" src={person.gitHubAvatar} alt={person.name}></img></div>
+
+                    <div className="flex flex-col">
+                          <h4 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{person.name}</h4>
+                          <h5 className="mb-4 text-1xl font-bold tracing-normal text-gray-500 dark:text-white">{person.role}</h5>
+                          <div className="flex flex-col w-full justify-start gap-2.5 text-sm leading-normal">
+                            <p><i className="fa-regular fa-compass text-indigo-500 font-bold" aria-hidden="true"></i> Location: {person.city}</p>
+                            <p><i className="fa-solid fa-graduation-cap text-indigo-500 font-bold"></i> Experience: {person.experience}</p>
+                            <p><i className="fa-solid fa-microchip text-indigo-500 font-bold"></i> Technology: {person.technology.join(', ')}</p>
+                          </div>
+                          <div className="mt-5">
+                            <a href={"mailto:" + person.email} className="inline-block flex-none rounded-md  bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 mr-2">Contact
+                            </a>
+                          </div>
+                    </div>
+
                       </div>
                     ))}
                   </div>
