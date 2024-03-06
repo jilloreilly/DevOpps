@@ -36,13 +36,13 @@ export default function Header() {
 
       <NavbarContent justify="end">
         <NavbarItem className="smhide md:flex" >
-          <Link href="/employer/search" color="foreground">Employer</Link>
+          <Link href="/employer/search" color="foreground" className='hover:text-indigo-400'>Employer</Link>
         </NavbarItem>
         <NavbarItem className="smhide md:flex">
-          <Link href="/candidate/create-profile" color="foreground">Candidate</Link>
+          <Link href="/candidate/create-profile" color="foreground" className='hover:text-indigo-400'>Candidate</Link>
         </NavbarItem>
         <NavbarItem className="smhide md:flex">
-          {<Link href="/job-results" color="foreground">Job Search</Link>}
+          {<Link href="/job-results" color="foreground" className='hover:text-indigo-400'>Job Search</Link>}
         </NavbarItem>
       </NavbarContent>
 
