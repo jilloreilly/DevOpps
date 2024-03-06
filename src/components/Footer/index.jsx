@@ -2,6 +2,13 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 const MyFooter = () => {
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
+
     return (
         <footer className="bg-blue-100 text-black py-10 mt-20 relative bottom-0 left-0 w-full">
             {/* Top section for logo and links within website */}
@@ -11,7 +18,7 @@ const MyFooter = () => {
                     <p className='p-5 md:p-1 text-center text-large md:text-base'>devOpps simplifies the hiring process by enabling developers to find their ideal job matches while assisting employers in discovering top talent. </p>
                 </div>
                 <div className="w-full lg:w-1/3 flex flex-col items-center justify-center pb-2">
-                <Link to='/'><img src='/images/logo.png'/></Link>
+                    <Link to='/' onClick={scrollToTop}><img src='/images/logo.png'/></Link>
                 </div>
                 {/* Right section for quick links */}
                 <div className='flex flex-col items-center w-1/3 pt-2'>
