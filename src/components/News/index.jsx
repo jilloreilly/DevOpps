@@ -4,9 +4,9 @@ const apiKey = import.meta.env.VITE_NEWS_API_KEY;
 
 export async function fetchNewsData() {
     try {
-        const url = `https://newsapi.org/v2/everything?q="technology news"&apiKey=${apiKey}&sortBy=publishedAt`;
+        const url = `https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=${apiKey}`;
         const response = await axios.get(url);
-        return response.data.articles;
+        return response.data.results;
     } catch (error) {
         console.error('Error fetching news data:', error);
         return [];   
