@@ -6,9 +6,17 @@ import { useNavigate } from 'react-router-dom'
 import userData from '../../candidates.json'
 
 function Candidate() {
+
+  let localData = JSON.parse(localStorage.getItem('candidateData')) || [];
+  console.log({ localData })
+
+  let combinedData = userData;
+  if (localData) {
+    combinedData = [...userData, ...localData]
+  }
   
   const { gitHubUsername } = useParams()
-  const user = userData.find(user => user.gitHubUsername === gitHubUsername);
+  const user = combinedData.find(user => user.gitHubUsername === gitHubUsername);
 
   const [repos, setRepos] = useState([]);
 
