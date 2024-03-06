@@ -155,7 +155,9 @@ function Home() {
           <h2 className='lg:w-1/2 mb-3 pb-5 font-bold mt-5 text-3xl'>Latest Tech News:</h2>
         </div>
 
-        <NewsSlider/>
+        <div className="container max-w-[1280px] px-6 mx-auto">
+                <NewsSlider />
+            </div>
 
     </>
   );
