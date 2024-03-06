@@ -18,7 +18,7 @@ function Home() {
   const [selectedOption, setSelectedOption] = useState(null);
   const [location, setLocation] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-
+  // search within hero section
   const handleSearch = () => {
     if (!selectedOption || !location) {
       setErrorMessage("Please select a job type and enter a location.");
@@ -36,6 +36,7 @@ function Home() {
 
   return (
     <>
+    {/* Hero section */}
       <div className="h-full flex items-center justify-center xl:justify-start lg:justify-center md:justify-center sm:justify-center hero-background relative">
         <div className="absolute  inset-0 bg-slate-800 opacity-30"></div>
         <div className="container max-w-[1280px] w-full px-6 py-10 xl:py-20 flex flex-col relative z-10 mx-auto">
