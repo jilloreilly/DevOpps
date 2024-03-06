@@ -3,6 +3,7 @@ import getJobs from "../services/getJobs.js";
 import JobSearchResults from "../components/JobSearch/Results.jsx";
 import EmploymentTypes from '../components/JobSearch/EmploymentTypes.jsx';
 import JobDetails from './JobDetails.jsx';
+import {Spinner} from "@nextui-org/react";
 
 function JobSearch() {
 
@@ -340,7 +341,7 @@ function JobSearch() {
               <div className="text-center mt-20 ">
                 {
                   // Show appropriate messages or results
-                  isSearching ? "Searching..." : (jobs.length === 0 && !isSearching && !isReset) ? "No jobs found" : <JobSearchResults jobs={jobs} handleJobSelection={handleJobSelection} />
+                  isSearching ? <Spinner/> : (jobs.length === 0 && !isSearching && !isReset) ? "No jobs found" : <JobSearchResults jobs={jobs} handleJobSelection={handleJobSelection} />
                 }
               </div>
 
