@@ -10,13 +10,12 @@
 
  One of the standout features of devOpps is its integration with GitHub, empowering developers to showcase their expertise by linking their GitHub repositories directly to their profiles. This not only provides employers with a deeper insight into the developer's capabilities but also enhances the credibility of the developer's portfolio.
 
-Moreover, devOpps caters to the needs of employers by offering a dedicated section where they can browse through developer profiles to identify potential candidates for their open positions. Employers can easily search and filter profiles based on specific criteria.
+  Moreover, devOpps caters to the needs of employers by offering a dedicated section where they can browse through developer profiles to identify potential candidates for their open positions. Employers can easily search and filter profiles based on specific criteria.
 
   ## Table of Contents: 
   - [Description](#Description)
   - [Installation Instructions](#Installation)
   - [Usage Information](#Usage) 
-  - [Contributing Guidelines](#Contributing)
   - [Test Instructions](#Test) 
   - [Questions & Contact Info](#Questions)
   - [License](#License)
@@ -47,7 +46,6 @@ Moreover, devOpps caters to the needs of employers by offering a dedicated secti
   - [Richard Llewellyn GitHub](https://www.github.com/RichLlew182)
 
   - [Ramon Saguini de Andrade GitHub](https://www.github.com/ramonsaguini)
-
 
 
 

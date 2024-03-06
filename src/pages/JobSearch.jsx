@@ -184,6 +184,7 @@ function JobSearch() {
     <div className="bg-indigo-500 py-24 mx-auto results-header">
       <div className ="container mx-auto max-w-[1280px] px-6">
         <h1 className="text-3xl font-semibold leading-7 text-white sm:text-4xl">Job Search</h1>
+        <p className="mt-3 leading-6 text-white">Unlock Your IT Career: Find Your Next Opportunity Here</p>
       </div>
       </div>
 
@@ -336,7 +337,7 @@ function JobSearch() {
                 </button>
               </div>
 
-              <div className="text-left">
+              <div className="text-center mt-20 ">
                 {
                   // Show appropriate messages or results
                   isSearching ? "Searching..." : (jobs.length === 0 && !isSearching && !isReset) ? "No jobs found" : <JobSearchResults jobs={jobs} handleJobSelection={handleJobSelection} />

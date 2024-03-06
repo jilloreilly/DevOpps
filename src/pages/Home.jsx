@@ -18,7 +18,7 @@ function Home() {
   const [selectedOption, setSelectedOption] = useState(null);
   const [location, setLocation] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-
+  // search within hero section
   const handleSearch = () => {
     if (!selectedOption || !location) {
       setErrorMessage("Please select a job type and enter a location.");
@@ -36,6 +36,7 @@ function Home() {
 
   return (
     <>
+    {/* Hero section */}
       <div className="h-full flex items-center justify-center xl:justify-start lg:justify-center md:justify-center sm:justify-center hero-background relative">
         <div className="absolute  inset-0 bg-slate-800 opacity-30"></div>
         <div className="container max-w-[1280px] w-full px-6 py-10 xl:py-20 flex flex-col relative z-10 mx-auto">
@@ -64,10 +65,10 @@ function Home() {
                     <DropdownItem key="Full Stack Developer" onClick={() => setSelectedOption('Full Stack Developer')}>
                       Full Stack Developer
                     </DropdownItem>
-                    <DropdownItem key="Full Stack Developer" onClick={() => setSelectedOption('DevOps Engineer')}>
+                    <DropdownItem key="DevOps Engineer" onClick={() => setSelectedOption('DevOps Engineer')}>
                       DevOps Engineer
                     </DropdownItem>
-                    <DropdownItem key="Full Stack Developer" onClick={() => setSelectedOption('Cloud Architect')}>
+                    <DropdownItem key="Cloud Architect" onClick={() => setSelectedOption('Cloud Architect')}>
                       Cloud Architect
                     </DropdownItem>
                   </DropdownMenu>
@@ -116,7 +117,7 @@ function Home() {
 
 
 {/* Popular cities grid */}
-<div className="container max-w-[1280px] grid lg:grid-cols-3 md:grid-cols-2 md:grid-rows-2 sm:grid-cols-1 sm:grid-rows-6 gap-8 my-5 md:my-20 px-6  mx-auto">
+<div className="container max-w-[1280px] grid lg:grid-cols-3 md:grid-cols-2 md:grid-rows-2 sm:grid-cols-1 sm:grid-rows-6 gap-8 my-5 md:my-20 px-6 mx-auto city">
           <a className="relative london-box rounded-lg" onClick={() => handleCityClick('London')}><div>
             <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
             <h2 className="absolute bottom-0 right-0 mr-3 mb-3 text-white text-2xl">London</h2>

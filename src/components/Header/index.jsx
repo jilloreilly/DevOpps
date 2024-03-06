@@ -24,25 +24,25 @@ export default function Header() {
 
       <div className="smhide md:block pr-3" justify="center">
         <NavbarBrand>
-          {<Link href="/"><img className="h-12 w-auto" src='/images/logo.png' alt='devOpps' /><p className="text-3xl ml-2 font-semibold text-foreground devopps">devOpps</p></Link>}          
+          {<Link href="/"><img className="h-12 w-auto" src='/images/logo.png' alt='devOpps' /><p className="text-3xl ml-2 font-semibold text-foreground devopps hover:text-indigo-400">devOpps</p></Link>}          
         </NavbarBrand>
       </div>
 
       <div className="md:hidden gap-4" justify="center">
         <NavbarBrand>
-          {<Link href="/"><img className="h-14 w-auto" src='/images/logo.png' alt='devOpps' /><p className="font-bold text-2xl text-foreground">devOpps</p></Link>}          
+          {<Link href="/"><img className="h-14 w-auto" src='/images/logo.png' alt='devOpps' /><p className="font-bold text-2xl text-foreground hover:text-indigo-400">devOpps</p></Link>}          
         </NavbarBrand>
       </div>
 
       <NavbarContent justify="end">
         <NavbarItem className="smhide md:flex" >
-          <Link href="/employer/search" color="foreground">Employer</Link>
+          <Link href="/employer/search" color="foreground" className='hover:text-indigo-400'>Employer</Link>
         </NavbarItem>
         <NavbarItem className="smhide md:flex">
-          <Link href="/candidate/create-profile" color="foreground">Candidate</Link>
+          <Link href="/candidate/create-profile" color="foreground" className='hover:text-indigo-400'>Candidate</Link>
         </NavbarItem>
         <NavbarItem className="smhide md:flex">
-          {<Link href="/job-results" color="foreground">Job Search</Link>}
+          {<Link href="/job-results" color="foreground" className='hover:text-indigo-400'>Job Search</Link>}
         </NavbarItem>
       </NavbarContent>
 
