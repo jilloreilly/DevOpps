@@ -162,3 +162,7 @@ body {
 @supports not (background-image: url('/images/candidate-banner.webp')) {
   .candidate-banner {background-image: url('/images/candidate-banner.jpg');}
 }
+
+.load-spinner {
+  display: flex !important;
+}
