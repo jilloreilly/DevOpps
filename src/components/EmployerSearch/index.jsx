@@ -239,9 +239,9 @@ function EmployerSearch() {
                         <h4 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{person.name}</h4>
                         <h5 className="mb-4 text-1xl font-bold tracing-normal text-gray-500 dark:text-white">{person.role}</h5>
                         <div className="flex flex-col w-full justify-start gap-2.5 text-sm leading-normal">
-                          <p><i class="fa-regular fa-compass" aria-hidden="true"></i> Location: {person.city}</p>
-                          <p>Experience: {person.experience}</p>
-                          <p>Technology: {person.technology.join(', ')}</p>
+                          <p><i class="fa-regular fa-compass text-indigo-500" aria-hidden="true"></i> Location: {person.city}</p>
+                          <p><i class="fa-solid fa-graduation-cap text-indigo-500"></i> Experience: {person.experience}</p>
+                          <p><i class="fa-solid fa-microchip text-indigo-500"></i> Technology: {person.technology.join(', ')}</p>
                         </div>
                         <div className="mt-5">
                           <a href={"mailto:" + person.email} className="inline-block flex-none rounded-md  bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 mr-2">Contact
