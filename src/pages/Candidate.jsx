@@ -3,30 +3,12 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import userData from '../../candidates.json'
 
 function Candidate() {
   
-  const [newUserData, setNewUserData] = useState(() => {
-    const localStorageData = localStorage.getItem('candidateData');
-    return localStorageData ? JSON.parse(localStorageData) : [];
-  });
-
-  useEffect(() => {
-    // Update local storage whenever userData changes
-    localStorage.setItem('candidateData', JSON.stringify(newUserData));
-  }, [newUserData]);
-
-  console.log( {newUserData})
-
-  const navigate = useNavigate();
-  
   const { gitHubUsername } = useParams()
-  const user = newUserData.find(user => user.gitHubUsername === gitHubUsername);
-  
-
-  const findJobs = () => {
-    navigate(`/job-results/?title=${user.role}&location=${user.city}`);
-  }
+  const user = userData.find(user => user.gitHubUsername === gitHubUsername);
 
   const [repos, setRepos] = useState([]);
 
@@ -61,7 +43,13 @@ function Candidate() {
   
   
     if (!user) {
-      return <div>User not found</div>;
+      return <> <div className="candidate-banner py-24 mx-auto ">
+      <div className ="container mx-auto max-w-[1280px] px-6">
+         <h1 className=" text-3xl font-semibold leading-7 text-white sm:text-4xl">User not Found!</h1>
+         
+      </div>
+     
+     </div></>
     }
   
   return (
