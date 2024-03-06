@@ -165,7 +165,7 @@ function EmployerSearch() {
                       </div>
                     ))}
                     {availableTechnologies.length > 10 &&
-                      <button onClick={() => setShowAllTechnologies(!showAllTechnologies)} className="text-blue-500 underline text-sm"> {showAllTechnologies ? 'Show Less' : 'Show More'}</button>
+                      <button onClick={() => setShowAllTechnologies(!showAllTechnologies)} className="text-black hover:text-indigo-600 underline text-sm"> {showAllTechnologies ? 'Show Less' : 'Show More'}</button>
                     }
                   </div>
                   <div>
