@@ -338,10 +338,10 @@ function JobSearch() {
                 </button>
               </div>
 
-              <div className="text-center mt-20 ">
+              <div className="mt-9">
                 {
                   // Show appropriate messages or results
-                  isSearching ? <Spinner/> : (jobs.length === 0 && !isSearching && !isReset) ? "No jobs found" : <JobSearchResults jobs={jobs} handleJobSelection={handleJobSelection} />
+                  isSearching ? <Spinner className='load-spinner'/> : (jobs.length === 0 && !isSearching && !isReset) ? "No jobs found" : <JobSearchResults jobs={jobs} handleJobSelection={handleJobSelection} />
                 }
               </div>
 
