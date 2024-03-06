@@ -24,10 +24,14 @@ body {
 
 /* hero image */
 .hero-background {
-    background-image: url('/images/background.jpg');
+    background-image: url('/images/background.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+/* Use JPG as fallback */
+@supports not (background-image: url('/images/background.webp')) {
+  .hero-background {background-image: url('/images/background.jpg');}
 }
 
 .hero-background h1,
@@ -41,24 +45,48 @@ body {
     
   /* City grid styling */
 
-.london-box {    
-    background-image: url('/images/London.jpg');
+  .london-box {    
+    background-image: url('/images/London.webp');
   }
+  @supports not (background-image: url('/images/London.webp')) {
+    .london-box {background-image: url('/images/London.jpg');}
+  }
+
   .bristol-box {    
-    background-image: url('/images/Bristol.jpg');
+    background-image: url('/images/Bristol.webp');
   }
+  @supports not (background-image: url('/images/Bristol.webp')) {
+   .bristol-box {background-image: url('/images/Bristol.jpg');}
+  }
+
   .manchester-box {    
-    background-image: url('/images/Manchester.jpg');
+    background-image: url('/images/Manchester.webp');
   }
+  @supports not (background-image: url('/images/Manchester.webp')) {
+    .manchester-box {background-image: url('/images/Manchester.jpg');}
+  }
+
   .cardiff-box {    
-    background-image: url('/images/Cardiff.jpg');
+    background-image: url('/images/Cardiff.webp');
   }
+  @supports not (background-image: url('/images/Cardiff.webp')) {
+    .cardiff-box {background-image: url('/images/Cardiff.jpg');}
+  }
+
   .edinburgh-box {    
-    background-image: url('/images/Edinburgh.jpg');
+    background-image: url('/images/Edinburgh.webp');
   }
+  @supports not (background-image: url('/images/Edinburgh.webp')) {
+    .edinburgh-box {background-image: url('/images/Edinburgh.jpg');}
+  }
+
   .cambridge-box {    
-    background-image: url('/images/Cambridge.jpg');
+    background-image: url('/images/Cambridge.webp');
   }
+  @supports not (background-image: url('/images/Cambridge.webp')) {
+    .cambridge-box {background-image: url('/images/Cambridge.jpg');}
+  }
+
   .bristol-box, .cardiff-box, .edinburgh-box, .manchester-box, .london-box, .cambridge-box {
     background-repeat: no-repeat;
     background-size: cover;
@@ -69,11 +97,19 @@ body {
 
   /* employer/employee cards */
 .employee {
-  background-image: url('/images/candidate.jpg');
+  background-image: url('/images/candidate.webp');
 }
+@supports not (background-image: url('/images/candidate.webp')) {
+    .employee {background-image: url('/images/candidate.jpg');}
+}
+
 .employer {
-  background-image: url('/images/employer.jpg');
+  background-image: url('/images/employer.webp');
 }
+@supports not (background-image: url('/images/employer.webp')) {
+    .employer {background-image: url('/images/employer.jpg');}
+}
+
 .employee, .employer {
   background-repeat: no-repeat;
   background-size: cover;
@@ -82,17 +118,24 @@ body {
 
 /* Results header */
 .results-header {
-  background: url('/images/results-header.jpg') center 100% no-repeat;
+  background: url('/images/results-header.webp') center 100% no-repeat;
   text-shadow: 1px 1px #333;
   background-size: cover;
+}
+@supports not (background-image: url('/images/results-header.webp')) {
+  .results-header {background-image: url('/images/results-header.jpg');}
 }
 
 /* Employer header */
 .employer-header {
-  background: url('/images/employer-header.jpg') center 55% no-repeat;
+  background: url('/images/employer-header.webp') center 55% no-repeat;
   text-shadow: 1px 1px #333;
   background-size: cover;
 }
+@supports not (background-image: url('/images/employer-header.webp')) {
+  .employer-header {background-image: url('/images/employer-header.jpg');}
+}
+
 /* news carousel */
 .control-dots {
   display: none !important;
@@ -100,8 +143,11 @@ body {
 
 /* Candidate banner  */
 .candidate-banner {
-  background-image: url('/images/candidate-banner.jpg');
+  background-image: url('/images/candidate-banner.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+@supports not (background-image: url('/images/candidate-banner.webp')) {
+  .candidate-banner {background-image: url('/images/candidate-banner.jpg');}
 }
