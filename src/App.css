@@ -95,6 +95,10 @@ body {
     height: 300px;
   }
 
+  .city h2 {
+    text-shadow: 1px 2px #333;
+  }
+
   /* employer/employee cards */
 .employee {
   background-image: url('/images/candidate.webp');
@@ -134,6 +138,13 @@ body {
 }
 @supports not (background-image: url('/images/employer-header.webp')) {
   .employer-header {background-image: url('/images/employer-header.jpg');}
+}
+
+/* 404 header */
+.not-found-header {
+  background: url('/images/404.jpg') center 55% no-repeat;
+  text-shadow: 1px 1px #333;
+  background-size: cover;
 }
 
 /* news carousel */
