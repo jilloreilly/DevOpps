@@ -3,30 +3,12 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import userData from '../../candidates.json'
 
 function Candidate() {
   
-  const [newUserData, setNewUserData] = useState(() => {
-    const localStorageData = localStorage.getItem('candidateData');
-    return localStorageData ? JSON.parse(localStorageData) : [];
-  });
-
-  useEffect(() => {
-    // Update local storage whenever userData changes
-    localStorage.setItem('candidateData', JSON.stringify(newUserData));
-  }, [newUserData]);
-
-  console.log( {newUserData})
-
-  const navigate = useNavigate();
-  
   const { gitHubUsername } = useParams()
-  const user = newUserData.find(user => user.gitHubUsername === gitHubUsername);
-  
-
-  const findJobs = () => {
-    navigate(`/job-results/?title=${user.role}&location=${user.city}`);
-  }
+  const user = userData.find(user => user.gitHubUsername === gitHubUsername);
 
   const [repos, setRepos] = useState([]);
 
@@ -61,7 +43,13 @@ function Candidate() {
   
   
     if (!user) {
-      return <div>User not found</div>;
+      return <> <div className="candidate-banner py-24 mx-auto ">
+      <div className ="container mx-auto max-w-[1280px] px-6">
+         <h1 className=" text-3xl font-semibold leading-7 text-white sm:text-4xl">User not Found!</h1>
+         
+      </div>
+     
+     </div></>
     }
   
   return (
@@ -80,11 +68,11 @@ function Candidate() {
 
        <div className='w-full md:w-7/12 leading-7'>
        <h2 className="my-6 text-2xl font-semibold">Details:</h2>
-          <p><i class="fa-solid fa-envelope mr-1 w-6 text-indigo-500" aria-hidden="true"></i>Email: <a href={"mailto:" + user.email}>{user.email}</a></p>
-          <p><i class="fa-solid fa-location-dot mr-1 w-6 text-indigo-500" aria-hidden="true"></i>City: {user.city}</p>
-          <p><i class="fa-solid fa-graduation-cap mr-1 w-6 text-indigo-500" aria-hidden="true"></i>Experience: {user.experience}</p>
-          <p><i class="fa-regular fa-building mr-1 w-6 text-indigo-500" aria-hidden="true"></i>Workplace Preference: {user.workplace}</p>
-          <p><i class="fa-regular fa-money-bill-1 mr-1 w-6 text-indigo-500" aria-hidden="true"></i>Salary Exectations: £{user.salaryRange}</p>
+          <p><i className="fa-solid fa-envelope mr-1 w-6 text-indigo-500" aria-hidden="true"></i>Email: <a href={"mailto:" + user.email}>{user.email}</a></p>
+          <p><i className="fa-solid fa-location-dot mr-1 w-6 text-indigo-500" aria-hidden="true"></i>City: {user.city}</p>
+          <p><i className="fa-solid fa-graduation-cap mr-1 w-6 text-indigo-500" aria-hidden="true"></i>Experience: {user.experience}</p>
+          <p><i className="fa-regular fa-building mr-1 w-6 text-indigo-500" aria-hidden="true"></i>Workplace Preference: {user.workplace}</p>
+          <p><i className="fa-regular fa-money-bill-1 mr-1 w-6 text-indigo-500" aria-hidden="true"></i>Salary Exectations: £{user.salaryRange}</p>
           {/* <button className="mt-6 flex-none rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500" onClick={findJobs}>Find matching jobs</button> */}
   
           <h2 className="mt-6 text-2xl font-semibold">Skills:</h2>

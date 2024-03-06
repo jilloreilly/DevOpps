@@ -10,7 +10,13 @@ function JobSearch() {
   const [selectedJob, setSelectedJob] = useState(null);
   const handleJobSelection = (job) => {
     setSelectedJob(job);
+    window.scrollTo({ top:0 }); // Go to top of job details page
   };
+
+  const handleBackToSearch = () => {
+    setSelectedJob(null);
+    window.scrollTo({ top:0 }); // Go to top of search form
+  }
 
   // Job search results
   const [jobs, setJobs] = useState([]);
@@ -193,7 +199,7 @@ function JobSearch() {
 
         {selectedJob ? (
           <>
-            <button onClick={() => setSelectedJob(null)} className="rounded-md bg-indigo-600 px-3 py-2 my-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Back to Search</button>
+            <button onClick={handleBackToSearch} className="rounded-md bg-indigo-600 px-3 py-2 my-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Back to Search</button>
             <JobDetails selectedJob={selectedJob} />
           </>
         ) : (
