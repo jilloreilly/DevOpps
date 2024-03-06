@@ -164,5 +164,5 @@ body {
 }
 
 .load-spinner {
-  text-align: center !important;
+  display: flex !important;
 }
