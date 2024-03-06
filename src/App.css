@@ -67,6 +67,10 @@ body {
     height: 300px;
   }
 
+  .city h2 {
+    text-shadow: 1px 2px #333;
+  }
+
   /* employer/employee cards */
 .employee {
   background-image: url('/images/candidate.jpg');
@@ -93,6 +97,14 @@ body {
   text-shadow: 1px 1px #333;
   background-size: cover;
 }
+
+/* 404 header */
+.not-found-header {
+  background: url('/images/404.jpg') center 55% no-repeat;
+  text-shadow: 1px 1px #333;
+  background-size: cover;
+}
+
 /* news carousel */
 .control-dots {
   display: none !important;
