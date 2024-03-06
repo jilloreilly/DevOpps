@@ -166,7 +166,7 @@ function CandidateProfileForm() {
                 </div>
                 </div>
   
-                <div className="sm:col-span-3">
+                <div className="sm:col-span-6 md:col-span-3">
                 <label htmlFor="role" className="block text-sm font-medium leading-6 text-gray-900">
                   Role
                 </label>
@@ -191,7 +191,7 @@ function CandidateProfileForm() {
                 </div>
                 </div>
 
-                <div className="sm:col-span-3">
+                <div className="sm:col-span-6 md:col-span-3">
                 <label htmlFor="experience" className="block text-sm font-medium leading-6 text-gray-900">
                   Experience
                 </label>
@@ -214,7 +214,7 @@ function CandidateProfileForm() {
                 </div>
                 </div>
   
-                <div className="sm:col-span-3">
+                <div className="sm:col-span-6 md:col-span-3">
                 <label htmlFor="workplace" className="block text-sm font-medium leading-6 text-gray-900">
                   Workplace preference
                 </label>
@@ -236,7 +236,7 @@ function CandidateProfileForm() {
                 </div>
                 </div>
 
-                <div className="sm:col-span-3">
+                <div className="sm:col-span-6 md:col-span-3">
                 <label htmlFor="salaryRange" className="block text-sm font-medium leading-6 text-gray-900">
                   Expected Salary
                 </label>
