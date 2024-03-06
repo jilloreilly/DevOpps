@@ -3,6 +3,16 @@ import candidatesData from '../../../candidates.json';
 import './index.css';
 
 function EmployerSearch() {
+
+
+  let localData = JSON.parse(localStorage.getItem('candidateData')) || [];
+  // console.log({ localData })
+
+  let combinedData = candidatesData;
+  if (localData) {
+    combinedData = [...candidatesData, ...localData]
+  }
+
   const [people, setPeople] = useState([]);
   const [search, setSearch] = useState('');
   const [filteredTechnologies, setFilteredTechnologies] = useState([]);
@@ -17,8 +27,8 @@ function EmployerSearch() {
   const [showImage, setShowImage] = useState(true);
 
   useEffect(() => {
-    setPeople(candidatesData);
-    const technologies = candidatesData.reduce((acc, person) => {
+    setPeople(combinedData);
+    const technologies = combinedData.reduce((acc, person) => {
       person.technology.forEach(tech => {
         if (!acc.includes(tech)) {
           acc.push(tech);
