@@ -101,10 +101,6 @@ function CandidateProfileForm() {
       <div className="max-w-[1280px] container mt-5 mx-auto px-6">
       <form id="candidate-profile-form" onSubmit={handleProfileSubmit}>
         <div>
-          <div className="border-b border-gray-900/10 pb-12">
-            
-            
-          </div>
   
           <div className="border-b border-gray-900/10 pb-12">
             <h2 className="text-2xl mt-12 font-bold sm:text-3xl">Personal Information</h2>
