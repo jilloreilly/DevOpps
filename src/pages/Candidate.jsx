@@ -8,7 +8,7 @@ import userData from '../../candidates.json'
 function Candidate() {
 
   let localData = JSON.parse(localStorage.getItem('candidateData')) || [];
-  console.log({ localData })
+  // console.log({ localData })
 
   let combinedData = userData;
   if (localData) {
@@ -28,10 +28,10 @@ function Candidate() {
     };
     try {
       const response = await axios.request(resource);
-      console.log(response.data)
+      // console.log(response.data)
       setRepos(response.data)
     } catch (error) {
-      console.error(error);
+      // console.error(error);
       return;
       
     }

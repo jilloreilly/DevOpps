@@ -6,7 +6,7 @@ function EmployerSearch() {
 
 
   let localData = JSON.parse(localStorage.getItem('candidateData')) || [];
-  console.log({ localData })
+  // console.log({ localData })
 
   let combinedData = candidatesData;
   if (localData) {
