@@ -64,10 +64,10 @@ function Home() {
                     <DropdownItem key="Full Stack Developer" onClick={() => setSelectedOption('Full Stack Developer')}>
                       Full Stack Developer
                     </DropdownItem>
-                    <DropdownItem key="Full Stack Developer" onClick={() => setSelectedOption('DevOps Engineer')}>
+                    <DropdownItem key="DevOps Engineer" onClick={() => setSelectedOption('DevOps Engineer')}>
                       DevOps Engineer
                     </DropdownItem>
-                    <DropdownItem key="Full Stack Developer" onClick={() => setSelectedOption('Cloud Architect')}>
+                    <DropdownItem key="Cloud Architect" onClick={() => setSelectedOption('Cloud Architect')}>
                       Cloud Architect
                     </DropdownItem>
                   </DropdownMenu>
