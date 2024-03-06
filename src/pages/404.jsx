@@ -16,7 +16,7 @@ function Custom404() {
         </div>
       </div>
    
-    <div as="main" className="container my-20 mx-auto max-w-[1280px] text-center px-6 leading-loose" id="page-404">
+    <div as="main" className="container my-20 mx-auto max-w-[1280px] text-center p-6 leading-loose" id="page-404">
       <p><strong className='text-2xl'>Oops!</strong> Looks like you've ventured into uncharted digital territory.</p>
       <p>No worries! Take a deep breath, and let's navigate back to familiar ground.</p>
       <p>Just hit the back button or return to the <Link to={'/'}>homepage</Link> to continue your journey.</p>
