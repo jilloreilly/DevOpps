@@ -45,6 +45,13 @@ body {
     
   /* City grid styling */
 
+  .absolute.inset-0.bg-white.opacity-10.hover\:opacity-0,
+  .absolute.inset-0.bg-white.opacity-20.hover\:opacity-10 {
+    -webkit-transition: ease .3s;
+    -o-transition: ease .3s;
+    transition: ease .3s;
+}
+
   .london-box {    
     background-image: url('/images/London.webp');
   }
@@ -169,6 +176,8 @@ body {
 }
 
 .load-spinner {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
   display: flex !important;
 }
 
