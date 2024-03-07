@@ -85,6 +85,10 @@ function CandidateProfileForm() {
     }));
   };
 
+  useEffect(() => {
+    document.title = `devOpps - Candidate - Create Profile`;
+  }, []);
+
   return (
     <>
       <div className=" candidate-banner  py-24 mx-auto ">
