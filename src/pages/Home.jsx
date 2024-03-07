@@ -25,13 +25,15 @@ function Home() {
       return;
     }
     navigate(`/job-results/?title=${selectedOption}&location=${location}`);
+    window.scrollTo({ top:0 })
   };
 
   const handleCityClick = (cityName) => {
     const option = 'Software Developer';
     const city = cityName;
     setErrorMessage(""); // Clear error message
-    navigate(`/job-results/?title=${option}&location=${city}`);
+    navigate(`/job-results/?title=${option}&location=${city} UK`);
+    window.scrollTo({ top:0 })
   };
 
   return (
