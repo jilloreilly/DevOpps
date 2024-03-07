@@ -39,7 +39,7 @@ function Home() {
     {/* Hero section */}
       <div className="h-full flex items-center justify-center xl:justify-start lg:justify-center md:justify-center sm:justify-center hero-background relative">
         <div className="absolute  inset-0 bg-slate-800 opacity-30"></div>
-        <div className="container max-w-[1280px] w-full px-6 py-10 xl:py-20 flex flex-col relative z-10 mx-auto">
+        <div className="container max-w-[1280px] w-full px-6 py-10 sm:py-16 lg:py-20 flex flex-col relative z-10 mx-auto">
           <div className="lg:w-3/4 xl:w-1/2">
             <h1 className="text-3xl sm:text-5xl font-medium text-white mb-6">Welcome to devOpps</h1>
             <h3 className="text-xl sm:text-2xl font-light text-white mb-10">From job seekers to recruiters, devOpps offers a comprehensive platform for all your tech hiring needs, making job searches and candidate sourcing hassle-free.</h3>
