@@ -16,3 +16,15 @@
      object-fit: cover;
      aspect-ratio: 1/1;
 }
+
+@media (max-width: 450px) {
+
+  .profile-photo {
+    min-width: 100%;
+    height: auto;
+    width: 100%;
+    max-height: none !important;
+    max-width: none !Important;
+  }
+  
+}
