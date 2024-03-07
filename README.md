@@ -16,7 +16,7 @@ Moreover, devOpps caters to the needs of employers by offering a dedicated secti
 
   - [Description](#Description)
   - [Tech](#Technologies)
-  - [Technologies Used](#Technologies Used)
+  - [Technologies](#Technologies)
   - [Usage Information](#Usage) 
   - [Questions & Contact Info](#Questions)
   - [License](#License)
@@ -44,29 +44,30 @@ Moreover, devOpps caters to the needs of employers by offering a dedicated secti
 
   1. Navigate to [devOpps.app](https://devopps.app)
 
-     ![Deployed home page](/public/images/homepage.png)
+  ![Deployed home page](/public/images/homepage.png)
 
-  2. Home Page: From the home page you have multiple options: 
-    You can search for jobs by completing the form within the hero section.
+  2. Home Page: From the home page you have multiple options. 
+  
+  - You can search for jobs by completing the form within the hero section.
 
-    ![hero section search](/public/readme/homesearch.png)
+  ![hero section search](/public/readme/homesearch.png)
 
-    You can select 'I am a candidate' which takes you to candidate section on the site.
+  - You can select 'I am a candidate' which takes you to candidate section on the site.
 
-    ![candidate section](/public/readme/candidatesection.png)
+  ![candidate section](/public/readme/candidatesection.png)
 
-    You can click one of the cities photos which is pre-programmed to search for 'Software Developer' roles in that desired city. 
+  - You can click one of the cities photos which is pre-programmed to search for 'Software Developer' roles in that desired city. 
 
-    ![Cities section](/public/readme/cities.png)
+  ![Cities section](/public/readme/cities.png)
 
-    You can read the tech news section, and go directly any article you want to read further.
+  - You can read the tech news section, and go directly any article you want to read further.
 
-    ![Tech news section](/public/readme/technews.png)
+  ![Tech news section](/public/readme/technews.png)
 
 
   3. Job Results: When you have searched for a job, you are taken to the job results page, where you can see a list of jobs based on your search. 
 
-  ![Job results page](/public/readme/homepage.png)
+  ![Job results page](/public/readme/jobresults.png)
   
   4. Job Details: You can click on any of the jobs on the job search page, which takes you to that specific job details page. This is where you can see more details for that position and apply via numerous avenues. 
 
