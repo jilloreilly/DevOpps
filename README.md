@@ -9,51 +9,57 @@ At its core, devOpps functions as a central hub where developers can explore job
 
 Moreover, devOpps caters to the needs of employers by offering a dedicated section where they can browse through developer profiles to identify potential candidates for their open positions. Employers can easily search and filter profiles based on specific criteria.
 
-![devOpps.app](https://devopps.app)
-![GitHub Repo](https://github.com/jilloreilly/DevOpps)
+- [devOpps.app](https://devopps.app)
+- [GitHub Repo](https://github.com/jilloreilly/DevOpps)
 
 ## Table of Contents: 
 
   - [Description](#Description)
-  - [Installation Instructions](#Technologies Used)
+  - [Tech](#Technologies)
+  - [Technologies Used](#Technologies Used)
   - [Usage Information](#Usage) 
-  <!-- - [Test Instructions](#Test)  -->
   - [Questions & Contact Info](#Questions)
   - [License](#License)
 
-## Technologies Used
+## Technologies
 
-| React          | HTML5          |
-| CSS3           | JavaScript     |
-| Node.js        | Netlify        |
-| GIT            | npm            |
-| Tailwind CSS   | Next UI        |
-| Vite           | Axios          |
-| GitHub         |                |
+- React
+- HTML5
+- CSS3
+- JavaScript
+- Node.js
+- Netlify
+- GIT
+- npm
+- Tailwind CSS
+- Next UI
+- Vite
+- Axios
+- GitHub
 
 
 ## Usage 
 
   ### As A Candidate:
 
-  1. Navigate to ![devOpps.app](https://devopps.app)
+  1. Navigate to [devOpps.app](https://devopps.app)
 
      ![Deployed home page](/public/images/homepage.png)
 
   2. Home Page: From the home page you have multiple options: 
-    - You can search for jobs by completing the form within the hero section.
+    You can search for jobs by completing the form within the hero section.
 
     ![hero section search](/public/readme/homesearch.png)
 
-    - You can select 'I am a candidate' which takes you to candidate section on the site.
+    You can select 'I am a candidate' which takes you to candidate section on the site.
 
     ![candidate section](/public/readme/candidatesection.png)
 
-    - You can click one of the cities photos which is pre-programmed to search for 'Software Developer' roles in that desired city. 
+    You can click one of the cities photos which is pre-programmed to search for 'Software Developer' roles in that desired city. 
 
     ![Cities section](/public/readme/cities.png)
 
-    - You can read the tech news section, and go directly any article you want to read further.
+    You can read the tech news section, and go directly any article you want to read further.
 
     ![Tech news section](/public/readme/technews.png)
 
