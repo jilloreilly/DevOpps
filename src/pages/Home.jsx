@@ -48,7 +48,7 @@ function Home() {
               <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex flex-col sm:flex-row items-center">
                 <Dropdown>
                   <DropdownTrigger>
-                    <Button variant="bordered" className="w-full bg-gray-200 text-gray-600 hover:text-gray-300 hover:bg-gray-400 h-12 mx-2 rounded-medium border border-gray-400">
+                    <Button variant="bordered" className="w-full bg-gray-200 text-gray-600 hover:text-gray-300 hover:bg-gray-400 h-12 mb-3 sm:mb-0 mx-2 rounded-medium border border-gray-400">
                       {selectedOption || 'Select a job type'}
                     </Button>
                   </DropdownTrigger>
