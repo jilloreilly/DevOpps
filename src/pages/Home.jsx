@@ -39,7 +39,7 @@ function Home() {
     {/* Hero section */}
       <div className="h-full flex items-center justify-center xl:justify-start lg:justify-center md:justify-center sm:justify-center hero-background relative">
         <div className="absolute  inset-0 bg-slate-800 opacity-30"></div>
-        <div className="container max-w-[1280px] w-full px-6 py-10 xl:py-20 flex flex-col relative z-10 mx-auto">
+        <div className="container max-w-[1280px] w-full px-6 py-10 sm:py-16 lg:py-20 flex flex-col relative z-10 mx-auto">
           <div className="lg:w-3/4 xl:w-1/2">
             <h1 className="text-3xl sm:text-5xl font-medium text-white mb-6">Welcome to devOpps</h1>
             <h3 className="text-xl sm:text-2xl font-light text-white mb-10">From job seekers to recruiters, devOpps offers a comprehensive platform for all your tech hiring needs, making job searches and candidate sourcing hassle-free.</h3>
@@ -48,7 +48,7 @@ function Home() {
               <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex flex-col sm:flex-row items-center">
                 <Dropdown>
                   <DropdownTrigger>
-                    <Button variant="bordered" className="w-full bg-gray-200 text-gray-600 hover:text-gray-300 hover:bg-gray-400 h-12 mx-2 rounded-medium border border-gray-400">
+                    <Button variant="bordered" className="w-full bg-gray-200 text-gray-600 hover:text-gray-300 hover:bg-gray-400 h-12 mb-3 sm:mb-0 mx-2 rounded-medium border border-gray-400">
                       {selectedOption || 'Select a job type'}
                     </Button>
                   </DropdownTrigger>
@@ -152,7 +152,7 @@ function Home() {
       
       {/* tech header */}
       <div className='text-center flex items-center justify-center flex-col'>
-          <h2 className='lg:w-1/2 mb-3 pb-5 font-bold mt-5 text-3xl'>Latest Tech News:</h2>
+          <h2 className='lg:w-1/2 mb-10 font-bold mt-5 text-3xl'>Latest Tech News</h2>
         </div>
 
         <div className="container max-w-[1280px] px-6 mx-auto">

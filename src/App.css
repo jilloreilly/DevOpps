@@ -45,6 +45,13 @@ body {
     
   /* City grid styling */
 
+  .absolute.inset-0.bg-white.opacity-10.hover\:opacity-0,
+  .absolute.inset-0.bg-white.opacity-20.hover\:opacity-10 {
+    -webkit-transition: ease .3s;
+    -o-transition: ease .3s;
+    transition: ease .3s;
+}
+
   .london-box {    
     background-image: url('/images/London.webp');
   }
@@ -169,6 +176,8 @@ body {
 }
 
 .load-spinner {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
   display: flex !important;
 }
 
@@ -176,13 +185,18 @@ body {
   .article-abstract {
     display: none;
   }
+  
   .article-title {
-    font-size: small !important;
+    font-size: 18px !important;
     font-weight: 400 !important;
-  }
+    line-height: 1.5rem !important;
+}
+
   .article-button {
-    font-size: small !important;
-    padding: 3px !important;
     font-weight: 300 !important;
   }
+
+  .carousel .slide img {
+    height: 400px;
+}
 }

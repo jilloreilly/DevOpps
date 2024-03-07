@@ -14,7 +14,7 @@ export default function CandidateSkills({ groupSelected, setGroupSelected }) {
         value={groupSelected}
         onChange={setGroupSelected}
       >
-        <CustomCheckbox value="Javascript">Javascript</CustomCheckbox>
+        <CustomCheckbox value="JavaScript">JavaScript</CustomCheckbox>
         <CustomCheckbox value="HTML">HTML</CustomCheckbox>
         <CustomCheckbox value="CSS">CSS</CustomCheckbox>
         <CustomCheckbox value="Python">Python</CustomCheckbox>
