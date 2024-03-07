@@ -99,7 +99,7 @@ function JobDetails(props) {
         <div className='flex flex-row sm:flex-col md:flex-row lg:flex-row justify-evenly flex-wrap gap-4 py-3 border-t-1 border-b-1'>
           <p><i className="fa-regular fa-compass text-indigo-500"></i> <strong>Location:</strong> {data.location}</p>
           <p><i className="fa-regular fa-clock text-indigo-500"></i> <strong>Employment Type:</strong> {data.employmentType}</p>
-          <p><i className="fa-regular fa-calendar text-indigo-500"></i> Date posted: {data.datePosted}</p>
+          <p><i className="fa-regular fa-calendar text-indigo-500"></i> <strong>Date posted:</strong> {data.datePosted}</p>
           <p><i className="fa-regular fa-money-bill-1 text-indigo-500"></i> <strong>Salary range:</strong> {data.salaryRange == "" ? "Competitive" : data.salaryRange}</p>
         </div>
         <div className='flex flex-row sm:flex-col md:flex-row lg:flex-row justify-evenly flex-wrap gap-4 py-3 border-b-1'>
