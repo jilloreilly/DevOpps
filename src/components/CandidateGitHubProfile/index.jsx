@@ -4,7 +4,11 @@ import './index.css'
 
 function CandidateGitHubProfile({ onGitHubInputChange, onGitHubDetailsChange }) {
   
+  // variables for setting initital state of git hub profile input
+  
   const [gitHubProfile, setGitHubProfile] = useState('')
+  
+  // Change handler for tracking and updating what user types in Github profile field
   
   const handleChange = (e) => {
     setGitHubProfile(e.target.value)
@@ -12,16 +16,20 @@ function CandidateGitHubProfile({ onGitHubInputChange, onGitHubDetailsChange }) 
     onGitHubInputChange(name, value);
   };
 
+  // Submit event that calls the fetchGitHub
 
   const handleGitHubClick = (e) => {
     e.preventDefault()
-    console.log('Input Value: ', gitHubProfile)
     fetchGitHub(gitHubProfile)
   }
+
+  // Variables for setting initial states of githubdetails and error/error messages
   
   const [gitHubDetails, setGitHubDetails] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
   const [isError, setIsError] = useState(false);
+
+  // Test to make sure github details are being returned and logged
   
   useEffect(() => {
     if (Object.keys(gitHubDetails).length > 0) {
@@ -33,6 +41,8 @@ function CandidateGitHubProfile({ onGitHubInputChange, onGitHubDetailsChange }) 
       console.log( gitHubDetails.repos_url );
     }
   }, [gitHubDetails]);
+
+  // Function to fetch github api and set the response to GitHubDetails, and also set the error message to true or false depending on the response
 
   const fetchGitHub = async (username) => {
     
@@ -55,8 +65,6 @@ function CandidateGitHubProfile({ onGitHubInputChange, onGitHubDetailsChange }) 
     }
     
 }
-
-  const propsNotPassed = !gitHubDetails || !gitHubDetails.avatar_url || !gitHubDetails.repos_url || !gitHubDetails.followers;
 
   return (
     <>

@@ -1,5 +1,7 @@
 import React from "react";
-import {useCheckbox, Chip, VisuallyHidden, tv} from "@nextui-org/react";
+import { useCheckbox, Chip, VisuallyHidden, tv } from "@nextui-org/react";
+
+// Pre existing component from NextUI
 
 const checkbox = tv({
   slots: {
