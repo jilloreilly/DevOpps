@@ -53,6 +53,7 @@ function JobSearch() {
         location: 'UK',
       });
     }
+    document.title = `devOpps - Job Search`;
   }, []);
 
   // Track if a search is in progress to disable buttons and prevent accidental multi-searching 

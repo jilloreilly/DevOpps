@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Custom404() {
   useEffect(() => {
-    document.title = `404`;
+    document.title = `devOpps - 404`;
   }, []);
 
   return (

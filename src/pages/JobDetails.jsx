@@ -17,6 +17,7 @@ function JobDetails(props) {
         setIsChecked(true)
       }
     }
+    document.title = `devOpps - Job Search`;
   }, []);
 
   // Function to handle adding a job to favourites

@@ -37,6 +37,7 @@ function EmployerSearch() {
       return acc;
     }, []);
     setAvailableTechnologies(technologies);
+    document.title = `devOpps - Employee Search`;
   }, []);
 
   const handleSearchChange = (event) => {
