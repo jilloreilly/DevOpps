@@ -25,7 +25,7 @@ function Home() {
       return;
     }
     navigate(`/job-results/?title=${selectedOption}&location=${location}`);
-    window.scrollTo({ top:0 })
+    window.scrollTo({ top: 0 });
   };
 
   const handleCityClick = (cityName) => {
@@ -33,12 +33,12 @@ function Home() {
     const city = cityName;
     setErrorMessage(""); // Clear error message
     navigate(`/job-results/?title=${option}&location=${city} UK`);
-    window.scrollTo({ top:0 })
+    window.scrollTo({ top: 0 });
   };
 
   return (
     <>
-    {/* Hero section */}
+      {/* Hero section */}
       <div className="h-full flex items-center justify-center xl:justify-start lg:justify-center md:justify-center sm:justify-center hero-background relative">
         <div className="absolute  inset-0 bg-slate-800 opacity-30"></div>
         <div className="container max-w-[1280px] w-full px-6 py-10 sm:py-16 lg:py-20 flex flex-col relative z-10 mx-auto">
@@ -107,59 +107,59 @@ function Home() {
             </div>
           </Link>
         </div>
-</div>
+      </div>
 
-<div className="container max-w-[1280px] px-6 mx-auto">
-{/* Popular cities text */}
+      <div className="container max-w-[1280px] px-6 mx-auto">
+        {/* Popular cities text */}
         <div className='text-center flex items-center justify-center flex-col'>
           <h2 className='lg:w-3/4 xl:w-1/2 mb-4 text-3xl font-bold'>Popular cities</h2>
           <p className='lg:w-3/4  xl:w-1/2 mb-5'>Our popular cities section enables candidates to explore job openings in their preferred locations. Click on a city to initiate a targeted job search and uncover exciting career prospects near you.</p>
         </div>
-</div>
+      </div>
 
 
-{/* Popular cities grid */}
-<div className="container max-w-[1280px] grid lg:grid-cols-3 md:grid-cols-2 md:grid-rows-2 sm:grid-cols-1 sm:grid-rows-6 gap-8 my-5 md:my-20 px-6 mx-auto city">
-          <a className="relative london-box rounded-lg" onClick={() => handleCityClick('London')}><div>
-            <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
-            <h2 className="absolute bottom-0 right-0 mr-3 mb-3 text-white text-2xl">London</h2>
-          </div></a>
+      {/* Popular cities grid */}
+      <div className="container max-w-[1280px] grid lg:grid-cols-3 md:grid-cols-2 md:grid-rows-2 sm:grid-cols-1 sm:grid-rows-6 gap-8 my-5 md:my-20 px-6 mx-auto city">
+        <a className="relative london-box rounded-lg" onClick={() => handleCityClick('London')}><div>
+          <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
+          <h2 className="absolute bottom-0 right-0 mr-3 mb-3 text-white text-2xl">London</h2>
+        </div></a>
 
-          {/* <div className="sm:col-span-1 grid grid-cols-1 gap-2"> */}
-            <a className="relative bristol-box rounded-lg" onClick={() => handleCityClick('Bristol')}><div>
-              <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0 "></div>
-              <h2 className="absolute bottom-0 right-0 mr-3 mb-3 text-white text-2xl">Bristol</h2>
-            </div></a>
-            <a className="relative edinburgh-box rounded-lg" onClick={() => handleCityClick('Edinburgh')}><div>
-              <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
-              <h2 className="absolute bottom-0 right-0 mr-3 mb-3 text-2xl text-white">Edinburgh</h2>
-            </div></a>
-          {/* </div> */}
-
-          {/* <div className="sm:col-span-1 grid grid-cols-1 gap-2"> */}
-            <a className="relative cardiff-box rounded-lg" onClick={() => handleCityClick('Cardiff')}><div>
-              <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
-              <h2 className="absolute bottom-0 right-0 mr-3 mb-3 text-white text-2xl">Cardiff</h2>
-            </div></a>
-            <a className="relative manchester-box rounded-lg" onClick={() => handleCityClick('Manchester')}><div>
-              <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
-              <h2 className="absolute bottom-0 right-0 mr-3 mb-3 text-white text-2xl">Manchester</h2>
-            </div></a>
-            <a className="relative cambridge-box rounded-lg" onClick={() => handleCityClick('Cambridge')}><div>
-              <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
-              <h2 className="absolute bottom-0 right-0 mr-3 mb-3 text-white text-2xl">Cambridge</h2>
-            </div></a>
-          </div>
+        {/* <div className="sm:col-span-1 grid grid-cols-1 gap-2"> */}
+        <a className="relative bristol-box rounded-lg" onClick={() => handleCityClick('Bristol')}><div>
+          <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0 "></div>
+          <h2 className="absolute bottom-0 right-0 mr-3 mb-3 text-white text-2xl">Bristol</h2>
+        </div></a>
+        <a className="relative edinburgh-box rounded-lg" onClick={() => handleCityClick('Edinburgh')}><div>
+          <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
+          <h2 className="absolute bottom-0 right-0 mr-3 mb-3 text-2xl text-white">Edinburgh</h2>
+        </div></a>
         {/* </div> */}
-      
+
+        {/* <div className="sm:col-span-1 grid grid-cols-1 gap-2"> */}
+        <a className="relative cardiff-box rounded-lg" onClick={() => handleCityClick('Cardiff')}><div>
+          <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
+          <h2 className="absolute bottom-0 right-0 mr-3 mb-3 text-white text-2xl">Cardiff</h2>
+        </div></a>
+        <a className="relative manchester-box rounded-lg" onClick={() => handleCityClick('Manchester')}><div>
+          <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
+          <h2 className="absolute bottom-0 right-0 mr-3 mb-3 text-white text-2xl">Manchester</h2>
+        </div></a>
+        <a className="relative cambridge-box rounded-lg" onClick={() => handleCityClick('Cambridge')}><div>
+          <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
+          <h2 className="absolute bottom-0 right-0 mr-3 mb-3 text-white text-2xl">Cambridge</h2>
+        </div></a>
+      </div>
+      {/* </div> */}
+
       {/* tech header */}
       <div className='text-center flex items-center justify-center flex-col'>
-          <h2 className='lg:w-1/2 mb-10 font-bold mt-5 text-3xl'>Latest Tech News</h2>
-        </div>
+        <h2 className='lg:w-1/2 mb-10 font-bold mt-5 text-3xl'>Latest Tech News</h2>
+      </div>
 
-        <div className="container max-w-[1280px] px-6 mx-auto">
-                <NewsSlider />
-            </div>
+      <div className="container max-w-[1280px] px-6 mx-auto">
+        <NewsSlider />
+      </div>
 
     </>
   );
