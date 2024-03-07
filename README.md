@@ -67,7 +67,7 @@ Moreover, devOpps caters to the needs of employers by offering a dedicated secti
 
   3. Job Results: When you have searched for a job, you are taken to the job results page, where you can see a list of jobs based on your search. 
 
-  ![Job results page](/public/readme/homepage.png)
+  ![Job results page](/public/readme/jobresults.png)
   
   4. Job Details: You can click on any of the jobs on the job search page, which takes you to that specific job details page. This is where you can see more details for that position and apply via numerous avenues. 
 
