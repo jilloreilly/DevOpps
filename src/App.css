@@ -142,9 +142,12 @@ body {
 
 /* 404 header */
 .not-found-header {
-  background: url('/images/404.jpg') center 55% no-repeat;
+  background: url('/images/404.webp') center 55% no-repeat;
   text-shadow: 1px 1px #333;
   background-size: cover;
+}
+@supports not (background-image: url('/images/404.webp')) {
+  .candidate-banner {background-image: url('/images/404.jpg');}
 }
 
 /* news carousel */
