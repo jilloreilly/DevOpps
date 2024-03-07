@@ -95,6 +95,10 @@ Moreover, devOpps caters to the needs of employers by offering a dedicated secti
   ![candidate profile](/public/readme/candidateprofile.png)
 
 
+  ### devOpps has been optimised for viewing across all devices
+
+![Multi device mockup](/public/readme/device-mockup.png)
+
   <!-- ## Test -->
   
 
