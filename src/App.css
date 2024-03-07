@@ -185,13 +185,18 @@ body {
   .article-abstract {
     display: none;
   }
+  
   .article-title {
-    font-size: small !important;
+    font-size: 18px !important;
     font-weight: 400 !important;
-  }
+    line-height: 1.5rem !important;
+}
+
   .article-button {
-    font-size: small !important;
-    padding: 3px !important;
     font-weight: 300 !important;
   }
+
+  .carousel .slide img {
+    height: 400px;
+}
 }
