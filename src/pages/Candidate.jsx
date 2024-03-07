@@ -42,11 +42,10 @@ function Candidate() {
     if (user) {
       fetchGitHubRepos();
     }
-    document.title = `devOpps - Candidate - ${user.name}`;
   }, [user]); 
 
   useEffect(() => {
-      document.title = `devOpps - Candidate`;
+    document.title = `devOpps - Candidate`;
     // You can use this effect to call fetchGitHubRepos() once on component mount
     fetchGitHubRepos();
   }, []); 
