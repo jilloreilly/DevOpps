@@ -45,7 +45,7 @@ Moreover, devOpps caters to the needs of employers by offering a dedicated secti
 
   1. Navigate to [devOpps.app](https://devopps.app)
 
-  ![Deployed home page](/public/images/homepage.png)
+  ![Deployed home page](/public/readme/homepage.png)
 
   2. Home Page: From the home page you have multiple options. 
   
