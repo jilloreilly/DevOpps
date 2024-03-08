@@ -11,14 +11,14 @@ Moreover, devOpps caters to the needs of employers by offering a dedicated secti
 
 - [devOpps.app](https://devopps.app)
 - [GitHub Repo](https://github.com/jilloreilly/DevOpps)
-- [Presentation](https://www.canva.com/design/DAF-uyw5mXQ/d8cCz1vUzAUSdpv6OsMOWg/view?utm_content=DAF-uyw5mXQ&utm_campaign=share_your_design&utm_medium=link&utm_source=shareyourdesignpanel#9)
+- [Presentation](https://www.canva.com/design/DAF-uyw5mXQ/d8cCz1vUzAUSdpv6OsMOWg/view?utm_content=DAF-uyw5mXQ&utm_campaign=share_your_design&utm_medium=link&utm_source=shareyourdesignpanel#1)
 
-## Table of Contents: 
+## Table of Contents
 
   - [Description](#Description)
-  - [Tech](#Technologies)
   - [Technologies](#Technologies)
   - [Usage Information](#Usage) 
+  - [Tests](#Tests)
   - [Questions & Contact Info](#Questions)
   - [License](#License)
 
@@ -100,7 +100,11 @@ Moreover, devOpps caters to the needs of employers by offering a dedicated secti
 
 ![Multi device mockup](/public/readme/device-mockup.png)
 
-  <!-- ## Test -->
+
+
+## Tests
+
+```npm run test```
   
 
 
@@ -120,9 +124,9 @@ Moreover, devOpps caters to the needs of employers by offering a dedicated secti
 
 
 
-## Credits:
+## Credits
 
-  - Chris Kratz TA
+  - [Chris Kratz TA](https://github.com/Ckratz17)
   - [NPM](https://www.npmjs.com/)
   - [GitHub API](https://docs.github.com/en/rest)
   - [New York Times API](https://developer.nytimes.com/apis)
