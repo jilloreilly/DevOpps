@@ -6,7 +6,7 @@ import './index.css'
 
 export default function NewsSlider() {
     const [news, setNews] = useState([]);
-
+// using 7 news articles
     useEffect(() => {
         async function getNews() {
             const data = await fetchNewsData();
@@ -17,6 +17,7 @@ export default function NewsSlider() {
 
     return (
         <div className="w-full lg:w-5/6 mx-auto py-0  relative">
+            {/* Carousel mapping over data received from ny times api to populate carousel */}
         <Carousel showArrows={true} showThumbs={false} showStatus={false} className=' bg-gray-800 rounded-lg overflow-hidden'>
             {news.map((article, index) => (
                 <div key={index} className="relative rounded-lg">

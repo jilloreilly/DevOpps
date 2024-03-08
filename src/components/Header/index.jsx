@@ -13,6 +13,7 @@ export default function Header() {
   ];
 
   return (
+    // navbar from nextui
     <Navbar
       isBordered
       isMenuOpen={isMenuOpen}
@@ -33,7 +34,7 @@ export default function Header() {
           {<Link href="/"><img className="h-14 w-auto" src='/images/logo.png' alt='devOpps' /><p className="font-bold text-2xl text-foreground hover:text-indigo-400">devOpps</p></Link>}          
         </NavbarBrand>
       </div>
-
+{/* nav links */}
       <NavbarContent justify="end">
         <NavbarItem className="smhide md:flex" >
           <Link href="/employer/search" color="foreground" className='hover:text-indigo-400'>Employer</Link>

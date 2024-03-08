@@ -27,7 +27,7 @@ function Home() {
     navigate(`/job-results/?title=${selectedOption}&location=${location}`);
     window.scrollTo({ top: 0 });
   };
-
+// Function to handle city section click
   const handleCityClick = (cityName) => {
     const option = 'Software Developer';
     const city = cityName;
@@ -43,10 +43,12 @@ function Home() {
         <div className="absolute  inset-0 bg-slate-800 opacity-30"></div>
         <div className="container max-w-[1280px] w-full px-6 py-10 sm:py-16 lg:py-20 flex flex-col relative z-10 mx-auto">
           <div className="lg:w-3/4 xl:w-1/2">
+            {/* Main hero text */}
             <h1 className="text-3xl sm:text-5xl font-medium text-white mb-6">Welcome to devOpps</h1>
             <h3 className="text-xl sm:text-2xl font-light text-white mb-10">From job seekers to recruiters, devOpps offers a comprehensive platform for all your tech hiring needs, making job searches and candidate sourcing hassle-free.</h3>
             <div className=' bg-white rounded-lg p-5 max-w-[620px]'>
               <h2 className='text-gray-800 font-medium pb-3 mx-2'>Search available positions:</h2>
+              {/* Search within hero */}
               <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex flex-col sm:flex-row items-center">
                 <Dropdown>
                   <DropdownTrigger>
@@ -87,7 +89,7 @@ function Home() {
 
       <div className='container max-w-[1280px] px-6 my-5 md:my-20 mx-auto'>
 
-        {/* candidate/employer section */}
+        {/* Employer box with grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8  py-5 ">
           <Link to='/employer/search'>
             <div className="employer p-4 shadow-md rounded-lg h-96 relative flex justify-center items-center">
@@ -97,7 +99,7 @@ function Home() {
               </h2>
             </div>
           </Link>
-
+{/* Candidate box with link */}
           <Link to='/candidate/create-profile'>
             <div className="employee p-4 shadow-md rounded-lg h-96 relative flex justify-center items-center">
               <div className="absolute inset-0 bg-white opacity-20 hover:opacity-10"></div>
@@ -125,7 +127,6 @@ function Home() {
           <h2 className="absolute bottom-0 right-0 mr-3 mb-3 text-white text-2xl">London</h2>
         </div></a>
 
-        {/* <div className="sm:col-span-1 grid grid-cols-1 gap-2"> */}
         <a className="relative bristol-box rounded-lg" onClick={() => handleCityClick('Bristol')}><div>
           <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0 "></div>
           <h2 className="absolute bottom-0 right-0 mr-3 mb-3 text-white text-2xl">Bristol</h2>
@@ -134,9 +135,7 @@ function Home() {
           <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
           <h2 className="absolute bottom-0 right-0 mr-3 mb-3 text-2xl text-white">Edinburgh</h2>
         </div></a>
-        {/* </div> */}
 
-        {/* <div className="sm:col-span-1 grid grid-cols-1 gap-2"> */}
         <a className="relative cardiff-box rounded-lg" onClick={() => handleCityClick('Cardiff')}><div>
           <div className="absolute inset-0 bg-white opacity-10 hover:opacity-0"></div>
           <h2 className="absolute bottom-0 right-0 mr-3 mb-3 text-white text-2xl">Cardiff</h2>
@@ -150,13 +149,12 @@ function Home() {
           <h2 className="absolute bottom-0 right-0 mr-3 mb-3 text-white text-2xl">Cambridge</h2>
         </div></a>
       </div>
-      {/* </div> */}
 
       {/* tech header */}
       <div className='text-center flex items-center justify-center flex-col'>
         <h2 className='lg:w-1/2 mb-10 font-bold mt-5 text-3xl'>Latest Tech News</h2>
       </div>
-
+{/* News carousel */}
       <div className="container max-w-[1280px] px-6 mx-auto">
         <NewsSlider />
       </div>
