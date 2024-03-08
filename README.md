@@ -11,6 +11,7 @@ Moreover, devOpps caters to the needs of employers by offering a dedicated secti
 
 - [devOpps.app](https://devopps.app)
 - [GitHub Repo](https://github.com/jilloreilly/DevOpps)
+- [Presentation](https://www.canva.com/design/DAF-uyw5mXQ/d8cCz1vUzAUSdpv6OsMOWg/view?utm_content=DAF-uyw5mXQ&utm_campaign=share_your_design&utm_medium=link&utm_source=shareyourdesignpanel#9)
 
 ## Table of Contents: 
 

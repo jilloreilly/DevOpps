@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 const MyFooter = () => {
+    // Scroll to top on logo click
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -13,7 +14,7 @@ const MyFooter = () => {
         <footer className="bg-blue-100 text-black py-10 mt-20 relative bottom-0 left-0 w-full">
             {/* Top section for logo and links within website */}
             <div className="container max-w-[1280px] mx-auto flex flex-col justify-around lg:flex-row md:flex-row items-center sm:flex-col p-10 md:p-5 sm:p-2">
-                {/* Left section for logo +/- text */}
+                {/* Left section for logo + text */}
                 <div className="w-full lg:w-1/3 flex flex-row items-center justify-center pb-2">
                     <p className='p-5 md:p-1 text-center text-large md:text-base'>devOpps simplifies the hiring process by enabling developers to find their ideal job matches while assisting employers in discovering top talent.</p>
                 </div>
