@@ -3,6 +3,8 @@ import { CustomCheckbox } from "./CustomCheckbox";
 import '../CandidateSkills/index.css'
 
 export default function CandidateSkills({ groupSelected, setGroupSelected }) {
+
+  // function takes in state setters from the candidate profile form page so they can be returned and added to local storage
  
   return (
     <div className="flex flex-col gap-1 w-full">

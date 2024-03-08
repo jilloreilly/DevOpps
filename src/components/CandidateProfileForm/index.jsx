@@ -9,6 +9,8 @@ function CandidateProfileForm() {
 
   const candidateArray = JSON.parse(localStorage.getItem('candidateData')) || []
 
+  // setting initital state of all the fields that will be used in the candidate page
+
   const [profileFormData, setProfileFormData] = useState({
     name: '',
     email: '',
@@ -28,12 +30,16 @@ function CandidateProfileForm() {
 
   const [parentGroupSelected, setParentGroupSelected] = useState([]);
 
+  // function that checks the profileFormData and combines it with the skills returned from the candidate skills component
+
   useEffect(() => {
     setProfileFormData(prevData => ({
       ...prevData,
       technology: parentGroupSelected
     }));
   }, [parentGroupSelected]);
+
+  // function to set the profile form data with the inputs are being updated
 
   const handleProfileChange = (e) => {
     const { name, value } = e.target;
@@ -45,13 +51,13 @@ function CandidateProfileForm() {
 
   const [isSaving, setIsSaving] = useState(false);
 
+  // function that pushes the new profile to the local storage, and then navigates to that profile page after 1.5 seconds
+
   const handleProfileSubmit = (e) => {
     e.preventDefault();
     setIsSaving(true); 
-    console.log('Form Data: ', profileFormData)
     candidateArray.push(profileFormData)
     localStorage.setItem('candidateData', JSON.stringify(candidateArray));
-    console.log(candidateArray)
 
     setTimeout(() => {
       navigate(`/candidate/profile/${profileFormData.gitHubUsername}`);
@@ -66,6 +72,8 @@ function CandidateProfileForm() {
       [name]: value
     }));
   }
+
+  // functions that retrieves the data from the git hub fetch component and sets it to the relevant values in the profile form data
 
   const handleGitHubInputChange = (name, value) => {
     setProfileFormData(prevData => ({
@@ -84,6 +92,8 @@ function CandidateProfileForm() {
       gitHubFollowing: gitHubDetails.following
     }));
   };
+
+  // useEffect to update document title on page
 
   useEffect(() => {
     document.title = `devOpps - Candidate - Create Profile`;

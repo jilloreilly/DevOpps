@@ -94,7 +94,7 @@ function JobDetails(props) {
             <p><i className="fa-regular fa-building text-indigo-500"></i> <strong>Company:</strong> {data.company}</p>
             <div className="my-4 font-normal text-gray-700 dark:text-gray-400">{formatDescription(data.description)}</div>
           </div>
-          <div className="favourite" onClick={addToFavourites}><i className={isChecked ? "fa-solid fa-heart text-indigo-500" : "fa-regular fa-heart text-indigo-500"}></i></div>
+          <div className="favourite" onClick={addToFavourites}><i className={isChecked ? "fa-solid fa-heart text-indigo-500 text-2xl" : "fa-regular fa-heart text-indigo-500 text-2xl"}></i></div>
         </div>
         <div className='flex flex-row sm:flex-col md:flex-row lg:flex-row justify-evenly flex-wrap gap-4 py-3 border-t-1 border-b-1'>
           <p><i className="fa-regular fa-compass text-indigo-500"></i> <strong>Location:</strong> {data.location}</p>
