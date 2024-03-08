@@ -11,14 +11,14 @@ Moreover, devOpps caters to the needs of employers by offering a dedicated secti
 
 - [devOpps.app](https://devopps.app)
 - [GitHub Repo](https://github.com/jilloreilly/DevOpps)
-- [Presentation](https://www.canva.com/design/DAF-uyw5mXQ/d8cCz1vUzAUSdpv6OsMOWg/view?utm_content=DAF-uyw5mXQ&utm_campaign=share_your_design&utm_medium=link&utm_source=shareyourdesignpanel#9)
+- [Presentation](https://www.canva.com/design/DAF-uyw5mXQ/d8cCz1vUzAUSdpv6OsMOWg/view?utm_content=DAF-uyw5mXQ&utm_campaign=share_your_design&utm_medium=link&utm_source=shareyourdesignpanel#1)
 
-## Table of Contents: 
+## Table of Contents
 
   - [Description](#Description)
-  - [Tech](#Technologies)
   - [Technologies](#Technologies)
   - [Usage Information](#Usage) 
+  - [Tests](#Tests)
   - [Questions & Contact Info](#Questions)
   - [License](#License)
 
@@ -100,7 +100,11 @@ Moreover, devOpps caters to the needs of employers by offering a dedicated secti
 
 ![Multi device mockup](/public/readme/device-mockup.png)
 
-  <!-- ## Test -->
+
+
+## Tests
+
+```npm run test```
   
 
 
@@ -120,9 +124,9 @@ Moreover, devOpps caters to the needs of employers by offering a dedicated secti
 
 
 
-## Credits:
+## Credits
 
-  - Chris Kratz TA
+  - [Chris Kratz TA](https://github.com/Ckratz17)
   - [NPM](https://www.npmjs.com/)
   - [GitHub API](https://docs.github.com/en/rest)
   - [New York Times API](https://developer.nytimes.com/apis)
@@ -132,16 +136,8 @@ Moreover, devOpps caters to the needs of employers by offering a dedicated secti
   - [Netlify](https://www.netlify.com/)
 
 
-## License
+## License 
 
-   ![License](https://img.shields.io/badge/License-MIT-blue.svg)
-  
-  MIT License
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
-Copyright (c) 2024 Jill O'Reilly
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Copyright (c) 2024 Sarah Egleston, Jill O'Reilly, Will Mowlam, Ramon Sanguini de Andrade and Richard Llewellyn
