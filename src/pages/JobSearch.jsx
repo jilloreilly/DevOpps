@@ -318,7 +318,7 @@ function JobSearch() {
                   <button
                     type="submit"
                     disabled={isSearching}
-                    className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                    className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 hover:disabled:bg-indigo-600 disabled:opacity-25">
                     Find Jobs
                   </button>
                 </div>
@@ -332,7 +332,7 @@ function JobSearch() {
                   id="prev-button"
                   onClick={() => requestPageChange(-1)}
                   disabled={page < 1 || isSearching}
-                  className="rounded-md bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                  className="rounded-md bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 hover:disabled:bg-indigo-600 disabled:opacity-25">
                   Previous
                 </button>
                 <div className="inline-block mx-2">Page {page + 1}</div>
@@ -340,7 +340,7 @@ function JobSearch() {
                   id="next-button"
                   onClick={() => requestPageChange(+1)}
                   disabled={jobs.length < 10 || isSearching}
-                  className="rounded-md bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                  className="rounded-md bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 hover:disabled:bg-indigo-600 disabled:opacity-25">
                   Next
                 </button>
               </div>
