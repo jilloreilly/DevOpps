@@ -4,6 +4,7 @@ import JobSearchResults from "../components/JobSearch/Results.jsx";
 import EmploymentTypes from '../components/JobSearch/EmploymentTypes.jsx';
 import JobDetails from './JobDetails.jsx';
 import {Spinner} from "@nextui-org/react";
+import Pagination from "../components/JobSearch/Pagination.jsx";
 
 function JobSearch() {
 
@@ -162,11 +163,6 @@ function JobSearch() {
     await handleJobSearch();
   }
 
-  // Handle page change (eg +1 or -1)
-  const requestPageChange = (delta) => {
-    setPage(page + delta)
-  };
-
   // Back to top button
   const [showButton, setShowButton] = useState(false)
 
@@ -318,7 +314,7 @@ function JobSearch() {
                   <button
                     type="submit"
                     disabled={isSearching}
-                    className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                    className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 hover:disabled:bg-indigo-600 disabled:opacity-25">
                     Find Jobs
                   </button>
                 </div>
@@ -327,23 +323,8 @@ function JobSearch() {
             </aside>
 
             <section className="w-full md:w-9/12">
-              <div id="next-page-nav" className={`flex justify-end items-center my-3 ${jobs.length < 10 ? "hidden" : "block"}`}>
-                <button
-                  id="prev-button"
-                  onClick={() => requestPageChange(-1)}
-                  disabled={page < 1 || isSearching}
-                  className="rounded-md bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                  Previous
-                </button>
-                <div className="inline-block mx-2">Page {page + 1}</div>
-                <button
-                  id="next-button"
-                  onClick={() => requestPageChange(+1)}
-                  disabled={jobs.length < 10 || isSearching}
-                  className="rounded-md bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                  Next
-                </button>
-              </div>
+
+              <Pagination page={page} setPage={setPage} isSearching={isSearching} jobsLength={jobs.length} />
 
               <div className="mt-9">
                 {
@@ -351,6 +332,8 @@ function JobSearch() {
                   isSearching ? <Spinner className='load-spinner'/> : (jobs.length === 0 && !isSearching && !isReset) ? "No jobs found" : <JobSearchResults jobs={jobs} handleJobSelection={handleJobSelection} />
                 }
               </div>
+
+              <Pagination page={page} setPage={setPage} isSearching={isSearching} jobsLength={jobs.length} scrollToTop={true} />
 
               {showButton && (
                 <div className={`scrollToTop`}>
