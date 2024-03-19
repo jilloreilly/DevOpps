@@ -23,8 +23,13 @@ const Pagination = ({ page, setPage, isSearching, jobsLength = 0, scrollToTop = 
     setPage(page + delta);
   };
 
+  // Don't render if no pagination required
+  if ((page === 0 && jobsLength < 10) || isSearching){
+    return null;
+  }
+
   return (
-    <div className={`flex justify-end items-center my-3 ${jobsLength < 10 || isSearching ? "hidden" : "block"}`}>
+    <div className={'flex justify-end items-center my-3'}>
       <button
         onClick={() => requestPageChange(-1)}
         disabled={page < 1}
