@@ -7,7 +7,7 @@ name: Deploy workflow
 on:
   push:
     branches:
-      - main
+      - banana
 
 # Jobs to carry out
 jobs:

@@ -21,7 +21,7 @@ export default function NewsSlider() {
         <Carousel showArrows={true} showThumbs={false} showStatus={false} className=' bg-gray-800 rounded-lg overflow-hidden'>
             {news.map((article, index) => (
                 <div key={index} className="relative rounded-lg">
-                    <img src={article.multimedia.find(item => item.format === 'threeByTwoSmallAt2X').url} alt="Article" />
+                    {article.multimedia ? (<img src={article.multimedia.find((item) => item.format === 'threeByTwoSmallAt2X')?.url} alt="Article" />) : (<img />)}                
                     <div className="absolute flex flex-col bottom-0 left-0 right-0 bg-black bg-opacity-50 py-6 px-10 gap-3">
                         <h2 className="text-white text-2xl font-semibold text-center article-title">{article.title}</h2>
                         <p className="text-gray-300  mb-4 text-center article-abstract">{article.abstract}</p>
