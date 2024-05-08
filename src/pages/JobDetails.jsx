@@ -1,4 +1,5 @@
 import { useState, useEffect, Fragment } from 'react';
+import parse from 'html-react-parser';
 
 function JobDetails(props) {
 
@@ -48,6 +49,9 @@ function JobDetails(props) {
 
     if (typeof text === 'string') {
 
+      // Parse html characters
+      text = parse(text);
+
       // Define the bullet character regex
       const bulletRegex = /•/;
 
@@ -90,8 +94,8 @@ function JobDetails(props) {
       <div className="w-full p-6 bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
         <div className='flex flex-row'>
           <div>
-            <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{data.title}</h2>
-            <p><i className="fa-regular fa-building text-indigo-500"></i> <strong>Company:</strong> {data.company}</p>
+            <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{parse(data.title)}</h2>
+            <p><i className="fa-regular fa-building text-indigo-500"></i> <strong>Company:</strong> {parse(data.company)}</p>
             <div className="my-4 font-normal text-gray-700 dark:text-gray-400">{formatDescription(data.description)}</div>
           </div>
           <div className="favourite" onClick={addToFavourites}><i className={isChecked ? "fa-solid fa-heart text-indigo-500 text-2xl" : "fa-regular fa-heart text-indigo-500 text-2xl"}></i></div>
